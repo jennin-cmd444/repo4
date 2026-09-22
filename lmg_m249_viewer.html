@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>M249 / SAW / Field Equipment Archive</title>
+<style>
+:root{--bg:#191714;--panel:#201d19;--line:#4a4338;--text:#ece7dd;--muted:#b5ac9c;--accent:#d9a441;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:13px/1.5 system-ui,sans-serif}button,input{font:inherit}button{color:inherit;background:transparent;border:1px solid var(--line);cursor:pointer;min-height:44px;border-radius:3px}button:hover{background:#ffffff09;border-color:#76808a}button[aria-pressed=true]{border-color:var(--accent);background:#d9a44114;color:#e9bc68}button:disabled{opacity:.4;cursor:wait}:focus-visible{outline:2px solid var(--accent);outline-offset:4px}input{accent-color:var(--accent)}svg{display:block}header{height:76px;display:flex;align-items:center;gap:16px;padding:0 28px;border-bottom:1px solid var(--line);background:#1c1915;position:relative;z-index:4}.brand{color:var(--accent);border:1px solid #695433;padding:9px}.brand svg{width:23px;height:23px}.brand-name{font-weight:650;font-size:12px;letter-spacing:2px}.edition{font:9px var(--mono);letter-spacing:1.7px;color:var(--muted);margin-top:5px}.header-spacer{flex:1}.offline{font:10px var(--mono);letter-spacing:1px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-right:12px}.offline i{width:5px;height:5px;border-radius:50%;background:#a9bb97;box-shadow:0 0 9px #a9bb9733}.icon-button{width:44px;display:grid;place-items:center}.icon-button svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.4}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 320px;height:calc(100dvh - 76px)}.stage{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 48%,#403a30 0%,#302b24 33%,#24211c 63%,#191714 100%)}.stage:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 140px #0003;z-index:-1}#viewport{width:100%;height:100%;display:block;touch-action:none;cursor:grab}#viewport:active{cursor:grabbing}.scene-heading{position:absolute;left:36px;top:31px;pointer-events:none}.eyebrow{font:9px var(--mono);letter-spacing:2.4px;color:var(--accent);display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";width:22px;height:1px;background:var(--accent)}h1{font-size:46px;font-weight:450;letter-spacing:-1.9px;line-height:1.1;margin:15px 0 9px}.scene-heading p{color:var(--muted);font-size:12px;margin:0}.scene-heading p span{font-family:var(--mono);font-size:10px;color:#777f88;padding:0 9px}.scene-index{position:absolute;right:28px;top:33px;text-align:right;font:10px/1.9 var(--mono);color:#858e97;letter-spacing:1px}.scene-index strong{display:block;color:#c7cdd2;font-weight:400;font-size:12px}.view-label{position:absolute;left:36px;bottom:142px;font:9px var(--mono);letter-spacing:1.8px;color:var(--muted);display:flex;gap:15px;align-items:center}.view-label i{width:6px;height:6px;border:1px solid var(--accent);transform:rotate(45deg)}.scale{position:absolute;right:32px;bottom:133px;font:9px var(--mono);color:#858e97;text-align:center}.scale:before{content:"";display:block;width:92px;border:1px solid #677079;border-top:0;height:5px;margin-bottom:7px}.render-modes{position:absolute;left:28px;bottom:64px;display:flex;gap:2px;border:1px solid #4a505766;padding:4px;background:#201d19eb;backdrop-filter:blur(10px);border-radius:5px;max-width:calc(100% - 56px);overflow:auto}.render-modes button{border-color:transparent;font:10px var(--mono);white-space:nowrap;padding:0 12px;min-height:44px}.render-modes button[aria-pressed=true]{border-color:#8a6939}.gestures{position:absolute;bottom:24px;left:36px;right:30px;display:flex;gap:17px;align-items:center;color:#919aa2;font:9px var(--mono)}.gestures b{font-weight:400;color:#c6cbd0}.gestures .right{margin-left:auto;color:#76818a}.inspector{background:var(--panel);border-left:1px solid var(--line);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#45494d transparent}.inspector section{padding:22px 22px;border-bottom:1px solid #3b352c}.inspector .intro{padding:25px 22px 23px}.tag{font:9px var(--mono);color:var(--accent);letter-spacing:1.4px;border:1px solid #695433;display:inline-block;padding:3px 7px}.intro h2{font-size:22px;letter-spacing:-.6px;font-weight:500;margin:13px 0 8px}.intro p{color:var(--muted);font-size:11px;line-height:1.8;margin:0}h3{font:9px var(--mono);letter-spacing:1.8px;color:#9ea7af;margin:0 0 14px;display:flex;justify-content:space-between}h3 span{font-size:9px;letter-spacing:0;color:#6f7a83}.camera-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.camera-grid button{font:10px var(--mono);text-align:left;padding:0 10px;display:flex;justify-content:space-between;align-items:center}.camera-grid small{color:#747d85;font-size:9px}.material{display:flex;align-items:center;width:100%;padding:9px 10px;text-align:left;gap:10px;margin:5px 0;min-height:54px;border-color:#3b352c}.swatch{flex:0 0 25px;width:25px;height:25px;border-radius:50%;border:1px solid #ffffff26;box-shadow:inset 0 0 5px #0006}.material strong{display:block;font-size:11px;font-weight:500}.material small{display:block;color:#8d979f;font:9px var(--mono);margin-top:3px}.material .tick{margin-left:auto;color:var(--accent);opacity:0}.material[aria-pressed=true] .tick{opacity:1}.micro{font:9px/1.8 var(--mono);color:#869199;margin:10px 0 0}.inline-check{display:flex;align-items:center;gap:8px;min-height:44px;font-size:11px;color:var(--muted);cursor:pointer}.finishes{display:grid;grid-template-columns:1fr 1fr;gap:6px}.finish{font-size:10px;padding:8px;text-align:left;display:flex;align-items:center;gap:7px}.finish .swatch{width:14px;height:14px;flex-basis:14px}.range-label{display:flex;justify-content:space-between;font:10px var(--mono);margin-top:16px;color:var(--muted)}output{color:#d7dde2}input[type=range]{width:100%;height:28px;cursor:pointer}input[type=text]{width:100%;height:44px;background:#191714;border:1px solid var(--line);color:var(--text);border-radius:3px;font:11px var(--mono);padding:10px}.wide{width:100%;font:10px var(--mono);margin-top:8px}.config-row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:5px 0;font-size:11px;color:var(--muted)}.config-row button{font:9px var(--mono);padding:0 9px;min-width:105px}.segmented{display:flex;gap:4px;margin-top:8px}.segmented button{flex:1;font:11px var(--mono)}table{width:100%;border-collapse:collapse;font:10px/1.65 var(--mono)}td{padding:6px 0;border-bottom:1px solid #352f27;color:var(--muted)}td:last-child{text-align:right;color:#d5dbe0}.export-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.export-row button{font:11px var(--mono)}.footnote{padding:19px 22px;color:#6e7983;font:9px/1.8 var(--mono)}.sheet-handle{display:none}#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#292d32;border:1px solid #6e5b43;box-shadow:0 8px 30px #0005;padding:12px 20px;border-radius:4px;font:11px var(--mono);z-index:20;transition:.2s;max-width:90vw}#toast.visible{opacity:1;transform:translate(-50%,0)}#error{display:none;position:absolute;inset:30%;padding:24px;background:var(--panel);border:1px solid var(--accent);z-index:6;min-width:260px;height:max-content}dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);max-width:450px;padding:28px}dialog::backdrop{background:#0009}dialog h2{margin-top:0;font-weight:500}dialog p{color:var(--muted);font-size:12px}dialog button{padding:0 20px;float:right}.loading-dot{position:absolute;right:28px;bottom:25px;font:9px var(--mono);color:var(--accent)}button{min-height:44px!important}@media(min-width:1400px){.scene-heading{left:48px;top:42px}h1{font-size:58px}.render-modes{left:40px}.view-label,.gestures{left:48px}}@media(max-width:1100px){header{padding:0 20px}.scene-index{display:none}.gestures{gap:10px;font-size:8px}.gestures .right{display:none}.render-modes{left:20px;max-width:calc(100% - 40px)}.render-modes button{padding:0 9px}.scene-heading{left:28px}h1{font-size:40px}}@media(max-width:899px){.workspace{display:block;height:calc(100dvh - 76px)}.stage{height:calc(100% - 58px)}.inspector{position:fixed;bottom:0;left:0;right:0;height:58px;z-index:8;border:1px solid var(--line);border-radius:14px 14px 0 0;transition:height .25s;overflow:hidden;box-shadow:0 -10px 50px #0003}.inspector.open{height:72dvh;overflow:auto}.sheet-handle{display:flex;width:100%;height:58px;align-items:center;justify-content:space-between;padding:0 24px;border:0;border-radius:14px 14px 0 0;background:var(--panel);position:sticky;top:0;z-index:2;font:10px var(--mono);letter-spacing:1.2px}.sheet-handle:before{content:"";position:absolute;left:calc(50% - 18px);top:6px;width:36px;height:3px;border-radius:3px;background:#5b6269}.inspector section{padding:19px 24px}.camera-grid{grid-template-columns:repeat(4,1fr)}#materials{display:grid;grid-template-columns:1fr 1fr;gap:4px}.material{margin:0}.brand-name{font-size:10px;letter-spacing:1px}.edition{font-size:8px;letter-spacing:1px}.offline{margin-right:0}.header-spacer{min-width:0}.scene-heading{top:25px}.scale{display:none}#toast{bottom:75px}.finishes{grid-template-columns:repeat(3,1fr)}.render-modes{bottom:56px}.view-label{bottom:126px}.gestures{bottom:20px}}@media(max-width:540px){header{gap:8px;padding:0 13px}.brand{padding:7px}.brand svg{width:20px;height:20px}.offline{font-size:0;gap:0;margin:0 5px}.edition{font-size:7px}.brand-name{font-size:9px}.icon-button{width:38px;min-width:38px}.scene-heading{left:22px}.scene-heading p{font-size:10px}h1{font-size:38px}.scene-heading p span{padding:0 4px}.gestures{left:22px;right:15px;gap:12px}.gestures .desktop{display:none}.camera-grid{grid-template-columns:1fr 1fr}.view-label{left:22px}.render-modes{left:14px;max-width:calc(100% - 28px)}.render-modes button{padding:0 10px}.finishes{grid-template-columns:1fr 1fr}.material strong{font-size:10px}.material small{font-size:8px}.material{padding:8px;gap:7px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.belt-builder{background:linear-gradient(130deg,#d9a4410b,transparent)}.belt-builder h3{color:var(--accent)}input[type=range]{min-height:44px}input[type=checkbox]{width:16px;height:16px} @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1 23 7v10l-11 6L1 17V7zM1 7l11 6 11-6M12 13v10M7 4l11 6v7M6 10v7l6 3"/></svg></div>
+ <div><div class="brand-name">FIELD EQUIPMENT ARCHIVE</div><div class="edition">INTERACTIVE ASSET STUDY / SERIES 07 · BELT-FED</div></div>
+ <div class="header-spacer"></div><div class="offline"><i></i>OFFLINE READY</div>
+ <button class="icon-button" id="auto" aria-label="Автовращение (A)" aria-pressed="false" title="Auto rotate · A"><svg viewBox="0 0 24 24"><path d="M20 8a9 9 0 1 0 1 8M20 3v6h-6"/></svg></button>
+ <button class="icon-button" id="reset" aria-label="Сбросить камеру (R)" title="Reset · R"><svg viewBox="0 0 24 24"><path d="M5 9V4m0 5h5M5 9a8 8 0 1 1-1 7"/></svg></button>
+ <button class="icon-button" id="help" aria-label="Управление и информация" title="Controls"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 1 1 4 3c-1 1-1 2-1 3m0 2v1"/></svg></button>
+</header>
+<main class="workspace">
+ <div class="stage" id="stage">
+  <canvas id="viewport" tabindex="0" aria-label="3D-модель M249 / SAW. Ракурсы: 1–8. R — сброс, A — вращение, W — сетка, E — разборка."></canvas>
+  <div class="scene-heading"><div class="eyebrow">SQUAD SUPPORT / 007</div><h1>M249 / SAW</h1><p>Linked by design.<span>/</span>Every round accounted for.</p></div>
+  <div class="scene-index">ASSET INDEX<strong>FE–249 / 2026</strong>5.56 × 45 NATO</div>
+  <div class="view-label"><i></i><span id="viewName">HERO PERSPECTIVE</span><span>55 MM</span></div>
+  <div class="scale">1:1 METRIC ASSET</div>
+  <div class="render-modes" role="group" aria-label="Режим рендера" id="renderModes"></div>
+  <div class="gestures"><span><b>DRAG</b> Orbit</span><span><b>SCROLL / PINCH</b> Zoom</span><span class="desktop"><b>SHIFT</b> Pan</span><span class="desktop"><b>2× CLICK</b> Focus</span><span class="right">PROCEDURAL · NO EXTERNAL ASSETS</span></div>
+  <div id="error" role="alert"></div>
+ </div>
+ <aside class="inspector" id="inspector" aria-label="Инспектор ассета">
+  <button class="sheet-handle" id="sheet" aria-expanded="false" aria-controls="inspectorContent">ASSET INSPECTOR <span id="sheetArrow">↑</span></button>
+  <div id="inspectorContent">
+  <section class="intro"><div class="tag">GAME ASSET / PROCEDURAL</div><h2>The sustained standard.</h2><p>M249 SAW / FN Minimi · 5.56 × 45.<br>Штампованная сталь, жар, латунь.<br>Процедурная лента. Видимая механика.</p></section>
+  <section><h3>CAMERA <span>01 — 08</span></h3><div class="camera-grid" id="cameras"></div></section>
+  <section><h3>MATERIALS <span>09 SURFACES</span></h3><div id="materials"></div><label class="inline-check"><input type="checkbox" id="isolate"> Изолировать выбранный материал</label><p class="micro">Выберите поверхность для подсветки.<br>Повторный клик — показать всё.</p></section>
+  <section><h3>FINISH / ОКРАСКА</h3><div class="finishes" id="finishes"></div>
+   <label class="range-label" for="wear">Wear / износ <output id="wearValue">32%</output></label><input id="wear" type="range" min="0" max="100" value="32">
+   <label class="range-label" for="grime">Grime / загрязнение <output id="grimeValue">48%</output></label><input id="grime" type="range" min="0" max="100" value="48">
+   <label class="range-label" for="heat">Barrel heat / побежалость <output id="heatValue">55%</output></label><input id="heat" type="range" min="0" max="100" value="55">
+   <label class="inline-check"><input id="serialEnabled" type="checkbox" checked> Serial number / маркировка</label><input id="serial" type="text" aria-label="Серийный номер" value="FN 249 08531" maxlength="22" spellcheck="false">
+   <button class="wide" id="randomSeed">↻ &nbsp; Randomize wear seed</button><p class="micro" id="seedLabel">SEED 24908531 · DETERMINISTIC</p>
+  </section>
+  <section><h3>CONFIGURATION</h3><div id="configuration"></div></section>
+  <section class="belt-builder"><h3>BELT BUILDER <span>M27 / LIVE GEOMETRY</span></h3><label class="range-label" for="count">Visible cartridges <output id="countValue">32 rounds</output></label><input id="count" type="range" min="0" max="50" value="32"><label class="range-label" for="sag">Sag / провисание <output id="sagValue">50%</output></label><input id="sag" type="range" min="0" max="100" value="50"><p class="micro">Arc-length Catmull–Rom · 11 mm pitch<br>Каждый пятый — красный трассер.<br>Патроны и звенья — общие батчи.</p></section>
+  <section><h3>EXPLODED VIEW <span id="explodedValue">0%</span></h3><label class="micro" for="exploded">Разнесение узлов / disassembly axes</label><input id="exploded" type="range" min="0" max="100" value="0"></section>
+  <section><h3>SPECIFICATIONS</h3><table><tbody><tr><td>Калибр</td><td>5.56 × 45 NATO</td></tr><tr><td>Длина</td><td>1041 mm</td></tr><tr><td>Ствол</td><td>465 mm</td></tr><tr><td>Масса</td><td>7.5 kg</td></tr><tr><td>Темп</td><td>800 r/min</td></tr><tr><td>Начальная скорость</td><td>915 m/s</td></tr><tr><td>Питание</td><td>M27 / 100–200</td></tr><tr><td>Автоматика</td><td>Газоотвод / long stroke</td></tr></tbody></table></section>
+  <section><h3>MESH STATS <span id="apiName">WEBGL</span></h3><table><tbody id="stats"></tbody></table><p class="micro" id="bakeStatus" aria-live="polite">Preparing procedural surfaces…</p></section>
+  <section><h3>EXPORT <span>LOCAL ONLY</span></h3><div class="export-row"><button id="glb">↓ GLB</button><button id="png">↓ PNG</button><button id="zip">↓ ZIP</button></div><p class="micro">GLB · Current configuration + PBR<br>ZIP · Five PBR maps + packed ORM + README</p></section>
+  <div class="footnote">FIELD EQUIPMENT ARCHIVE / 007<br>METERS · RIGHT-HANDED · +X BORE<br>Artist-built visual reference. Not CAD.</div>
+  </div>
+ </aside>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="helpDialog"><h2>Inspect every surface.</h2><p>ЛКМ — орбита. ПКМ или Shift + ЛКМ — панорама. Колесо — масштаб. Двойной клик — фокус на реальной точке поверхности. На сенсорном экране: один палец — орбита, два — масштаб и панорама.</p><p>1–8 — камеры · R — сброс · A — автовращение · W — каркас · E — разнесение узлов · B — сошки · T — крышка. Tab — переход по интерфейсу, стрелки — слайдеры.</p><p>Все текстуры синтезируются локально. Серийный номер: латиница, цифры и дефис. Все девять материалов имеют карты albedo, normal, roughness, metalness и AO. ZIP и GLB доступны после завершения перепекания. Это художественный игровой ассет, а не производственный чертёж.</p><form method="dialog"><button>Понятно</button></form></dialog>
+<script>
+'use strict';
+(() => {
+const $=s=>document.querySelector(s), TAU=Math.PI*2, clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), mix=(a,b,t)=>a+(b-a)*t;
+const nextFrame=()=>new Promise(r=>requestAnimationFrame(r));
+const yieldTask=()=>new Promise(r=>setTimeout(r,0));
+const started=performance.now();
+function rng(seed){let s=seed>>>0;return()=>{s+=0x6D2B79F5;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+const V={add:(a,b)=>a.map((x,i)=>x+b[i]),sub:(a,b)=>a.map((x,i)=>x-b[i]),mul:(a,s)=>a.map(x=>x*s),dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm:a=>{let l=Math.hypot(...a)||1;return a.map(x=>x/l)}};
+const Q={axis:(v,a)=>[...V.mul(V.norm(v),Math.sin(a/2)),Math.cos(a/2)],mul:(a,b)=>[a[3]*b[0]+a[0]*b[3]+a[1]*b[2]-a[2]*b[1],a[3]*b[1]-a[0]*b[2]+a[1]*b[3]+a[2]*b[0],a[3]*b[2]+a[0]*b[1]-a[1]*b[0]+a[2]*b[3],a[3]*b[3]-V.dot(a,b)],rotate:(q,v)=>{let t=V.mul(V.cross(q,v),2);return V.add(v,V.add(V.mul(t,q[3]),V.cross(q,t)))}};
+const M={identity:()=>new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]),mul:(a,b)=>{let o=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k];return o},perspective:(f,a,n,z)=>{let t=1/Math.tan(f/2);return new Float32Array([t/a,0,0,0,0,t,0,0,0,0,(z+n)/(n-z),-1,0,0,2*z*n/(n-z),0])},look:(eye,target)=>{let z=V.norm(V.sub(eye,target)),x=V.norm(V.cross([0,1,0],z)),y=V.cross(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-V.dot(x,eye),-V.dot(y,eye),-V.dot(z,eye),1])},rigid:(q,p,t=[0,0,0])=>{let x=Q.rotate(q,[1,0,0]),y=Q.rotate(q,[0,1,0]),z=Q.rotate(q,[0,0,1]),d=V.sub(V.add(p,t),Q.rotate(q,p));return new Float32Array([...x,0,...y,0,...z,0,...d,1])},point:(m,p)=>[m[0]*p[0]+m[4]*p[1]+m[8]*p[2]+m[12],m[1]*p[0]+m[5]*p[1]+m[9]*p[2]+m[13],m[2]*p[0]+m[6]*p[1]+m[10]*p[2]+m[14]],inverseRigid:m=>{let o=new Float32Array([m[0],m[4],m[8],0,m[1],m[5],m[9],0,m[2],m[6],m[10],0,0,0,0,1]);o[12]=-V.dot([m[0],m[1],m[2]],m.slice(12,15));o[13]=-V.dot([m[4],m[5],m[6]],m.slice(12,15));o[14]=-V.dot([m[8],m[9],m[10]],m.slice(12,15));return o}};
+const materials=[['phosphate','Phosphated steel','STAMPED / OILED / WORN','#55534b'],['barrelsteel','Heat-treated steel','FLUTED / THERMAL OXIDES','#73707d'],['anodized','Anodized alloy','PICATINNY / CONTACT WEAR','#55564f'],['nitride','Nitrided steel','FEED / BOLT / PISTON','#3d4240'],['polymer','Glass-filled nylon','STOCK / GRIP / CONTAINER','#4b4c3d'],['rubber','Elastomer','BUTT / FEET / HEAT GUARD','#34332e'],['brass','Cartridge brass','ANNEALED / SEALED / STAMPED','#c7a457'],['linksteel','M27 link steel','OXIDIZED / BENT SHEET','#5c594e'],['cordura','Cordura 100','WOVEN / STITCHED / DUST','#7a7952']];
+function packAtlas(){return [[0,0,2048],[2048,0,2048],[0,2048,1024],[1024,2048,1024],[2048,2048,1024],[3072,2048,1024],[0,3072,1024],[1024,3072,1024],[2048,3072,1024]].map(([x,y,s])=>({x,y,s,uv:[(x+8)/4096,(y+8)/4096,(s-16)/4096,(s-16)/4096]}))}
+const atlasLayout=packAtlas(),state={finish:0,wear:.32,grime:.48,heat:.55,seed:24908531,serial:'FN 249 08531',serialEnabled:true,selected:-1,isolate:false,mode:0,exploded:0,cover:0,bipod:1,container:0,translucent:true,barrel:0,optic:0,sling:0,charging:0,shoulder:0,drum:0,count:32,sag:.5,auto:false};
+const batches=[];
+function batch(name,material,group='receiver',explode=[0,0,0]){let b={name,material,group,explode,raw:[],matrix:M.identity(),visible:true};batches.push(b);return b}
+function vertex(b,p,n,uv,e,bar){b.raw.push(...p,...n,uv[0],uv[1],e,...bar)}
+function triangle(b,a,c,d){let n=V.cross(V.sub(c.p,a.p),V.sub(d.p,a.p));if(V.dot(n,n)<1e-28)return;if(V.dot(n,V.add(V.add(a.n,c.n),d.n))<0)[c,d]=[d,c];[a,c,d].forEach((v,i)=>vertex(b,v.p,v.n,v.uv,v.e,[i===0?1:0,i===1?1:0,i===2?1:0]))}
+function makeSurface(b,nu,nv,fn,uvFn=(u,v)=>[.04+.92*u,.31+.65*(1-v)]){let grid=[];for(let j=0;j<=nv;j++)for(let i=0;i<=nu;i++){let u=i/nu,v=j/nv,o=fn(u,v);if(!o.n){let h=.0001,du=V.sub(fn(clamp(u+h),v).p,fn(clamp(u-h),v).p),dv=V.sub(fn(u,clamp(v+h)).p,fn(u,clamp(v-h)).p);o.n=V.norm(V.cross(du,dv))}o.uv=uvFn(u,v);o.e=o.e||0;grid.push(o)}for(let j=0;j<nv;j++)for(let i=0;i<nu;i++){let k=j*(nu+1)+i,a=grid[k],c=grid[k+1],d=grid[k+nu+1],e=grid[k+nu+2];triangle(b,a,c,e);triangle(b,a,e,d)}}
+function patch(b,nu,nv,fn,uv){makeSurface(b,nu,nv,fn,uv)}
+function box(b,center,size,r=.0004,n=3,q=[0,0,0,1],special=false){let h=size.map(x=>x/2);r=Math.min(r,...h.map(x=>x*.8));let inner=h.map(x=>x-r),sample=(u,h)=>{let e=r/(2*h);return u<1/n?u*n*e:u>1-1/n?1-(1-u)*n*e:e+(u-1/n)/(1-2/n)*(1-2*e)};n=Math.max(3,n);for(let axis=0;axis<3;axis++)for(let s of [-1,1]){let a=(axis+1)%3,c=(axis+2)%3;makeSurface(b,n,n,(u,v)=>{let p=[0,0,0];p[axis]=s*h[axis];p[a]=(sample(u,h[a])*2-1)*h[a];p[c]=(sample(v,h[c])*2-1)*h[c];let nearest=p.map((x,i)=>clamp(x,-inner[i],inner[i])),normal=V.norm(V.sub(p,nearest)),rounded=V.add(nearest,V.mul(normal,r));return{p:V.add(center,Q.rotate(q,rounded)),n:Q.rotate(q,normal),e:1-Math.max(...normal.map(Math.abs))+.15*(Math.abs(p[a])>inner[a]||Math.abs(p[c])>inner[c]?1:0)}},(u,v)=>[.04+.92*sample(u,h[a]),(special&&axis===2?0:.31)+(special&&axis===2?.25:.65)*(1-sample(v,h[c]))])}}
+function basis(a,b){let d=V.norm(V.sub(b,a)),u=V.norm(V.cross(d,Math.abs(d[1])>.9?[1,0,0]:[0,1,0]));return[d,u,V.cross(d,u)]}
+function disk(b,c,axis,r,inner=0,segments=40){let [d,u,v]=basis(c,V.add(c,axis));makeSurface(b,segments,1,(s,t)=>{let rr=mix(inner,r,t),a=s*TAU;return{p:V.add(c,V.add(V.mul(u,Math.cos(a)*rr),V.mul(v,Math.sin(a)*rr))),n:d,e:t>.66?.5:0}})}
+function cylinder(b,a,c,r1,r2=r1,seg=40,rings=6,caps=true){let [d,u,v]=basis(a,c),length=Math.hypot(...V.sub(c,a));makeSurface(b,seg,rings,(s,t)=>{let th=s*TAU,rad=V.add(V.mul(u,Math.cos(th)),V.mul(v,Math.sin(th))),bevel=Math.min(.00035,r1*.15),rr=mix(r1,r2,t)-bevel*(t===0||t===1?1:0);return{p:V.add(V.add(a,V.mul(d,length*t)),V.mul(rad,rr)),n:V.norm(V.add(rad,V.mul(d,(r1-r2)/length+(t===0?-.24:t===1?.24:0)))),e:t===0||t===1?.7:0}});if(caps){disk(b,a,V.mul(d,-1),r1-.0003,0,seg);disk(b,c,d,r2-.0003,0,seg)}}
+function tube(b,a,c,ro,ri,seg=48,rings=8){cylinder(b,a,c,ro,ro,seg,rings,false);let [d,u,v]=basis(a,c);makeSurface(b,seg,rings,(s,t)=>{let rad=V.add(V.mul(u,Math.cos(s*TAU)),V.mul(v,Math.sin(s*TAU)));return{p:V.add(V.add(a,V.mul(V.sub(c,a),t)),V.mul(rad,ri)),n:V.mul(rad,-1),e:t===0||t===1?.4:0}});disk(b,a,V.mul(d,-1),ro-.0002,ri,seg);disk(b,c,d,ro-.0002,ri,seg)}
+function catmull(points,t){let f=clamp(t)*(points.length-1),i=Math.min(points.length-2,Math.floor(f)),u=f-i,p0=points[Math.max(0,i-1)],p1=points[i],p2=points[i+1],p3=points[Math.min(points.length-1,i+2)];return p1.map((x,k)=>.5*((2*x)+(-p0[k]+p2[k])*u+(2*p0[k]-5*x+4*p2[k]-p3[k])*u*u+(-p0[k]+3*x-3*p2[k]+p3[k])*u*u*u))}
+function sweep(b,points,r,steps=32,sides=10){makeSurface(b,sides,steps,(u,t)=>{let p=catmull(points,t),d=V.norm(V.sub(catmull(points,clamp(t+.001)),catmull(points,clamp(t-.001)))),a=V.norm(V.cross(d,Math.abs(d[2])<.9?[0,0,1]:[0,1,0])),c=V.cross(d,a),n=V.add(V.mul(a,Math.cos(u*TAU)),V.mul(c,Math.sin(u*TAU)));return{p:V.add(p,V.mul(n,r)),n,e:.2}})}
+function lathe(b,center,profile,seg=40){let [d,u,v]=basis(center,V.add(center,[1,0,0]));makeSurface(b,seg,(profile.length-1)*4,(s,t)=>{let f=t*(profile.length-1),i=Math.min(profile.length-2,Math.floor(f)),k=f-i,px=mix(profile[i][0],profile[i+1][0],k),r=mix(profile[i][1],profile[i+1][1],k),rad=V.add(V.mul(u,Math.cos(s*TAU)),V.mul(v,Math.sin(s*TAU)));return{p:V.add(center,V.add(V.mul(d,px),V.mul(rad,r))),e:k<.1?.4:0}})}
+
+function mergeBatches(){for(let b of batches){if(!b.raw)continue;b.data=new Float32Array(b.raw);b.raw=null;b.count=b.data.length/12;b.min=[Infinity,Infinity,Infinity];b.max=[-Infinity,-Infinity,-Infinity];for(let i=0;i<b.data.length;i+=12)for(let k=0;k<3;k++){b.min[k]=Math.min(b.min[k],b.data[i+k]);b.max[k]=Math.max(b.max[k],b.data[i+k])}b.center=V.mul(V.add(b.min,b.max),.5)}}
+function extrude(b,poly,z,depth,bevel=.00035){
+ const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x0=Math.min(...xs),y0=Math.min(...ys),dx=Math.max(...xs)-x0,dy=Math.max(...ys)-y0;let area=poly.reduce((s,p,i)=>{let q=poly[(i+1)%poly.length];return s+p[0]*q[1]-q[0]*p[1]},0);if(area<0)poly=poly.slice().reverse();
+ const cross=(a,c,d)=>(c[0]-a[0])*(d[1]-a[1])-(c[1]-a[1])*(d[0]-a[0]),ids=poly.map((_,i)=>i),faces=[];
+ while(ids.length>3){let found=false;for(let j=0;j<ids.length;j++){let a=ids[(j+ids.length-1)%ids.length],c=ids[j],d=ids[(j+1)%ids.length];if(cross(poly[a],poly[c],poly[d])<=1e-12)continue;if(ids.some(k=>k!==a&&k!==c&&k!==d&&cross(poly[a],poly[c],poly[k])>=-1e-12&&cross(poly[c],poly[d],poly[k])>=-1e-12&&cross(poly[d],poly[a],poly[k])>=-1e-12))continue;faces.push([a,c,d]);ids.splice(j,1);found=true;break}if(!found)throw Error('Invalid extrusion polygon: '+b.name)}faces.push(ids);
+ const inset=poly.map((p,i)=>{let prev=poly[(i+poly.length-1)%poly.length],next=poly[(i+1)%poly.length],a=V.norm([p[1]-prev[1],prev[0]-p[0],0]),c=V.norm([next[1]-p[1],p[0]-next[0],0]),n=V.add(a,c),k=bevel/Math.max(.25,1+V.dot(a,c));return[p[0]-n[0]*k,p[1]-n[1]*k]});
+ for(let s of [-1,1])for(let f of faces)triangle(b,...f.map(i=>({p:[...inset[i],z+s*depth/2],n:[0,0,s],uv:[.04+(poly[i][0]-x0)/dx*.92,.96-(poly[i][1]-y0)/dy*.65],e:0})));
+ for(let i=0;i<poly.length;i++){let j=(i+1)%poly.length,p=poly[i],q=poly[j],n=V.norm([q[1]-p[1],p[0]-q[0],0]);makeSurface(b,4,2,(u,v)=>({p:[mix(p[0],q[0],u),mix(p[1],q[1],u),z+(v-.5)*(depth-2*bevel)],n,e:.3}));for(let s of [-1,1])makeSurface(b,4,2,(u,v)=>({p:[mix(mix(p[0],q[0],u),mix(inset[i][0],inset[j][0],u),v),mix(mix(p[1],q[1],u),mix(inset[i][1],inset[j][1],u),v),z+s*(depth/2-bevel+v*bevel)],n:V.norm([n[0]*(1-v),n[1]*(1-v),s*v]),e:.5}))}
+}
+function mark(b,origin,w,h,rect,axis='side'){
+ makeSurface(b,1,1,(u,v)=>({p:axis==='top'?[origin[0]+u*w,origin[1],origin[2]+v*h]:[origin[0]+u*w,origin[1]+v*h,origin[2]],n:axis==='top'?[0,1,0]:[0,0,Math.sign(origin[2])],e:0}),(u,v)=>[rect[0]+(axis==='side'&&origin[2]<0?1-u:u)*rect[2],rect[1]+(1-v)*rect[3]]);
+}
+function screw(b,p,axis,r=.0022){let end=V.add(p,V.mul(axis,.0012));cylinder(b,p,end,r,r,16,2);let [d,u,v]=basis(p,end);for(let dir of [u,v])sweep(b,[V.add(end,V.mul(dir,-r*.6)),V.add(end,V.mul(dir,r*.6))],.00018,2,4)}
+function picatinny(b,x0,x1,y,z=0,side=0){
+ const q=Q.axis([1,0,0],side);let start=b.raw.length;
+ box(b,[(x0+x1)/2,y-.004,z],[x1-x0,.006,.015],.0004,3);
+ for(let x=x0+.003;x<x1-.002;x+=.010){box(b,[x,y,z],[.0054,.0048,.021],.00035,3);if(!side)box(b,[x,y-.003,z],[.0064,.004,.017],.0003,3)}
+ if(side)for(let i=start;i<b.raw.length;i+=12){let p=Q.rotate(q,[b.raw[i],b.raw[i+1]-.052,b.raw[i+2]]),n=Q.rotate(q,b.raw.slice(i+3,i+6));for(let k=0;k<3;k++){b.raw[i+k]=p[k]+(k===1?.052:0);b.raw[i+3+k]=n[k]}}
+}
+/*
+ * M249 / Minimi geometry source.
+ *
+ * This file intentionally uses the viewer's small geometry vocabulary rather
+ * than owning a renderer.  The host injects batch(), box(), cylinder(),
+ * makeSurface(), sweep(), lathe(), extrude(), mark(), screw(), picatinny(),
+ * mergeBatches(), V, Q and TAU before evaluating this source.
+ */
+
+const M249_MATERIAL = Object.freeze({
+  phosphate: 0,
+  barrelsteel: 1,
+  anodized: 2,
+  nitride: 3,
+  polymer: 4,
+  rubber: 5,
+  brass: 6,
+  linksteel: 7,
+  cordura: 8,
+});
+
+const M249_DEFAULT_STATE = Object.freeze({
+  count: 32,
+  sag: 0.5,
+  coverOpen: false,
+  bipodDeployed: true,
+  container: 'plastic',
+});
+
+function m249State(options) {
+  const s = options || {};
+  const count = Number(s.count == null ? M249_DEFAULT_STATE.count : s.count);
+  const sag = Number(s.sag == null ? M249_DEFAULT_STATE.sag : s.sag);
+  return {
+    count: Number.isFinite(count) ? Math.max(0, Math.min(50, Math.round(count))) : M249_DEFAULT_STATE.count,
+    sag: Number.isFinite(sag) ? Math.max(0, Math.min(1, sag)) : M249_DEFAULT_STATE.sag,
+  };
+}
+
+function m249Batch(name, material, group, explode) {
+  return batch(name, material, group, explode || [0, 0, 0]);
+}
+
+function m249AxisBasis(origin, axis) {
+  const d = V.norm(axis);
+  const ref = Math.abs(d[1]) > 0.9 ? [0, 0, 1] : [0, 1, 0];
+  const u = V.norm(V.cross(d, ref));
+  return [d, u, V.cross(d, u)];
+}
+
+function m249Lathe(b, origin, axis, profile, segments) {
+  const [d, u, v] = m249AxisBasis(origin, axis);
+  const nu = segments || 20;
+  const nv = Math.max(1, profile.length - 1);
+  makeSurface(b, nu, nv, (s, t) => {
+    const f = t * (profile.length - 1);
+    const i = Math.min(profile.length - 2, Math.floor(f));
+    const k = f - i;
+    const x = mix(profile[i][0], profile[i + 1][0], k);
+    const r = mix(profile[i][1], profile[i + 1][1], k);
+    const a = s * TAU;
+    const radial = V.add(V.mul(u, Math.cos(a)), V.mul(v, Math.sin(a)));
+    return {
+      p: V.add(V.add(origin, V.mul(d, x)), V.mul(radial, r)),
+      n: radial,
+      e: (i === 0 || i === profile.length - 2) ? 0.45 : 0,
+    };
+  });
+}
+
+function m249OrientedRing(b, center, axis, radius, tubeRadius, start, end, segments) {
+  const [d, u, v] = m249AxisBasis(center, axis);
+  const pts = [];
+  const n = segments || 12;
+  for (let i = 0; i <= n; i++) {
+    const a = mix(start, end, i / n);
+    pts.push(V.add(center, V.add(V.mul(u, Math.cos(a) * radius), V.mul(v, Math.sin(a) * radius))));
+  }
+  sweep(b, pts, tubeRadius, Math.max(5, Math.round(n * 0.68)), 5);
+  return d;
+}
+
+function m249Rivet(b, p, side, radius) {
+  const r = radius || 0.002;
+  const axis = [0, 0, side < 0 ? -1 : 1];
+  cylinder(b, p, V.add(p, V.mul(axis, 0.0024)), r, r * 0.82, 12, 2);
+}
+
+function m249Weld(b, points, radius) {
+  sweep(b, points, radius || 0.00055, Math.max(4, points.length), 5);
+}
+
+function m249OrientedRod(b, a, c, radius, materialBatch) {
+  cylinder(materialBatch || b, a, c, radius, radius, 12, 3);
+}
+
+function m249PathPoint(points, t) {
+  return catmull(points, clamp(t));
+}
+
+function m249SamplePath(points, distance) {
+  const samples = [];
+  const steps = 320;
+  let total = 0;
+  let last = m249PathPoint(points, 0);
+  samples.push({ t: 0, d: 0, p: last });
+  for (let i = 1; i <= steps; i++) {
+    const t = i / steps;
+    const p = m249PathPoint(points, t);
+    total += Math.hypot(...V.sub(p, last));
+    samples.push({ t, d: total, p });
+    last = p;
+  }
+  const wanted = Math.max(0, Math.min(total, distance));
+  for (let i = 1; i < samples.length; i++) {
+    if (samples[i].d >= wanted) {
+      const a = samples[i - 1];
+      const b = samples[i];
+      const k = (wanted - a.d) / Math.max(1e-9, b.d - a.d);
+      const t = mix(a.t, b.t, k);
+      const p = m249PathPoint(points, t);
+      const before = m249PathPoint(points, clamp(t - 0.002));
+      const after = m249PathPoint(points, clamp(t + 0.002));
+      return { p, d: V.norm(V.sub(after, before)), t, length: total };
+    }
+  }
+  return {
+    p: samples[samples.length - 1].p,
+    d: V.norm(V.sub(m249PathPoint(points, 1), m249PathPoint(points, 0.998))),
+    t: 1,
+    length: total,
+  };
+}
+
+function m249Cartridge(caseBatch, bulletBatch, center, axis, tracer) {
+  const d = V.norm(axis);
+  const base = V.add(center, V.mul(d, -0.0115));
+  const caseProfile = [
+    [0, 0.00415],
+    [0.0007, 0.00435],
+    [0.0085, 0.00435],
+    [0.0103, 0.00405],
+    [0.0113, 0.0033],
+  ];
+  m249Lathe(caseBatch, base, d, caseProfile, 12);
+  // Close the drawn brass at the extractor groove and give the primer a
+  // separate recessed face; lathe() intentionally leaves profile ends open.
+  disk(caseBatch, base, V.mul(d, -1), 0.0038, 0, 12);
+  cylinder(caseBatch, V.add(base, V.mul(d, -0.0002)), V.add(base, V.mul(d, 0.00055)), 0.00135, 0.00115, 10, 2);
+  m249OrientedRing(caseBatch, V.add(base, V.mul(d, 0.0087)), d, 0.00445, 0.00034, 0, TAU, 10);
+  m249OrientedRing(caseBatch, V.add(base, V.mul(d, 0.0107)), d, 0.00345, 0.00025, 0, TAU, 10);
+
+  // The bullet is separate so the fifth round can be recoloured as a tracer.
+  const bulletProfile = [
+    [0.0108, 0.00325],
+    [0.0120, 0.0038],
+    [0.0155, 0.00365],
+    [0.0195, 0.00295],
+    [0.0228, 0.00145],
+    [0.0242, 0.00012],
+  ];
+  m249Lathe(bulletBatch, base, d, bulletProfile, 12);
+  disk(bulletBatch, V.add(base, V.mul(d, 0.0242)), d, 0.00016, 0, 10);
+  m249OrientedRing(bulletBatch, V.add(base, V.mul(d, 0.0116)), d, 0.0034, 0.00022, 0, TAU, 8);
+  bulletBatch.tint = tracer ? [0.86, 0.055, 0.025] : null;
+}
+
+function m249Link(linkBatch, center, axis, index) {
+  const d = V.norm(axis);
+  const [longitudinal, u, v] = m249AxisBasis(center, d);
+  const phase = (index & 1) ? 0.12 : -0.12;
+  // Three pressed loops are deliberately independent ribbons, as on an M27
+  // link, instead of a single torus that would read as a texture decal.
+  for (let j = 0; j < 3; j++) {
+    const loopCenter = V.add(center, V.mul(longitudinal, (j - 1) * 0.0029));
+    const pts = [];
+    const steps = 7;
+    for (let i = 0; i <= steps; i++) {
+      const a = -1.72 + phase + (3.35 * i / steps);
+      pts.push(V.add(loopCenter, V.add(V.mul(u, Math.cos(a) * 0.0050), V.mul(v, Math.sin(a) * 0.0050))));
+    }
+    sweep(linkBatch, pts, 0.00042, 5, 4);
+  }
+}
+
+function m249BeltPoints(sag) {
+  // Feed end is first. The outside loop drops below the receiver before
+  // turning back through the translucent box envelope. Increasing count
+  // therefore extends a fixed-pitch tail instead of stretching old rounds.
+  const points = [
+    [0.018, 0.052, -0.066],
+    [0.007, 0.025, -0.075],
+    [-0.010, -0.012, -0.083],
+    [0.026, -0.067, -0.103],
+    [0.080, -0.102, -0.132],
+    [0.102, -0.145, -0.145 - sag * 0.008],
+    [0.080, -0.184, -0.112 - sag * 0.007],
+    [0.030, -0.208, -0.048 - sag * 0.004],
+    [-0.040, -0.207, -0.010],
+    [-0.095, -0.178, -0.044],
+    [-0.103, -0.135, -0.025],
+    [-0.094, -0.100, -0.015],
+  ];
+  for (let i = 2; i < points.length - 2; i++) points[i][1] -= sag * 0.012;
+  return points;
+}
+
+function buildBelt(options) {
+  const s = m249State(options);
+  if (!s.count) return { count: 0, length: 0, batches: [] };
+  const path = m249BeltPoints(s.sag);
+  const first = m249SamplePath(path, 0);
+  const visibleLength = Math.min(m249SamplePath(path, Infinity).length, 0.006 + Math.max(0, s.count - 1) * 0.011);
+  const externalBrass = m249Batch('Belt · 5.56 cartridge cases / heat tint', M249_MATERIAL.brass, 'belt', [0.06, -0.04, -0.09]);
+  const externalBullets = m249Batch('Belt · ogival bullets / crimped cannelure', M249_MATERIAL.brass, 'belt', [0.06, -0.04, -0.09]);
+  const externalLinks = m249Batch('Belt · M27 three-loop stamped links', M249_MATERIAL.linksteel, 'belt', [0.06, -0.04, -0.09]);
+  const tracerBullets = m249Batch('Belt · tracer projectile tips', M249_MATERIAL.brass, 'belt', [0.06, -0.04, -0.09]);
+  // Keep tracer rounds in the normal belt lifecycle: the host removes
+  // `belt`/`insideBelt` batches before rebuilding the slider preview.
+  tracerBullets.tracer = true;
+  tracerBullets.tint = [0.86, 0.055, 0.025];
+  const insideBrass = m249Batch('Inside belt · cases visible through container', M249_MATERIAL.brass, 'insideBelt', [0.02, -0.12, -0.05]);
+  const insideBullets = m249Batch('Inside belt · projectile tips', M249_MATERIAL.brass, 'insideBelt', [0.02, -0.12, -0.05]);
+  const insideTracerBullets = m249Batch('Inside belt · tracer projectile tips', M249_MATERIAL.brass, 'insideBelt', [0.02, -0.12, -0.05]);
+  insideTracerBullets.tracer = true;
+  insideTracerBullets.tint = [0.86, 0.055, 0.025];
+  const insideLinks = m249Batch('Inside belt · M27 links', M249_MATERIAL.linksteel, 'insideBelt', [0.02, -0.12, -0.05]);
+  const dynamicBatches = [externalBrass, externalBullets, externalLinks, tracerBullets, insideBrass, insideBullets, insideTracerBullets, insideLinks];
+  dynamicBatches.forEach((b) => { b.dynamic = 'belt'; b.beltCount = s.count; b.beltSag = s.sag; });
+
+  for (let i = 0; i < s.count; i++) {
+    const sample = m249SamplePath(path, 0.006 + i * 0.011);
+    const point = sample.p;
+    const internal = point[0] > -0.106 && point[0] < 0.056
+      && point[1] > -0.215 && point[1] < -0.084
+      && point[2] > -0.068 && point[2] < 0.030;
+    const caseBatch = internal ? insideBrass : externalBrass;
+    const linkBatch = internal ? insideLinks : externalLinks;
+    const bulletBatch = ((i + 1) % 5 === 0)
+      ? (internal ? insideTracerBullets : tracerBullets)
+      : (internal ? insideBullets : externalBullets);
+    // Rounds stay parallel to the weapon axis (as on a real disintegrating
+    // belt); the link centres, rather than the bullet axes, follow the sag.
+    // This keeps the 11 mm pitch from allowing adjacent cartridges to touch.
+    m249Cartridge(caseBatch, bulletBatch, point, [1, 0, 0], (i + 1) % 5 === 0);
+    // Cases stay parallel to the bore while the stamped link plane follows
+    // the local belt tangent around the drop and into the receiver.
+    m249Link(linkBatch, point, sample.d, i);
+  }
+  return {
+    count: s.count,
+    length: first.length,
+    visibleLength,
+    batches: dynamicBatches,
+    path,
+  };
+}
+
+function buildGeometry(options) {
+  const geometryState = m249State(options);
+  let b;
+
+  // -----------------------------------------------------------------------
+  // Stamped receiver, ejection window and lower receiver
+  // -----------------------------------------------------------------------
+  b = m249Batch('Receiver · stamped phosphate shell / bent side plates', M249_MATERIAL.phosphate, 'receiver', [0, 0.022, 0]);
+  b.assetNode = 'receiver';
+  // The side is assembled as thick stampings around a real open ejection port.
+  for (const z of [-0.056, 0.056]) {
+    box(b, [-0.022, 0.079, z], [0.245, 0.014, 0.004], 0.00045, 4);
+    box(b, [-0.022, 0.018, z], [0.245, 0.015, 0.004], 0.00045, 4);
+    box(b, [-0.139, 0.049, z], [0.014, 0.068, 0.004], 0.00045, 4);
+    box(b, [0.096, 0.049, z], [0.018, 0.068, 0.004], 0.00045, 4);
+    // Four rolled flanges surround the side ejection port; the centre stays
+    // open so the nitride shadow and bolt face remain visible through it.
+    box(b, [-0.077, 0.049, z], [0.110, 0.047, 0.004], 0.00035, 4);
+    box(b, [0.050, 0.075, z], [0.073, 0.014, 0.004], 0.00035, 4);
+    box(b, [0.050, 0.023, z], [0.073, 0.014, 0.004], 0.00035, 4);
+  }
+  // Cut the visual port back into the side with a dark recessed surround.
+  const port = m249Batch('Receiver · open ejection port / dust shadow', M249_MATERIAL.nitride, 'receiver', [0, 0.015, 0]);
+  for (const z of [-0.059, 0.059]) {
+    box(port, [0.035, 0.051, z], [0.072, 0.037, 0.002], 0.0005, 4);
+    box(port, [0.011, 0.051, z], [0.012, 0.030, 0.002], 0.0003, 3);
+  }
+  // Stamped longitudinal folds and doubled lower seam.
+  for (const z of [-0.061, 0.061]) {
+    for (const x of [-0.104, -0.073, -0.039, 0.072]) {
+      box(b, [x, 0.015, z], [0.006, 0.018, 0.004], 0.0003, 3);
+      box(b, [x, 0.083, z], [0.006, 0.017, 0.004], 0.0003, 3);
+    }
+    m249Weld(b, [[-0.125, 0.020, z], [-0.125, 0.079, z]], 0.00055);
+    m249Weld(b, [[0.078, 0.020, z], [0.078, 0.079, z]], 0.00055);
+    for (const x of [-0.113, -0.081, -0.038, 0.019, 0.067]) m249Rivet(b, [x, 0.047, z], z, 0.0021);
+  }
+  const weld = m249Batch('Receiver · spot welds / rolled seams', M249_MATERIAL.phosphate, 'receiver', [0, 0.022, 0]);
+  for (const z of [-0.064, 0.064]) {
+    for (const x of [-0.115, -0.090, -0.064, 0.073]) m249Rivet(weld, [x, 0.085, z], z, 0.00165);
+    m249Weld(weld, [[-0.118, 0.091, z], [0.079, 0.091, z]], 0.00038);
+  }
+
+  b = m249Batch('Receiver · barrel trunnion / feed throat', M249_MATERIAL.phosphate, 'receiver', [0.04, 0.03, 0]);
+  box(b, [0.092, 0.052, 0], [0.043, 0.070, 0.094], 0.0010, 3);
+  for (const z of [-0.052, 0.052]) {
+    box(b, [0.103, 0.093, z], [0.034, 0.011, 0.006], 0.00035, 3);
+    for (const x of [0.089, 0.108]) m249Rivet(b, [x, 0.052, z], z, 0.002);
+  }
+  box(b, [0.079, 0.030, 0], [0.012, 0.030, 0.072], 0.0004, 3);
+
+  // Lower receiver has a shaped trigger pocket rather than a solid silhouette.
+  b = m249Batch('Lower receiver · trigger pocket / feed opening', M249_MATERIAL.phosphate, 'receiver', [0, -0.035, 0]);
+  extrude(b, [
+    [-0.133, 0.028], [0.083, 0.028], [0.083, -0.012],
+    [0.063, -0.043], [-0.021, -0.043], [-0.050, -0.030],
+    [-0.087, -0.030], [-0.111, -0.010], [-0.133, 0.004],
+  ], 0, 0.104, 0.00055);
+  for (const z of [-0.056, 0.056]) {
+    box(b, [-0.025, -0.035, z], [0.102, 0.009, 0.006], 0.0004, 3);
+    box(b, [0.073, -0.009, z], [0.010, 0.035, 0.006], 0.0004, 3);
+  }
+  b = m249Batch('Lower receiver · selector / pins / recessed calibre marks', M249_MATERIAL.nitride, 'receiver', [0, -0.035, 0]);
+  for (const z of [-0.059, 0.059]) {
+    m249Rivet(b, [-0.065, -0.006, z], z, 0.0027);
+    m249Rivet(b, [0.035, -0.006, z], z, 0.0025);
+    box(b, [-0.099, 0.009, z], [0.040, 0.002, 0.003], 0.0002, 3);
+    box(b, [0.048, 0.009, z], [0.030, 0.002, 0.003], 0.0002, 3);
+  }
+
+  // -----------------------------------------------------------------------
+  // Hinged feed cover and the mechanism visible below it
+  // -----------------------------------------------------------------------
+  b = m249Batch('Feed cover · stamped hinged lid / raised rail', M249_MATERIAL.phosphate, 'cover', [0.02, 0.105, 0]);
+  b.pivot = [0.13, 0.065, 0];
+  b.hinge = b.pivot.slice();
+  b.closedRotation = 0;
+  b.openRotation = -1.48;
+  b.animation = 'hingeZ';
+  box(b, [0.010, 0.106, 0], [0.238, 0.009, 0.104], 0.0010, 3);
+  for (const z of [-0.051, 0.051]) {
+    box(b, [0.008, 0.096, z], [0.238, 0.017, 0.005], 0.0004, 4);
+    box(b, [-0.102, 0.110, z], [0.012, 0.032, 0.005], 0.00035, 3);
+    for (const x of [-0.073, -0.033, 0.010, 0.051, 0.091]) box(b, [x, 0.112, z], [0.005, 0.014, 0.006], 0.0003, 3);
+  }
+  picatinny(b, -0.020, 0.035, 0.114);
+  for (const z of [-0.057, 0.057]) {
+    for (const x of [-0.092, -0.057, -0.014, 0.030, 0.073, 0.106]) m249Rivet(b, [x, 0.101, z], z, 0.00155);
+  }
+  b = m249Batch('Feed cover · hinge pin / latch and spring', M249_MATERIAL.nitride, 'cover', [0.13, 0.065, 0]);
+  b.pivot = [0.13, 0.065, 0];
+  cylinder(b, [0.126, 0.061, -0.061], [0.126, 0.061, 0.061], 0.0032, 0.0032, 16, 3);
+  box(b, [0.104, 0.088, 0], [0.025, 0.016, 0.018], 0.0005, 4);
+  for (let i = 0; i < 11; i++) {
+    const x = 0.079 + i * 0.0023;
+    tube(b, [x, 0.089, 0], [x + 0.00075, 0.089, 0], 0.0023, 0.00165, 10, 1);
+  }
+  b = m249Batch('Feed tray · polished stamped tray / raised guides', M249_MATERIAL.phosphate, 'tray', [0.00, 0.055, 0]);
+  box(b, [0.004, 0.057, 0], [0.187, 0.006, 0.088], 0.00055, 4);
+  for (const z of [-0.047, 0.047]) {
+    box(b, [0.006, 0.068, z], [0.177, 0.021, 0.004], 0.00035, 3);
+    for (const x of [-0.064, -0.020, 0.024, 0.068]) box(b, [x, 0.073, z], [0.009, 0.011, 0.006], 0.0003, 3);
+  }
+  // Feed pawls and actuating lever stay with the tray; springs have their own
+  // group so a configuration panel can isolate the working mechanism.
+  b = m249Batch('Feed mechanism · pawls / lever', M249_MATERIAL.nitride, 'tray', [0.0, 0.055, 0]);
+  for (const z of [-0.037, 0.037]) {
+    box(b, [-0.047, 0.077, z], [0.030, 0.010, 0.006], 0.00035, 3, Q.axis([0, 0, 1], -0.22));
+    box(b, [0.002, 0.079, z], [0.031, 0.008, 0.006], 0.00035, 3, Q.axis([0, 0, 1], 0.26));
+    cylinder(b, [-0.051, 0.076, z], [-0.051, 0.086, z], 0.0023, 0.0023, 12, 2);
+  }
+  box(b, [-0.001, 0.089, 0], [0.075, 0.005, 0.008], 0.00035, 3, Q.axis([0, 0, 1], -0.15));
+  const springBatch = m249Batch('Feed mechanism · paired return springs', M249_MATERIAL.nitride, 'spring', [0.0, 0.055, 0]);
+  for (const z of [-0.023, 0.023]) {
+    const pts = [];
+    for (let i = 0; i <= 12; i++) {
+      const x = -0.020 + i * 0.0025;
+      pts.push([x, 0.086 + Math.sin(i * Math.PI * 2) * 0.0024, z]);
+    }
+    sweep(springBatch, pts, 0.00125, 12, 5);
+  }
+  b = m249Batch('Feed cover · latch catch / contact wear insert', M249_MATERIAL.anodized, 'cover', [0.10, 0.075, 0]);
+  box(b, [0.112, 0.074, 0], [0.022, 0.009, 0.050], 0.0003, 3);
+  box(b, [0.116, 0.080, 0], [0.012, 0.004, 0.036], 0.0002, 3);
+
+  // -----------------------------------------------------------------------
+  // Quick-change barrel, flutes, gas block, regulator and muzzle device
+  // -----------------------------------------------------------------------
+  b = m249Batch('Barrel · quick-change tapered fluted bore', M249_MATERIAL.barrelsteel, 'barrel', [0.24, 0.055, 0]);
+  const barrelCenter = [0.054, 0.055, 0];
+  lathe(b, barrelCenter, [
+    [0.000, 0.0142], [0.016, 0.0142], [0.027, 0.0110],
+    [0.100, 0.0100], [0.175, 0.0095], [0.248, 0.0090],
+    [0.260, 0.0088], [0.305, 0.0083], [0.392, 0.0075],
+    [0.442, 0.0072], [0.458, 0.0068],
+  ], 36);
+  // Raised lands and inset dark channels make the longitudinal fluting real
+  // geometry, not a normal-map suggestion.
+  for (let i = 0; i < 12; i++) {
+    const a = i * TAU / 12;
+    const y = 0.055 + Math.cos(a) * 0.0082;
+    const z = Math.sin(a) * 0.0082;
+    const flute = [];
+    for (let j = 0; j <= 8; j++) {
+      const x = 0.089 + j * 0.041;
+      flute.push([x, y, z]);
+    }
+    sweep(b, flute, 0.00115, 8, 6);
+    if (i % 2 === 0) {
+      const groove = m249Batch('Barrel · fluted machining channels', M249_MATERIAL.nitride, 'barrel', [0.24, 0.055, 0]);
+      sweep(groove, flute, 0.00052, 8, 5);
+    }
+  }
+  b = m249Batch('Barrel · locking collar / quick release lugs', M249_MATERIAL.phosphate, 'barrel', [0.11, 0.055, 0]);
+  tube(b, [0.048, 0.055, 0], [0.087, 0.055, 0], 0.019, 0.014, 28, 4);
+  for (let i = 0; i < 16; i++) {
+    const a = i * TAU / 16;
+    box(b, [0.070, 0.055 + Math.cos(a) * 0.018, Math.sin(a) * 0.018], [0.024, 0.0034, 0.0042], 0.00025, 3, Q.axis([1, 0, 0], -a));
+  }
+  b = m249Batch('Gas block · regulator / front sight base', M249_MATERIAL.barrelsteel, 'gas', [0.24, 0.075, 0]);
+  tube(b, [0.293, 0.055, 0], [0.318, 0.055, 0], 0.0145, 0.0092, 28, 4);
+  box(b, [0.305, 0.071, 0], [0.027, 0.027, 0.024], 0.00065, 5);
+  box(b, [0.305, 0.086, 0], [0.011, 0.008, 0.016], 0.0003, 3);
+  for (const z of [-0.012, 0.012]) cylinder(b, [0.305, 0.080, z], [0.305, 0.088, z], 0.0024, 0.0020, 12, 2);
+  b = m249Batch('Gas regulator · two-position drum / detent', M249_MATERIAL.anodized, 'drum', [0.30, 0.08, 0]);
+  b.pivot = [0.305, 0.080, 0];
+  cylinder(b, [0.305, 0.079, -0.014], [0.305, 0.079, 0.014], 0.0072, 0.0072, 20, 3);
+  for (let i = 0; i < 6; i++) {
+    const a = i * TAU / 6;
+    box(b, [0.305, 0.079 + Math.cos(a) * 0.006, Math.sin(a) * 0.006], [0.006, 0.002, 0.002], 0.0002, 3, Q.axis([1, 0, 0], -a));
+  }
+  b = m249Batch('Gas system · long-stroke piston / tube / return spring', M249_MATERIAL.nitride, 'piston', [0.20, 0.082, 0]);
+  cylinder(b, [0.048, 0.079, 0], [0.286, 0.079, 0], 0.0035, 0.0035, 16, 4);
+  tube(b, [0.206, 0.079, 0], [0.315, 0.079, 0], 0.0062, 0.0038, 18, 4);
+  for (let i = 0; i < 8; i++) {
+    const x = 0.183 + i * 0.0035;
+    tube(b, [x, 0.079, 0], [x + 0.0010, 0.079, 0], 0.0055, 0.0037, 12, 1);
+  }
+  b = m249Batch('Gas system · protective tube / vent holes', M249_MATERIAL.phosphate, 'gas', [0.18, 0.080, 0]);
+  tube(b, [0.135, 0.078, 0], [0.290, 0.078, 0], 0.0060, 0.0041, 20, 3);
+  for (let x = 0.162; x < 0.284; x += 0.020) for (const z of [-0.005, 0.005]) cylinder(b, [x, 0.078, z], [x, 0.082, z], 0.0011, 0.0008, 10, 2);
+
+  b = m249Batch('Barrel · carry handle with heat sleeve', M249_MATERIAL.phosphate, 'barrel', [0.25, 0.11, 0]);
+  box(b, [0.241, 0.098, -0.019], [0.085, 0.008, 0.007], 0.0004, 3);
+  box(b, [0.205, 0.118, -0.019], [0.008, 0.043, 0.007], 0.0004, 3, Q.axis([0, 0, 1], -0.08));
+  box(b, [0.278, 0.118, -0.019], [0.008, 0.043, 0.007], 0.0004, 3, Q.axis([0, 0, 1], 0.08));
+  b = m249Batch('Barrel · carry handle ribbed thermoplastic grip', M249_MATERIAL.rubber, 'barrel', [0.24, 0.12, -0.02]);
+  box(b, [0.242, 0.128, -0.019], [0.047, 0.014, 0.010], 0.0010, 5);
+  for (let x = 0.222; x < 0.266; x += 0.007) box(b, [x, 0.128, -0.025], [0.0013, 0.016, 0.003], 0.00025, 3);
+
+  // Slotted flash hider: rings and individual bridges leave actual open slots.
+  b = m249Batch('Muzzle · slotted flash hider / bore opening', M249_MATERIAL.barrelsteel, 'barrel', [0.46, 0.055, 0]);
+  tube(b, [0.483, 0.055, 0], [0.489, 0.055, 0], 0.0112, 0.0070, 28, 3);
+  tube(b, [0.516, 0.055, 0], [0.523, 0.055, 0], 0.0112, 0.0067, 28, 3);
+  for (let i = 0; i < 8; i++) {
+    const a = -0.14 + i * TAU / 8;
+    const u = [0, Math.cos(a), Math.sin(a)];
+    const p0 = [0.489, 0.055 + u[1] * 0.0095, u[2] * 0.0095];
+    const p1 = [0.517, 0.055 + u[1] * 0.0095, u[2] * 0.0095];
+    cylinder(b, p0, p1, 0.0013, 0.0013, 10, 2);
+  }
+  tube(b, [0.523, 0.055, 0], [0.525, 0.055, 0], 0.0105, 0.0065, 28, 2);
+
+  // -----------------------------------------------------------------------
+  // Handguard and complete geometric Picatinny rails
+  // -----------------------------------------------------------------------
+  b = m249Batch('Handguard · ventilated stamped heat shield', M249_MATERIAL.phosphate, 'handguard', [0.15, 0.057, 0]);
+  box(b, [0.184, 0.086, 0], [0.218, 0.008, 0.054], 0.0005, 3);
+  for (const z of [-0.031, 0.031]) {
+    box(b, [0.184, 0.064, z], [0.218, 0.036, 0.006], 0.0005, 3);
+    for (let x = 0.083; x < 0.287; x += 0.028) {
+      box(b, [x, 0.067, z], [0.011, 0.020, 0.008], 0.00035, 3);
+    }
+  }
+  for (let x = 0.084; x < 0.288; x += 0.025) {
+    box(b, [x, 0.055, 0], [0.006, 0.004, 0.054], 0.0003, 3);
+  }
+  b = m249Batch('Handguard · top and side Picatinny teeth / slot numbers', M249_MATERIAL.anodized, 'handguard', [0.15, 0.087, 0]);
+  picatinny(b, 0.087, 0.255, 0.097);
+  picatinny(b, 0.087, 0.145, 0.060, 0, -Math.PI / 2);
+  picatinny(b, 0.087, 0.145, 0.060, 0, Math.PI / 2);
+  for (let i = 0; i < 12; i++) mark(b, [0.091 + i * 0.016, 0.101, -0.006], 0.005, 0.009, [0.01 + i * 0.025, 0.015, 0.019, 0.035], 'top');
+  b = m249Batch('Handguard · captive screws / heat shield rivets', M249_MATERIAL.nitride, 'handguard', [0.15, 0.065, 0]);
+  for (const z of [-0.036, 0.036]) {
+    for (const x of [0.099, 0.154, 0.209, 0.264]) screw(b, [x, 0.076, z], [0, 0, Math.sign(z)], 0.0019);
+  }
+
+  // -----------------------------------------------------------------------
+  // Stock, butt pad, shoulder recess, grip and controls
+  // -----------------------------------------------------------------------
+  b = m249Batch('Stock · polymer skeleton / shoulder relief shell', M249_MATERIAL.polymer, 'stock', [-0.30, -0.075, 0]);
+  extrude(b, [
+    [-0.119, 0.026], [-0.163, 0.006], [-0.208, -0.011], [-0.258, -0.029],
+    [-0.335, -0.045], [-0.486, -0.094], [-0.512, -0.149], [-0.469, -0.186],
+    [-0.355, -0.165], [-0.278, -0.130], [-0.216, -0.086], [-0.147, -0.057],
+  ], 0, 0.079, 0.0012);
+  for (const z of [-0.043, 0.043]) {
+    box(b, [-0.207, -0.017, z], [0.080, 0.026, 0.006], 0.0007, 4, Q.axis([0, 0, 1], -0.16));
+    box(b, [-0.390, -0.109, z], [0.155, 0.012, 0.006], 0.0006, 4, Q.axis([0, 0, 1], -0.23));
+    for (const x of [-0.188, -0.280, -0.363, -0.445]) m249Rivet(b, [x, -0.052 - (x + 0.2) * 0.22, z], z, 0.0015);
+  }
+  b = m249Batch('Stock · deep shoulder cutout / cheek shell', M249_MATERIAL.polymer, 'shoulder', [-0.36, -0.11, 0]);
+  for (const z of [-0.045, 0.045]) {
+    extrude(b, [
+      [-0.448, -0.105], [-0.382, -0.082], [-0.300, -0.047], [-0.270, -0.064],
+      [-0.286, -0.115], [-0.360, -0.153], [-0.427, -0.157],
+    ], z, 0.003, 0.00035);
+    box(b, [-0.339, -0.121, z], [0.105, 0.009, 0.005], 0.0005, 3, Q.axis([0, 0, 1], -0.28));
+  }
+  b = m249Batch('Stock · rubber butt pad / shoulder texture ribs', M249_MATERIAL.rubber, 'stock', [-0.49, -0.15, 0]);
+  box(b, [-0.501, -0.143, 0], [0.018, 0.070, 0.087], 0.004, 4, Q.axis([0, 0, 1], -0.10));
+  for (let z = -0.032; z <= 0.032; z += 0.016) box(b, [-0.514, -0.143, z], [0.004, 0.008, 0.010], 0.001, 4);
+  b = m249Batch('Stock · cleaning kit / PPI capsule aperture', M249_MATERIAL.nitride, 'stock', [-0.34, -0.12, 0]);
+  cylinder(b, [-0.355, -0.116, -0.042], [-0.355, -0.116, -0.050], 0.010, 0.009, 18, 2);
+  cylinder(b, [-0.355, -0.116, 0.043], [-0.355, -0.116, 0.051], 0.010, 0.009, 18, 2);
+
+  b = m249Batch('Pistol grip · glass-filled polymer / mould line', M249_MATERIAL.polymer, 'grip', [-0.055, -0.09, 0]);
+  box(b, [-0.054, -0.083, 0], [0.052, 0.098, 0.054], 0.004, 6, Q.axis([0, 0, 1], -0.19));
+  for (const z of [-0.029, 0.029]) {
+    m249Weld(b, [[-0.077, -0.043, z], [-0.032, -0.121, z]], 0.00045);
+    for (let i = 0; i < 5; i++) box(b, [-0.064 + i * 0.008, -0.087 - i * 0.010, z], [0.005, 0.002, 0.004], 0.0003, 3, Q.axis([0, 0, 1], -0.19));
+  }
+  b = m249Batch('Controls · trigger / guard / safety button', M249_MATERIAL.nitride, 'receiver', [0, -0.06, 0]);
+  box(b, [-0.029, -0.046, 0], [0.073, 0.006, 0.052], 0.0007, 4);
+  const trigger = [];
+  for (let i = 0; i <= 10; i++) trigger.push([-0.021 - i * 0.0013, -0.047 - Math.sin(i / 10 * Math.PI) * 0.021, 0]);
+  sweep(b, trigger, 0.0021, 10, 6);
+  cylinder(b, [-0.085, -0.004, -0.061], [-0.085, -0.004, -0.069], 0.0047, 0.0047, 16, 2);
+  box(b, [-0.085, 0.003, -0.069], [0.018, 0.008, 0.007], 0.001, 4);
+  b = m249Batch('Charging handle · right-side reciprocating handle', M249_MATERIAL.nitride, 'charging', [0.02, 0.045, -0.07]);
+  b.pivot = [0.022, 0.045, -0.066];
+  b.animation = 'slideX';
+  cylinder(b, [0.002, 0.047, -0.066], [0.052, 0.047, -0.066], 0.0034, 0.0030, 16, 3);
+  box(b, [0.055, 0.047, -0.066], [0.026, 0.010, 0.016], 0.0012, 4);
+  box(b, [0.058, 0.047, -0.066], [0.008, 0.014, 0.022], 0.0012, 4);
+
+  // -----------------------------------------------------------------------
+  // Sights, drum and optional optic
+  // -----------------------------------------------------------------------
+  b = m249Batch('Front sight · protected post / windage ears', M249_MATERIAL.phosphate, 'rearSight', [0.31, 0.11, 0]);
+  box(b, [0.322, 0.097, 0], [0.025, 0.012, 0.047], 0.0005, 3);
+  for (const z of [-0.014, 0.014]) box(b, [0.322, 0.112, z], [0.027, 0.013, 0.006], 0.00035, 3);
+  box(b, [0.322, 0.118, 0], [0.004, 0.017, 0.006], 0.0004, 3);
+  b = m249Batch('Rear sight · folding aperture / elevation scale', M249_MATERIAL.anodized, 'rearSight', [-0.10, 0.12, 0]);
+  b.pivot = [-0.096, 0.088, 0];
+  box(b, [-0.096, 0.102, 0], [0.009, 0.041, 0.044], 0.00045, 4);
+  box(b, [-0.096, 0.123, 0], [0.020, 0.004, 0.030], 0.00035, 3);
+  cylinder(b, [-0.096, 0.126, -0.018], [-0.096, 0.126, 0.018], 0.007, 0.007, 18, 3);
+  for (let i = 0; i < 8; i++) box(b, [-0.096, 0.126 + (i - 3.5) * 0.0018, 0], [0.012, 0.001, 0.031], 0.0002, 3);
+  b = m249Batch('Rear sight · elevation drum / adjustment detent', M249_MATERIAL.nitride, 'drum', [-0.096, 0.126, 0]);
+  b.pivot = [-0.096, 0.126, 0];
+  cylinder(b, [-0.096, 0.126, -0.022], [-0.096, 0.126, 0.022], 0.009, 0.009, 20, 3);
+  for (let i = 0; i < 12; i++) {
+    const a = i * TAU / 12;
+    box(b, [-0.096, 0.126 + Math.cos(a) * 0.009, Math.sin(a) * 0.009], [0.004, 0.0018, 0.002], 0.0002, 3, Q.axis([1, 0, 0], -a));
+  }
+  b = m249Batch('Optic · low-profile red dot mount / lens hood', M249_MATERIAL.anodized, 'optic', [0, 0.12, 0]);
+  box(b, [-0.013, 0.125, 0], [0.066, 0.012, 0.048], 0.002, 3);
+  box(b, [-0.013, 0.138, 0], [0.048, 0.010, 0.041], 0.004, 5);
+  cylinder(b, [-0.043, 0.139, -0.020], [-0.043, 0.139, 0.020], 0.016, 0.016, 24, 3);
+  b = m249Batch('Optic · lens glass / adjustment cap', M249_MATERIAL.rubber, 'optic', [0, 0.14, 0]);
+  disk(b, [-0.043, 0.139, 0], [0, 0, 1], 0.013, 0, 24);
+  cylinder(b, [-0.004, 0.143, 0], [0.011, 0.143, 0], 0.006, 0.006, 16, 3);
+
+  // -----------------------------------------------------------------------
+  // Folding bipod; host rotates leg groups around these exact pivots.
+  // -----------------------------------------------------------------------
+  b = m249Batch('Bipod · left hinge / spring latch', M249_MATERIAL.phosphate, 'legL', [0.24, -0.08, 0.038]);
+  b.pivot = [0.24, -0.036, 0.017];
+  b.foldRotation = 1.35;
+  cylinder(b, [0.24, -0.036, 0.011], [0.24, -0.036, 0.029], 0.006, 0.006, 18, 3);
+  box(b, [0.24, -0.055, 0.020], [0.026, 0.033, 0.012], 0.001, 4);
+  const leftPivot = [0.24, -0.036, 0.017];
+  cylinder(b, leftPivot, [0.188, -0.180, 0.040], 0.0072, 0.0060, 18, 5);
+  cylinder(b, [0.185, -0.173, 0.040], [0.154, -0.222, 0.040], 0.0055, 0.0046, 16, 4);
+  for (let i = 0; i < 5; i++) box(b, [0.185 - i * 0.007, -0.174 - i * 0.010, 0.040], [0.003, 0.004, 0.010], 0.00025, 3, Q.axis([0, 0, 1], -0.55));
+  b = m249Batch('Bipod · left rubber foot / detent', M249_MATERIAL.rubber, 'legL', [0.16, -0.22, 0.04]);
+  b.pivot = [0.24, -0.036, 0.017];
+  b.foldRotation = 1.35;
+  box(b, [0.149, -0.224, 0.040], [0.033, 0.020, 0.015], 0.003, 5, Q.axis([0, 0, 1], -0.48));
+  cylinder(b, [0.158, -0.224, 0.030], [0.158, -0.224, 0.050], 0.0025, 0.0025, 12, 2);
+  b = m249Batch('Bipod · right hinge / telescoping notched leg', M249_MATERIAL.phosphate, 'legR', [0.24, -0.08, -0.038]);
+  b.pivot = [0.24, -0.036, -0.017];
+  b.foldRotation = 1.35;
+  cylinder(b, [0.24, -0.036, -0.029], [0.24, -0.036, -0.011], 0.006, 0.006, 18, 3);
+  box(b, [0.24, -0.055, -0.020], [0.026, 0.033, 0.012], 0.001, 4);
+  const rightPivot = [0.24, -0.036, -0.017];
+  cylinder(b, rightPivot, [0.188, -0.180, -0.040], 0.0072, 0.0060, 18, 5);
+  cylinder(b, [0.185, -0.173, -0.040], [0.154, -0.222, -0.040], 0.0055, 0.0046, 16, 4);
+  for (let i = 0; i < 5; i++) box(b, [0.185 - i * 0.007, -0.174 - i * 0.010, -0.040], [0.003, 0.004, 0.010], 0.00025, 3, Q.axis([0, 0, 1], -0.55));
+  b = m249Batch('Bipod · right rubber foot / detent', M249_MATERIAL.rubber, 'legR', [0.16, -0.22, -0.04]);
+  b.pivot = [0.24, -0.036, -0.017];
+  b.foldRotation = 1.35;
+  box(b, [0.149, -0.224, -0.040], [0.033, 0.020, 0.015], 0.003, 5, Q.axis([0, 0, 1], -0.48));
+  cylinder(b, [0.158, -0.224, -0.050], [0.158, -0.224, -0.030], 0.0025, 0.0025, 12, 2);
+
+  // -----------------------------------------------------------------------
+  // 200-round translucent plastic box and the 100-round Cordura bag
+  // -----------------------------------------------------------------------
+  b = m249Batch('Container · translucent 200-round polymer box shell', M249_MATERIAL.polymer, 'box', [0.0, -0.14, 0]);
+  b.containerType = 'plastic';
+  b.opacity = 0.68;
+  b.translucent = true;
+  b.alpha = 0.22;
+  // Required envelope: x[-.11,.065], y[-.215,-.075], z[-.068,.038].
+  box(b, [-0.0225, -0.211, -0.015], [0.175, 0.008, 0.106], 0.0015, 3);
+  box(b, [-0.0225, -0.079, -0.015], [0.175, 0.008, 0.106], 0.0015, 3);
+  box(b, [-0.106, -0.145, -0.015], [0.008, 0.132, 0.106], 0.0015, 3);
+  box(b, [0.061, -0.145, -0.015], [0.008, 0.132, 0.106], 0.0015, 3);
+  box(b, [-0.0225, -0.145, -0.064], [0.175, 0.132, 0.008], 0.0013, 3);
+  for (const x of [-0.092, -0.054, -0.016, 0.022, 0.049]) {
+    box(b, [x, -0.145, -0.065], [0.006, 0.122, 0.006], 0.0006, 4);
+    box(b, [x, -0.145, 0.035], [0.006, 0.122, 0.006], 0.0006, 4);
+  }
+  b = m249Batch('Container · latch / carrying handle / mould ribs', M249_MATERIAL.polymer, 'box', [0.0, -0.14, 0]);
+  b.containerType = 'plastic';
+  box(b, [0.060, -0.145, -0.015], [0.014, 0.026, 0.046], 0.0012, 4);
+  box(b, [0.066, -0.145, 0.016], [0.008, 0.042, 0.010], 0.001, 4);
+  box(b, [-0.023, -0.070, 0], [0.061, 0.008, 0.009], 0.001, 4);
+  box(b, [-0.023, -0.220, 0], [0.061, 0.008, 0.009], 0.001, 4);
+  for (const x of [-0.086, -0.047, -0.008, 0.031]) box(b, [x, -0.076, -0.015], [0.006, 0.012, 0.084], 0.0007, 4);
+  b = m249Batch('Container · latch spring / feed outlet guide', M249_MATERIAL.anodized, 'box', [0.055, -0.08, -0.08]);
+  box(b, [0.060, -0.076, -0.015], [0.018, 0.011, 0.040], 0.0005, 3);
+  box(b, [0.040, -0.076, -0.064], [0.039, 0.011, 0.009], 0.0004, 3);
+  for (let i = 0; i < 9; i++) tube(b, [0.046 + i * 0.0015, -0.067, -0.055], [0.046 + i * 0.0015, -0.063, -0.055], 0.0012, 0.00075, 10, 1);
+
+  b = m249Batch('Container · 100-round Cordura bag / stitched seams', M249_MATERIAL.cordura, 'bag', [0.0, -0.14, 0]);
+  b.containerType = 'bag';
+  b.visible = false;
+  box(b, [-0.022, -0.146, -0.013], [0.166, 0.125, 0.098], 0.006, 3);
+  for (const z of [-0.066, 0.040]) m249Weld(b, [[-0.101, -0.206, z], [0.057, -0.206, z]], 0.0010);
+  for (const x of [-0.095, 0.050]) m249Weld(b, [[x, -0.207, -0.058], [x, -0.083, -0.058]], 0.0009);
+  for (let x = -0.090; x < 0.051; x += 0.009) box(b, [x, -0.211, -0.012], [0.004, 0.002, 0.095], 0.0002, 3);
+  box(b, [-0.022, -0.072, 0.040], [0.146, 0.020, 0.009], 0.002, 5);
+  for (let x = -0.078; x < 0.040; x += 0.012) box(b, [x, -0.062, 0.041], [0.004, 0.018, 0.002], 0.0002, 3);
+  b = m249Batch('Container · bag buckles / webbing handle', M249_MATERIAL.anodized, 'bag', [0.0, -0.14, 0]);
+  b.containerType = 'bag';
+  b.visible = false;
+  for (const x of [-0.079, 0.036]) {
+    box(b, [x, -0.069, -0.020], [0.012, 0.026, 0.012], 0.001, 4);
+    box(b, [x, -0.052, -0.010], [0.006, 0.040, 0.007], 0.001, 4);
+  }
+
+  // Add a fixed belt and its visible in-box continuation last, so the
+  // translucent container can show rounds behind its ribs.
+  const belt = buildBelt(geometryState);
+
+  // -----------------------------------------------------------------------
+  // Sling and small hardware
+  // -----------------------------------------------------------------------
+  b = m249Batch('Sling · woven strap / front and rear hardware', M249_MATERIAL.cordura, 'sling', [-0.12, -0.03, 0.05]);
+  const slingPath = [
+    [-0.458, 0.018, 0.060], [-0.390, -0.005, 0.073], [-0.200, 0.018, 0.078],
+    [0.030, 0.030, 0.077], [0.266, 0.018, 0.073], [0.311, 0.030, 0.060],
+  ];
+  sweep(b, slingPath, 0.0028, 20, 7);
+  for (const p of [[-0.458, 0.018, 0.060], [0.311, 0.030, 0.060]]) {
+    tube(b, [p[0], p[1], p[2] - 0.004], [p[0], p[1], p[2] + 0.004], 0.0055, 0.0038, 18, 3);
+  }
+  b = m249Batch('Sling · adjustment buckle / keeper', M249_MATERIAL.anodized, 'sling', [-0.12, -0.03, 0.05]);
+  box(b, [-0.255, 0.014, 0.078], [0.030, 0.007, 0.012], 0.001, 4);
+  box(b, [-0.244, 0.018, 0.078], [0.005, 0.015, 0.015], 0.0005, 3);
+
+  // Dynamic consumers can hide these without deleting GPU buffers.
+  for (const x of batches) {
+    if (x.group === 'box') {
+      x.container = 'plastic';
+      x.containerType = x.containerType || 'plastic';
+    } else if (x.group === 'bag') {
+      x.container = 'bag';
+      x.containerType = x.containerType || 'bag';
+    }
+  }
+  mergeBatches();
+  return {
+    batches,
+    belt,
+    material: M249_MATERIAL,
+    contracts: {
+      cover: { pivot: [0.13, 0.065, 0], openRotation: -1.48, axis: 'Z' },
+      legs: {
+        legL: { pivot: [0.24, -0.036, 0.017], foldRotation: 1.35, axis: 'Z' },
+        legR: { pivot: [0.24, -0.036, -0.017], foldRotation: 1.35, axis: 'Z' },
+      },
+      container: { min: [-0.11, -0.215, -0.068], max: [0.065, -0.075, 0.038] },
+    },
+  };
+}
+
+buildGeometry(state);
+const canvas=$('#viewport'),gl=canvas.getContext('webgl2',{alpha:true,antialias:true,preserveDrawingBuffer:true})||canvas.getContext('webgl',{alpha:true,antialias:true,preserveDrawingBuffer:true});
+if(!gl){$('#error').style.display='block';$('#error').textContent='WebGL недоступен. Включите аппаратное ускорение браузера.';return}
+const fragmentHighp=gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER,gl.HIGH_FLOAT).precision>0;
+const webgl2=typeof WebGL2RenderingContext!=='undefined'&&gl instanceof WebGL2RenderingContext,derivatives=webgl2||gl.getExtension('OES_standard_derivatives');
+$('#apiName').textContent=webgl2?'WEBGL 2':'WEBGL 1';
+const vertexSource=`precision highp float;attribute vec3 aPos,aNormal,aBary;attribute vec2 aUV;attribute float aEdge;uniform mat4 uModel,uVP;varying vec3 vPos,vNormal,vBary;varying vec2 vUV;varying float vEdge;void main(){vec4 p=uModel*vec4(aPos,1.);vPos=p.xyz;vNormal=mat3(uModel)*aNormal;vUV=aUV;vEdge=aEdge;vBary=aBary;gl_Position=uVP*p;}`;
+const fragmentSource=`precision highp float;varying vec3 vPos,vNormal,vBary;varying vec2 vUV;varying float vEdge;uniform sampler2D uAlbedo,uNormal,uORM;uniform vec4 uRect;uniform vec3 uEye;uniform float uWear,uGrime,uMetal,uDim,uSelected,uHeat,uGround,uTexture,uAlpha;uniform vec3 uTint;uniform int uMode;const float PI=3.14159265;
+vec3 aces(vec3 x){return clamp((x*(2.51*x+.03))/(x*(2.43*x+.59)+.14),0.,1.);}vec3 fresnel(float x,vec3 f){return f+(1.-f)*pow(clamp(1.-x,0.,1.),5.);}float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+vec3 light(vec3 n,vec3 v,vec3 l,vec3 radiance,vec3 base,float rough,float metal){vec3 h=normalize(v+l);float nv=max(dot(n,v),.001),nl=max(dot(n,l),.001),nh=max(dot(n,h),0.),vh=max(dot(v,h),0.);float a=rough*rough,a2=a*a,k=pow(rough+1.,2.)/8.;float D=a2/(PI*pow(nh*nh*(a2-1.)+1.,2.)+.00001),G=nv/(nv*(1.-k)+k)*nl/(nl*(1.-k)+k);vec3 f=fresnel(vh,mix(vec3(.04),base,metal));return((1.-f)*(1.-metal)*base/PI+D*G*f/(4.*nv*nl+.0001))*radiance*nl;}
+void main(){if(uGround>.5){float sh=exp(-pow(vPos.z/.072,2.)-pow((vPos.x+.035)/.44,6.));float mag=exp(-pow((vPos.x-.075)/.05,2.)-pow(vPos.z/.05,2.));float grid=(1.-smoothstep(.0,.008,abs(fract(vPos.x*10.)-.5)))+(1.-smoothstep(.0,.008,abs(fract(vPos.z*10.)-.5)));float fade=exp(-length(vPos.xz)*2.);gl_FragColor=vec4(vec3(.045,.050,.055),clamp(sh*.26+mag*.13+grid*fade*.035,0.,.5));return;}
+vec2 uv=uRect.xy+clamp(vUV,.001,.999)*uRect.zw;vec3 tex=texture2D(uAlbedo,uv).rgb,orm=texture2D(uORM,uv).rgb;vec3 base=pow(tex*uTint,vec3(2.2));float rough=clamp(orm.g,.17,.96),metal=orm.b,ao=orm.r;vec3 N=normalize(vNormal),n=N;
+#ifdef DERIVATIVES
+vec3 dp1=dFdx(vPos),dp2=dFdy(vPos);vec2 du1=dFdx(vUV),du2=dFdy(vUV);vec3 T=cross(dp2,N)*du1.x+cross(N,dp1)*du2.x,B=cross(dp2,N)*du1.y+cross(N,dp1)*du2.y;float inv=inversesqrt(max(max(dot(T,T),dot(B,B)),.00000001));vec3 map=texture2D(uNormal,uv).xyz*2.-1.;map.xy*=.62;n=normalize(mat3(T*inv,B*inv,N)*map);
+#endif
+float grain=hash(floor(vPos.xy*19000.)+floor(vPos.zz*27000.));float edge=smoothstep(.07,.43,vEdge)*uWear*(.25+grain*.75)*uMetal;base=mix(base,vec3(.27,.29,.30),edge*.40);rough=mix(rough,.31,edge);ao*=1.-uGrime*.12*(1.-max(n.y,0.));
+vec3 view=normalize(uEye-vPos),color;if(uMode==2){color=n*.5+.5;}else if(uMode==3){color=vec3(rough);}else if(uMode==4){color=vec3(ao);}else if(uMode==5){vec2 c=floor(vUV*24.);color=mix(vec3(.15,.19,.22),vec3(.72,.77,.79),mod(c.x+c.y,2.));color=mix(color,vec3(.82,.35,.13),step(.94,fract(vUV.x*6.)));}else{if(uMode==6){base=vec3(.34,.32,.29);rough=.7;metal=0.;n=N;}vec3 env=mix(vec3(.12,.15,.20),vec3(.46,.49,.52),n.y*.5+.5);vec3 f=fresnel(max(dot(n,view),0.),mix(vec3(.04),base,metal));color=(base*(1.-metal)*env*.58+f*env*(.34+.38*(1.-rough)))*ao;color+=light(n,view,normalize(vec3(-.35,1.3,1.)),vec3(3.8,3.65,3.35),base,rough,metal);color+=light(n,view,normalize(vec3(.8,.25,-1.)),vec3(1.8,2.15,2.8),base,rough,metal);color+=light(n,view,normalize(vec3(-.7,.7,-.2)),vec3(2.5,1.9,1.25),base,rough,metal);color=pow(aces(color*1.12),vec3(1./2.2));}
+if(uMode==1){float edgeLine;
+#ifdef DERIVATIVES
+vec3 d=fwidth(vBary)*1.15;vec3 s=smoothstep(vec3(0.),d,vBary);edgeLine=1.-min(min(s.x,s.y),s.z);
+#else
+edgeLine=1.-step(.035,min(min(vBary.x,vBary.y),vBary.z));
+#endif
+color=mix(vec3(.075,.09,.105),vec3(.86,.68,.35),edgeLine);}
+color*=uDim;color+=vec3(.16,.10,.025)*uSelected*pow(1.-abs(dot(N,view)),2.);gl_FragColor=vec4(color,uAlpha);}`;
+function program(vs,fs){let p=gl.createProgram();for(let [type,src] of [[gl.VERTEX_SHADER,vs],[gl.FRAGMENT_SHADER,fs]]){if(webgl2){src=src.replace(/attribute /g,'in ').replace(/varying /g,type===gl.VERTEX_SHADER?'out ':'in ').replace(/texture2D/g,'texture');if(type===gl.FRAGMENT_SHADER)src='out vec4 fragColor;\n'+src.replace(/gl_FragColor/g,'fragColor');src='#version 300 es\n'+(type===gl.FRAGMENT_SHADER?'precision highp float;\n':'')+(derivatives?'#define DERIVATIVES\n':'')+src}else if(type===gl.FRAGMENT_SHADER&&derivatives)src='#extension GL_OES_standard_derivatives : enable\n#define DERIVATIVES\n'+src;if(type===gl.FRAGMENT_SHADER&&!fragmentHighp)src=src.replace(/precision highp float/g,'precision mediump float').replace('.00000001','.0001');let sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));gl.attachShader(p,sh);gl.deleteShader(sh)}gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(p));return p}
+let prog;try{prog=program(vertexSource,fragmentSource)}catch(e){$('#error').style.display='block';$('#error').textContent=e.message;return}gl.useProgram(prog);
+const attributes={};for(let [name,size,offset] of [['aPos',3,0],['aNormal',3,12],['aUV',2,24],['aEdge',1,32],['aBary',3,36]]){let loc=gl.getAttribLocation(prog,name);attributes[name]={loc,size,offset}}
+const U={};for(let name of ['uModel','uVP','uEye','uRect','uAlbedo','uNormal','uORM','uWear','uGrime','uMetal','uDim','uSelected','uHeat','uGround','uMode','uTexture','uTint','uAlpha'])U[name]=gl.getUniformLocation(prog,name);
+function upload(b){b.buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b.buffer);gl.bufferData(gl.ARRAY_BUFFER,b.data,gl.STATIC_DRAW)}batches.forEach(upload);
+const ground={raw:[]};makeSurface(ground,1,1,(u,v)=>({p:[(u-.5)*3,-.303,(v-.5)*3],n:[0,1,0],e:0}));ground.data=new Float32Array(ground.raw);ground.count=ground.data.length/12;ground.matrix=M.identity();upload(ground);
+function bind(b){gl.bindBuffer(gl.ARRAY_BUFFER,b.buffer);for(let a of Object.values(attributes))if(a.loc>=0){gl.enableVertexAttribArray(a.loc);gl.vertexAttribPointer(a.loc,a.size,gl.FLOAT,false,48,a.offset)}}
+const atlasCanvases=Array.from({length:3},()=>{let c=document.createElement('canvas');c.width=c.height=4096;return c}),atlasContexts=atlasCanvases.map(c=>c.getContext('2d',{willReadFrequently:true}));
+for(let i=0;i<9;i++)for(let k=0;k<3;k++){let r=atlasLayout[i],c=atlasContexts[k];c.fillStyle=k===0?materials[i][3]:k===1?'#8080ff':([0,1,2,3,6,7].includes(i)?'#f2a3eb':'#f2b500');c.fillRect(r.x,r.y,r.s,r.s)}
+const textures=Array.from({length:3},(_,i)=>{let t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,t);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array(i===0?[66,68,72,255]:i===1?[128,128,255,255]:[240,170,220,255]));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);return t});
+gl.uniform1i(U.uAlbedo,0);gl.uniform1i(U.uNormal,1);gl.uniform1i(U.uORM,2);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);
+let toastTimer;function toast(text,hold=false){$('#toast').textContent=text;$('#toast').classList.add('visible');clearTimeout(toastTimer);if(!hold)toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3200)}
+const camera={yaw:3.48,pitch:.28,distance:1.65,target:[.012,-.055,0]},desired={...camera,target:[...camera.target]},presets=[['Hero',3.48,.28,1.65,[.012,-.055,0]],['Left',Math.PI,.03,1.70,[.01,-.045,0]],['Right',0,.03,1.70,[.01,-.045,0]],['Top',Math.PI,1.56,1.65,[.01,0,0]],['Muzzle',Math.PI/2,.12,.35,[.46,0,0]],['Feed tray',3.7,.83,.47,[-.005,.058,-.02]],['Bipod',2.8,.12,.64,[.27,-.15,0]],['Belt detail',3.7,.22,.39,[-.016,-.006,-.115]]];
+function setCamera(i){let p=presets[i];desired.yaw=p[1];desired.pitch=p[2];desired.distance=p[3];desired.target=[...p[4]];state.auto=false;$('#auto').setAttribute('aria-pressed','false');$('#viewName').textContent=p[0].toUpperCase()+' PERSPECTIVE';document.querySelectorAll('[data-camera]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.camera===i)))}
+function effectiveMaterial(b){return b.material}
+const anim={cover:0,bipod:1,barrel:0,charging:0,shoulder:0,drum:0,explode:0};
+function updateModels(dt){
+ let t=1-Math.exp(-dt*9);for(let k of ['cover','bipod','barrel','charging','shoulder','drum'])anim[k]=mix(anim[k],Number(state[k]),t);anim.explode=mix(anim.explode,state.exploded,t);
+ for(let b of batches){let g=b.group,trans=V.mul(b.explode,anim.explode),q=[0,0,0,1],p=[0,0,0];
+  if(g==='cover'||g==='optic'||g==='rearSight'||g==='drum'){q=Q.axis([0,0,1],-anim.cover*1.48);p=[.13,.065,0]}
+  if(g==='legL'||g==='legR'){p=[.24,-.036,g==='legL'?-.017:.017];q=Q.axis([0,0,1],(1-anim.bipod)*1.38)}
+  if(['barrel','carry','frontSight'].includes(g)){trans=V.add(trans,[anim.barrel*.16,anim.barrel*.14,0])}
+  if(g==='charging')trans[0]-=anim.charging*.075;
+  if(g==='shoulder'){q=Q.axis([0,0,1],anim.shoulder*1.35);p=[-.49,.035,0]}
+  b.matrix=M.rigid(q,p,trans);
+  if(g==='drum')b.matrix=M.mul(b.matrix,M.rigid(Q.axis([0,0,1],anim.drum*TAU),[-.092,.096,.019]));
+  b.visible=!(g==='box'&&state.container!==0||g==='boxShell'&&state.container!==0||g==='bag'&&state.container!==1||g==='insideBelt'&&(state.container!==0||!state.translucent)||g==='optic'&&!state.optic||g==='sling'&&!state.sling);
+ }
+}
+const rendererInfo=gl.getExtension('WEBGL_debug_renderer_info'),softwareGPU=rendererInfo&&/swiftshader|llvmpipe|software/i.test(gl.getParameter(rendererInfo.UNMASKED_RENDERER_WEBGL));
+let renderScale=softwareGPU?.5:1,renderRevision=0,lastRenderKey="";
+let eye=[0,0,1],vp=M.identity(),last=performance.now(),fpsFrames=0,fpsStart=last,firstFrame=0,bakeMs=0;
+function render(now){let dt=Math.min(.4,(now-last)/1000);last=now;let rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,1.5)*renderScale,w=Math.max(1,Math.round(rect.width*dpr)),h=Math.max(1,Math.round(rect.height*dpr));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}let s=1-Math.exp(-dt*11);if(state.auto&&!exporting)desired.yaw+=dt*.20;for(let k of ['yaw','pitch','distance'])camera[k]=mix(camera[k],desired[k],s);camera.target=camera.target.map((x,i)=>mix(x,desired.target[i],s));let fit=Math.max(1,1.45/(w/h));eye=V.add(camera.target,V.mul([Math.sin(camera.yaw)*Math.cos(camera.pitch),Math.sin(camera.pitch),Math.cos(camera.yaw)*Math.cos(camera.pitch)],camera.distance*fit));vp=M.mul(M.perspective(.63,w/h,.008,14),M.look(eye,camera.target));updateModels(dt);let key=[w,h,renderRevision,state.mode,state.selected,state.isolate,...Object.values(state),...Object.values(anim).map(x=>x.toFixed(5)),camera.yaw.toFixed(5),camera.pitch.toFixed(5),camera.distance.toFixed(5),...camera.target.map(x=>x.toFixed(5))].join("|");if(key!==lastRenderKey){draw();lastRenderKey=key;fpsFrames++}if(!firstFrame){firstFrame=performance.now()-started;$('#statFirst').textContent=Math.round(firstFrame)+' ms'}if(now-fpsStart>600){$('#statFps').textContent=fpsFrames?Math.round(fpsFrames*1000/(now-fpsStart))+' fps'+(renderScale<1?' · '+Math.round(renderScale*100)+'%':''):'idle · on demand';fpsStart=now;fpsFrames=0}requestAnimationFrame(render)}
+function draw(){
+ if(gl.isContextLost())return;gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(prog);
+ for(let i=0;i<3;i++){gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,textures[i])}
+ gl.uniformMatrix4fv(U.uVP,false,vp);gl.uniform3fv(U.uEye,eye);gl.uniform1f(U.uWear,state.finish===5?Math.max(.8,state.wear):state.wear);gl.uniform1f(U.uGrime,state.grime);gl.uniform1i(U.uMode,state.mode);gl.uniform1f(U.uGround,1);gl.uniformMatrix4fv(U.uModel,false,ground.matrix);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);bind(ground);gl.drawArrays(gl.TRIANGLES,0,ground.count);gl.depthMask(true);gl.disable(gl.BLEND);gl.uniform1f(U.uGround,0);
+ const transparent=[];
+ function part(b){let mat=b.material,selected=state.selected<0||state.selected===mat;if(!b.visible||state.isolate&&!selected)return;gl.uniform4fv(U.uRect,atlasLayout[mat].uv);gl.uniform1f(U.uMetal,[0,1,2,3,6,7].includes(mat)?1:0);gl.uniform1f(U.uDim,selected?1:.18);gl.uniform1f(U.uSelected,state.selected===mat?1:0);gl.uniform1f(U.uHeat,mat===1?state.heat:0);gl.uniform1f(U.uAlpha,b.group==='boxShell'&&state.translucent?(b.alpha||.26):1);gl.uniform3fv(U.uTint,b.tint||[1,1,1]);gl.uniformMatrix4fv(U.uModel,false,b.matrix);bind(b);gl.drawArrays(gl.TRIANGLES,0,b.count)}
+ for(let b of batches){if(b.group==='boxShell'&&state.translucent)transparent.push(b);else part(b)}
+ if(transparent.length){transparent.sort((a,b)=>V.dot(V.sub(M.point(b.matrix,b.center),eye),V.sub(M.point(b.matrix,b.center),eye))-V.dot(V.sub(M.point(a.matrix,a.center),eye),V.sub(M.point(a.matrix,a.center),eye)));gl.enable(gl.BLEND);gl.depthMask(false);for(let b of transparent)part(b);gl.depthMask(true);gl.disable(gl.BLEND)}
+}
+const modes=['Shaded','Wireframe','Normals','Roughness','AO','UV checker','Clay'];
+const finishes=[['Parkerized Black','#3e3d38'],['FDE','#b8a078'],['OD Green','#626845'],['Desert Spray','#baaa84'],['Winter','#d4d4c8'],['Heavy Use','#73654e']];
+$('#renderModes').innerHTML=modes.map((n,i)=>`<button data-mode="${i}" aria-pressed="${i===0}">${n}</button>`).join('');
+$('#cameras').innerHTML=presets.map((p,i)=>`<button data-camera="${i}" aria-pressed="${i===0}">${p[0]}<small>${i+1}</small></button>`).join('');
+$('#materials').innerHTML=materials.map((m,i)=>`<button class="material" data-material="${m[0]}" data-index="${i}" aria-pressed="false"><span class="swatch" style="background:radial-gradient(circle at 35% 25%,${m[3]},#1a1713)"></span><span><strong>${m[1]}</strong><small>${m[2]}</small></span><span class="tick">◦</span></button>`).join('');
+$('#finishes').innerHTML=finishes.map((p,i)=>`<button class="finish" data-finish="${i}" aria-pressed="${i===0}"><span class="swatch" style="background:${p[1]}"></span>${p[0]}</button>`).join('');
+const configs=[['cover','Крышка приёмника',['Closed','Open']],['bipod','Сошки',['Folded','Deployed']],['container','Контейнер',['Plastic 200','Cordura 100','Removed']],['barrel','Быстросъёмный ствол',['Installed','Removed']],['optic','Прицелы',['Iron sights','Optic']],['sling','Ремень',['Off','On']],['charging','Рукоятка взведения',['Forward','Retracted']],['shoulder','Наплечник',['Folded','Raised']]];
+$('#configuration').innerHTML=configs.map(([key,label,values])=>`<div class="config-row"><span>${label}</span><button data-config="${key}" aria-label="${label}: ${values[Number(state[key])]}" aria-pressed="${!!state[key]}">${values[Number(state[key])]}</button></div>`).join('')+'<label class="inline-check"><input id="translucent" type="checkbox" checked> Прозрачный короб / inspection shell</label><label class="range-label" for="drum">Rear sight / дальность <output id="drumValue">300 m</output></label><input id="drum" type="range" min="0" max="7" value="0">';
+$('#translucent').onchange=e=>{state.translucent=e.target.checked;updateModels(0);updateStats()};
+$('#drum').oninput=e=>{state.drum=+e.target.value/8;$('#drumValue').textContent=(300+100*e.target.value)+' m'};
+const buildMs=performance.now()-started;let triangles=0;
+$('#stats').innerHTML=[['Треугольники / active','<span id="activeTriangles"></span>'],['Вершины / all','<span id="vertices"></span>'],['Именованные батчи','<span id="batchCount"></span>'],['PBR-атласы','3 × 4096²'],['Материалы','2 × 2048² / 7 × 1024²'],['Сборка',Math.round(buildMs)+' ms'],['Первый кадр','<span id="statFirst">…</span>'],['Перепекание','<span id="statBake">…</span>'],['Производительность','<span id="statFps">…</span>']].map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join('');
+function updateStats(){triangles=batches.reduce((s,b)=>s+b.count/3,0);$('#activeTriangles').textContent=batches.filter(b=>b.visible).reduce((s,b)=>s+b.count/3,0).toLocaleString('en-US');$('#vertices').textContent=(triangles*3).toLocaleString('en-US');$('#batchCount').textContent=batches.length}
+updateModels(10);updateStats();
+function setMode(i){state.mode=i;document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.mode===i)))}
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(+b.dataset.mode));document.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>setCamera(+b.dataset.camera));
+document.querySelectorAll('[data-material]').forEach(b=>b.onclick=()=>{let i=+b.dataset.index;state.selected=state.selected===i?-1:i;document.querySelectorAll('[data-material]').forEach(x=>x.setAttribute('aria-pressed',String(+x.dataset.index===state.selected)))});
+$('#isolate').onchange=e=>state.isolate=e.target.checked;
+document.querySelectorAll('[data-config]').forEach(b=>b.onclick=()=>{let k=b.dataset.config,c=configs.find(x=>x[0]===k);state[k]=(Number(state[k])+1)%c[2].length;b.setAttribute('aria-pressed',String(!!state[k]));b.textContent=c[2][Number(state[k])];b.setAttribute('aria-label',c[1]+': '+b.textContent);updateModels(0);updateStats()});
+let beltTimer;
+let beltBuiltCount=state.count,beltBuiltSag=state.sag;
+function rebuildBelt(){beltBuiltCount=state.count;beltBuiltSag=state.sag;for(let i=batches.length-1;i>=0;i--)if(['belt','insideBelt'].includes(batches[i].group)){gl.deleteBuffer(batches[i].buffer);batches.splice(i,1)}buildBelt(state);mergeBatches();for(let b of batches)if(!b.buffer)upload(b);updateModels(0);updateStats();renderRevision++}
+for(let k of ['count','sag'])$('#'+k).oninput=e=>{state[k]=k==='count'?+e.target.value:+e.target.value/100;$('#'+k+'Value').textContent=e.target.value+(k==='sag'?'%':' rounds');clearTimeout(beltTimer);beltTimer=setTimeout(rebuildBelt,75)};
+$('#exploded').oninput=e=>{state.exploded=e.target.value/100;if(state.exploded>.3)desired.distance=2.2;$('#explodedValue').textContent=e.target.value+'%'};
+$('#auto').onclick=()=>{state.auto=!state.auto;$('#auto').setAttribute('aria-pressed',String(state.auto))};$('#reset').onclick=()=>setCamera(0);$('#help').onclick=()=>$('#helpDialog').showModal();
+function syncSheet(){let collapsed=matchMedia('(max-width:899px)').matches&&!$('#inspector').classList.contains('open');$('#inspectorContent').inert=collapsed;$('#inspectorContent').setAttribute('aria-hidden',String(collapsed))}
+$('#sheet').onclick=()=>{let open=$('#inspector').classList.toggle('open');$('#sheet').setAttribute('aria-expanded',String(open));$('#sheetArrow').textContent=open?'↓':'↑';syncSheet()};addEventListener('resize',syncSheet);syncSheet();
+document.addEventListener('keydown',e=>{if(exporting||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||$('#helpDialog').open||e.ctrlKey||e.metaKey||e.altKey)return;let k=e.key.toLowerCase();if(k>='1'&&k<='8'){setCamera(+k-1);e.preventDefault()}if(k==='r')setCamera(0);if(k==='a')$('#auto').click();if(k==='w')setMode(state.mode===1?0:1);if(k==='b')$('[data-config="bipod"]').click();if(k==='t')$('[data-config="cover"]').click();if(k==='e'){$('#exploded').value=state.exploded>.5?0:100;$('#exploded').dispatchEvent(new Event('input'))}if(e.target===canvas&&e.key.startsWith('Arrow')){e.preventDefault();desired.yaw+=(e.key==='ArrowLeft'?-.1:e.key==='ArrowRight'?.1:0);desired.pitch=clamp(desired.pitch+(e.key==='ArrowUp'?.1:e.key==='ArrowDown'?-.1:0),-1.5,1.56)}});
+const pointers=new Map();let previousGesture=null;
+function gesture(){let p=[...pointers.values()];return{x:p.reduce((s,a)=>s+a.x,0)/p.length,y:p.reduce((s,a)=>s+a.y,0)/p.length,d:p.length>1?Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y):0,n:p.length}}
+function pan(dx,dy){let forward=V.norm(V.sub(camera.target,eye)),right=V.norm(V.cross(forward,[0,1,0])),up=V.cross(right,forward),scale=Math.hypot(...V.sub(eye,camera.target))*.65/canvas.clientHeight;desired.target=V.add(desired.target,V.add(V.mul(right,-dx*scale),V.mul(up,dy*scale)))}
+canvas.onpointerdown=e=>{if(exporting)return;canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});previousGesture=gesture();state.auto=false;$('#auto').setAttribute('aria-pressed','false')};
+canvas.onpointermove=e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});let g=gesture(),p=previousGesture;previousGesture=g;if(!p||p.n!==g.n)return;let dx=g.x-p.x,dy=g.y-p.y;if(g.n>1){desired.distance=clamp(desired.distance*p.d/Math.max(1,g.d),.07,3.8);pan(dx,dy)}else if(e.buttons===2||e.shiftKey)pan(dx,dy);else{desired.yaw-=dx*.006;desired.pitch=clamp(desired.pitch+dy*.006,-1.5,1.56)}$('#viewName').textContent='CUSTOM PERSPECTIVE';document.querySelectorAll('[data-camera]').forEach(b=>b.setAttribute('aria-pressed','false'))};
+for(let event of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(event,e=>{pointers.delete(e.pointerId);previousGesture=pointers.size?gesture():null});canvas.oncontextmenu=e=>e.preventDefault();canvas.addEventListener('wheel',e=>{e.preventDefault();if(exporting)return;desired.distance=clamp(desired.distance*Math.exp(clamp(e.deltaY,-200,200)*.001),.07,3.8)},{passive:false});
+function rayTriangle(o,d,a,b,c){let e1=V.sub(b,a),e2=V.sub(c,a),h=V.cross(d,e2),det=V.dot(e1,h);if(Math.abs(det)<1e-10)return Infinity;let inv=1/det,s=V.sub(o,a),u=V.dot(s,h)*inv;if(u<0||u>1)return Infinity;let q=V.cross(s,e1),v=V.dot(d,q)*inv;if(v<0||u+v>1)return Infinity;let t=V.dot(e2,q)*inv;return t>0?t:Infinity}
+canvas.ondblclick=e=>{if(exporting)return;let r=canvas.getBoundingClientRect(),f=V.norm(V.sub(camera.target,eye)),right=V.norm(V.cross(f,[0,1,0])),up=V.cross(right,f),x=(2*(e.clientX-r.left)/r.width-1)*Math.tan(.63/2)*r.width/r.height,y=(1-2*(e.clientY-r.top)/r.height)*Math.tan(.63/2),dir=V.norm(V.add(f,V.add(V.mul(right,x),V.mul(up,y)))),best=Infinity,hit=null;for(let b of batches){if(!b.visible||state.isolate&&state.selected>=0&&effectiveMaterial(b)!==state.selected)continue;let inv=M.inverseRigid(b.matrix),o=M.point(inv,eye),d=V.sub(M.point(inv,V.add(eye,dir)),o);let lo=0,hi=Infinity;for(let k=0;k<3;k++){if(Math.abs(d[k])<1e-8){if(o[k]<b.min[k]||o[k]>b.max[k])hi=-1}else{let t1=(b.min[k]-o[k])/d[k],t2=(b.max[k]-o[k])/d[k];lo=Math.max(lo,Math.min(t1,t2));hi=Math.min(hi,Math.max(t1,t2))}}if(hi<lo)continue;for(let i=0;i<b.data.length;i+=36){let a=b.data.subarray(i,i+3),c=b.data.subarray(i+12,i+15),dd=b.data.subarray(i+24,i+27),t=rayTriangle(o,d,a,c,dd);if(t<best){best=t;hit=b}}}if(hit){desired.target=V.add(eye,V.mul(dir,best));desired.distance=.32;$('#viewName').textContent='DETAIL FOCUS';toast(hit.name)}};
+requestAnimationFrame(render);
+
+async function textureJob(o, emit, alive = () => true) {
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const asUnit = x => {
+    x = Number(x);
+    return Number.isFinite(x) ? clamp(x > 1 ? x / 100 : x) : 0;
+  };
+  const pause = () => typeof document === 'undefined' ? Promise.resolve() : new Promise(resolve => setTimeout(resolve, 0));
+  const finish = clamp(Number(o && (o.finish ?? o.finishIndex ?? o.finish0)) || 0, 0, 5) | 0;
+  const wear = finish === 5 ? Math.max(.9, asUnit(o && o.wear)) : asUnit(o && o.wear);
+  const grime = finish === 5 ? Math.max(.86, asUnit(o && o.grime)) : asUnit(o && o.grime);
+  const heat = asUnit(o && o.heat);
+  const seed = ((Number(o && o.seed) || 0) >>> 0) || 0x4D323439;
+  const serial = String(o && o.serial != null ? o.serial : 'M249 04286').slice(0, 24);
+  const serialEnabled = o && o.serialEnabled !== false;
+
+  // These tables are intentionally local to the job: a Blob worker receives only textureJob.toString().
+  const bases = Object.freeze([
+    Object.freeze([47, 51, 54]),   // phosphate
+    Object.freeze([46, 51, 56]),   // barrel steel
+    Object.freeze([119, 127, 132]),// anodized aluminium
+    Object.freeze([31, 34, 36]),   // nitride
+    Object.freeze([48, 54, 49]),   // glass-filled nylon
+    Object.freeze([42, 43, 40]),   // rubber
+    Object.freeze([178, 119, 43]), // brass
+    Object.freeze([57, 63, 61]),   // M27 link steel
+    Object.freeze([42, 45, 41])    // Cordura
+  ]);
+  const roughness = Object.freeze([.68, .46, .33, .25, .76, .90, .30, .72, .88]);
+  const metalness = Object.freeze([.89, .96, .94, .97, 0, 0, .88, .92, 0]);
+
+  function rng(value) {
+    let state = value >>> 0;
+    return () => {
+      state = (state + 0x6D2B79F5) >>> 0;
+      let t = state;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function hash2(x, y, s = 0) {
+    x |= 0; y |= 0; s |= 0;
+    let n = Math.imul(x ^ s, 374761393) + Math.imul(y, 668265263);
+    n = Math.imul(n ^ (n >>> 13), 1274126177);
+    return ((n ^ (n >>> 16)) >>> 0) / 4294967295;
+  }
+  function vnoise(x, y, s) {
+    const ix = Math.floor(x), iy = Math.floor(y);
+    let fx = x - ix, fy = y - iy;
+    fx *= fx * (3 - 2 * fx); fy *= fy * (3 - 2 * fy);
+    const a = lerp(hash2(ix, iy, s), hash2(ix + 1, iy, s), fx);
+    const b = lerp(hash2(ix, iy + 1, s), hash2(ix + 1, iy + 1, s), fx);
+    return lerp(a, b, fy);
+  }
+  function pnoise(x, y, period, s) {
+    x = ((x % period) + period) % period;
+    y = ((y % period) + period) % period;
+    const ix = Math.floor(x), iy = Math.floor(y);
+    let fx = x - ix, fy = y - iy;
+    fx *= fx * (3 - 2 * fx); fy *= fy * (3 - 2 * fy);
+    const a = lerp(hash2(ix, iy, s), hash2((ix + 1) % period, iy, s), fx);
+    const b = lerp(hash2(ix, (iy + 1) % period, s), hash2((ix + 1) % period, (iy + 1) % period, s), fx);
+    return lerp(a, b, fy);
+  }
+  function fbm(x, y, s) {
+    let value = 0, amplitude = .55;
+    for (let k = 0; k < 4; k++) {
+      value += vnoise(x, y, s + k * 17) * amplitude;
+      x *= 2; y *= 2; amplitude *= .5;
+    }
+    return value;
+  }
+  function pfbm(x, y, s) {
+    let value = 0, amplitude = .55, period = 8;
+    for (let k = 0; k < 4; k++) {
+      value += pnoise(x, y, period, s + k * 17) * amplitude;
+      x *= 2; y *= 2; period *= 2; amplitude *= .5;
+    }
+    return value;
+  }
+  function pstreak(x, y, s) {
+    return pnoise(x * .125, y * 32, 64, s) * .7 + pnoise(x * .5, y * 96, 128, s + 1) * .3;
+  }
+  function worley(x, y, s) {
+    const ix = Math.floor(x), iy = Math.floor(y);
+    let closest = 2;
+    for (let yy = -1; yy <= 1; yy++) for (let xx = -1; xx <= 1; xx++) {
+      const qx = ix + xx, qy = iy + yy;
+      closest = Math.min(closest, Math.hypot(qx + hash2(qx, qy, s) - x, qy + hash2(qx, qy, s + 91) - y));
+    }
+    return closest;
+  }
+  // Fibres, lathe marks and Cordura weave use a deliberately anisotropic field.
+  function anisotropic(x, y, s) {
+    return pnoise(x * 46, y * 3, 128, s) * .62 + pnoise(x * 3, y * 180, 256, s + 31) * .38;
+  }
+  function bilinear(field, ix, iy, fx, fy, width) {
+    const k = (iy * width + ix);
+    return lerp(lerp(field[k], field[k + 1], fx), lerp(field[k + width], field[k + width + 1], fx), fy);
+  }
+
+  const glyphs = Object.freeze({
+    A:[14,17,17,31,17,17,17], B:[30,17,17,30,17,17,30], C:[14,17,16,16,16,17,14],
+    D:[30,17,17,17,17,17,30], E:[31,16,16,30,16,16,31], F:[31,16,16,30,16,16,16],
+    G:[14,17,16,23,17,17,15], H:[17,17,17,31,17,17,17], I:[14,4,4,4,4,4,14],
+    J:[7,2,2,2,18,18,12], K:[17,18,20,24,20,18,17], L:[16,16,16,16,16,16,31],
+    M:[17,27,21,21,17,17,17], N:[17,25,25,21,19,19,17], O:[14,17,17,17,17,17,14],
+    P:[30,17,17,30,16,16,16], Q:[14,17,17,17,21,18,13], R:[30,17,17,30,20,18,17],
+    S:[15,16,16,14,1,1,30], T:[31,4,4,4,4,4,4], U:[17,17,17,17,17,17,14],
+    V:[17,17,17,17,17,10,4], W:[17,17,17,21,21,27,17], X:[17,17,10,4,10,17,17],
+    Y:[17,17,10,4,4,4,4], Z:[31,1,2,4,8,16,31],
+    '0':[14,17,19,21,25,17,14], '1':[4,12,4,4,4,4,14], '2':[14,17,1,2,4,8,31],
+    '3':[30,1,1,14,1,1,30], '4':[2,6,10,18,31,2,2], '5':[31,16,16,30,1,1,30],
+    '6':[14,16,16,30,17,17,14], '7':[31,1,2,4,8,8,8], '8':[14,17,17,14,17,17,14],
+    '9':[14,17,17,15,1,1,14], '-':[0,0,0,31,0,0,0], '.':[0,0,0,0,0,6,6],
+    '/':[1,2,4,8,16,0,0], ':':[0,6,6,0,6,6,0], ' ':[0,0,0,0,0,0,0]
+  });
+  function glyph(ctx, character, x, y, size) {
+    const pattern = glyphs[character] || glyphs['-'];
+    ctx.beginPath();
+    for (let row = 0; row < 7; row++) for (let col = 0; col < 5; col++) {
+      if (pattern[row] & (1 << (4 - col))) ctx.rect(x + col * size, y + row * size, size * .86, size * .86);
+    }
+    ctx.fill();
+  }
+  function vectorText(ctx, value, x, y, size) {
+    for (const character of String(value).toUpperCase()) {
+      glyph(ctx, character, x, y, size);
+      x += size * 6;
+    }
+  }
+  function makeCanvas(size) {
+    const canvas = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(size, size) : document.createElement('canvas');
+    canvas.width = canvas.height = size;
+    return canvas;
+  }
+  function putPixels(ctx, bytes, size) {
+    const image = ctx.createImageData(size, size);
+    image.data.set(bytes);
+    ctx.putImageData(image, 0, 0);
+  }
+  function stain(ctx, x, y, radius, color) {
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    gradient.addColorStop(0, color);
+    gradient.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+  }
+  async function normalFromHeight(height, size) {
+    const normal = new Uint8ClampedArray(size * size * 4);
+    for (let y = 0; y < size; y++) {
+      const ym = y === 0 ? size - 1 : y - 1, yp = y + 1 === size ? 0 : y + 1;
+      const row = y * size, rowUp = ym * size, rowDown = yp * size;
+      for (let x = 0; x < size; x++) {
+        const xm = x === 0 ? size - 1 : x - 1, xp = x + 1 === size ? 0 : x + 1;
+        const index = (row + x) * 4;
+        const dx = (height[(row + xm) * 4] - height[(row + xp) * 4]) * .018;
+        const dy = (height[(rowUp + x) * 4] - height[(rowDown + x) * 4]) * .018;
+        const inverse = 1 / Math.sqrt(dx * dx + dy * dy + 1);
+        normal[index] = clamp(dx * inverse * .5 + .5) * 255;
+        normal[index + 1] = clamp(dy * inverse * .5 + .5) * 255;
+        normal[index + 2] = inverse * .5 * 255 + 127.5;
+        normal[index + 3] = 255;
+      }
+      if ((y & 31) === 0) {
+        if (!alive()) throw new Error('Cancelled');
+        await pause();
+      }
+    }
+    return normal;
+  }
+  function mark(ctx, heightCtx, value, x, y, size) {
+    ctx.fillStyle = 'rgba(20,20,18,.66)';
+    vectorText(ctx, value, x, y, size);
+    // Lower height produces a recessed, rather than screen-space, marking in the normal map.
+    heightCtx.fillStyle = 'rgb(103,103,103)';
+    vectorText(heightCtx, value, x, y, size);
+  }
+
+  for (let mat = 0; mat < 9; mat++) {
+    if (!alive()) throw new Error('Cancelled');
+    const size = mat < 2 ? 2048 : 1024;
+    const pixelCount = size * size;
+    const rand = rng((seed + Math.imul(mat + 1, 7919)) >>> 0);
+    const materialSeed = (seed + Math.imul(mat + 1, 379)) >>> 0;
+    const base = bases[mat];
+    const albedo = new Uint8ClampedArray(pixelCount * 4);
+    const height = new Uint8ClampedArray(pixelCount * 4);
+    const orm = new Uint8ClampedArray(pixelCount * 4);
+
+    // Five reusable macro fields keep the expensive noise work bounded while retaining high-frequency grain.
+    const fieldSize = 129;
+    const fieldLength = fieldSize * fieldSize;
+    const macro = new Float32Array(fieldLength);
+    const streak = new Float32Array(fieldLength);
+    const cells = new Float32Array(fieldLength);
+    const broad = new Float32Array(fieldLength);
+    const fibres = new Float32Array(fieldLength);
+    for (let y = 0; y < fieldSize; y++) for (let x = 0; x < fieldSize; x++) {
+      const i = y * fieldSize + x, u = x / 128, v = y / 128;
+      macro[i] = pfbm(u * 8, v * 8, materialSeed);
+      streak[i] = pstreak(u * 16, v * 16, materialSeed + 7);
+      cells[i] = worley(u * 38, v * 38, materialSeed + 13);
+      broad[i] = fbm(u * 13, v * 13, materialSeed + 17);
+      fibres[i] = anisotropic(u, v, materialSeed + 23);
+    }
+
+    for (let y = 0; y < size; y++) {
+      const gy = y / (size - 1) * 128;
+      const iy = Math.min(127, gy | 0), fy = gy - iy;
+      for (let x = 0; x < size; x++) {
+        const gx = x / (size - 1) * 128;
+        const ix = Math.min(127, gx | 0), fx = gx - ix;
+        const noise = bilinear(macro, ix, iy, fx, fy, fieldSize);
+        const directional = bilinear(streak, ix, iy, fx, fy, fieldSize);
+        const cell = bilinear(cells, ix, iy, fx, fy, fieldSize);
+        const large = bilinear(broad, ix, iy, fx, fy, fieldSize);
+        const fibre = mat === 2 || mat === 4 || mat === 8 ? bilinear(fibres, ix, iy, fx, fy, fieldSize) : .5;
+        const u = x / size, v = y / size;
+        const grain = hash2(x, y, materialSeed);
+        const edge = Math.pow(1 - Math.min(u, 1 - u, v, 1 - v) * 2, 21) * wear;
+        const dust = grime * (.10 + Math.pow(1 - noise, 2) * .24 + Math.pow(1 - cell, 3) * .35);
+        const index = (y * size + x) * 4;
+        let c0 = base[0] + (noise - .5) * 18 + (grain - .5) * 11;
+        let c1 = base[1] + (noise - .5) * 18 + (grain - .5) * 11;
+        let c2 = base[2] + (noise - .5) * 18 + (grain - .5) * 11;
+        let localRoughness = roughness[mat] + (noise - .5) * .09 + grime * .12;
+        let localMetalness = metalness[mat];
+        let localHeight = 127 + (noise - .5) * 18 + (grain - .5) * (mat < 2 ? 16 : 8);
+
+        if (mat === 0) {
+          // Phosphate grain, rubbed edges, oil film and carbon halos at the working interfaces.
+          const oil = clamp((large - .36) * 2.2) * (1 - grime * .2);
+          const carbon = grime * clamp((directional - .42) * 1.8) * .35;
+          c0 = c0 * (1 - carbon) + 23 * carbon + oil * 7;
+          c1 = c1 * (1 - carbon) + 24 * carbon + oil * 7;
+          c2 = c2 * (1 - carbon) + 22 * carbon + oil * 6;
+          localHeight += directional * 5 + edge * 16;
+          localRoughness += oil * -.12;
+        } else if (mat === 1) {
+          // Heat tint follows the barrel axis: straw, brown, purple and finally blue near the gas block.
+          const breech = Math.exp(-Math.pow((u - .18) / .22, 2));
+          const gasBlock = Math.exp(-Math.pow((u - .49) / .17, 2));
+          const thermal = clamp(heat * (.10 + .90 * Math.max(breech, gasBlock * .90)) * (.78 + noise * .22));
+          const lathe = .5 + .5 * Math.sin(v * 760 + directional * 11 + u * 4);
+          let t0 = 51, t1 = 55, t2 = 59;
+          if (thermal < .25) {
+            const q = thermal / .25;
+            t0 = lerp(51, 142, q); t1 = lerp(55, 105, q); t2 = lerp(59, 56, q);
+          } else if (thermal < .50) {
+            const q = (thermal - .25) / .25;
+            t0 = lerp(142, 112, q); t1 = lerp(105, 58, q); t2 = lerp(56, 44, q);
+          } else if (thermal < .74) {
+            const q = (thermal - .50) / .24;
+            t0 = lerp(112, 58, q); t1 = lerp(58, 44, q); t2 = lerp(44, 82, q);
+          } else {
+            const q = (thermal - .74) / .26;
+            t0 = lerp(58, 34, q); t1 = lerp(44, 55, q); t2 = lerp(82, 112, q);
+          }
+          c0 = lerp(c0, t0, thermal) + (lathe - .5) * 13;
+          c1 = lerp(c1, t1, thermal) + (lathe - .5) * 11;
+          c2 = lerp(c2, t2, thermal) + (lathe - .5) * 12;
+          c0 -= grime * (1 - noise) * 18; c1 -= grime * (1 - noise) * 14; c2 -= grime * (1 - noise) * 10;
+          localHeight += lathe * 5 + edge * 8;
+          localRoughness += thermal * .16;
+        } else if (mat === 2) {
+          const anodizeGrain = (fibre - .5) * 16 + (directional - .5) * 7;
+          c0 += anodizeGrain; c1 += anodizeGrain; c2 += anodizeGrain;
+          localHeight += directional * 8 + edge * 10;
+          localRoughness += .04;
+        } else if (mat === 3) {
+          const oil = clamp((directional - .38) * 4) * (1 - grime * .25);
+          const carbon = grime * clamp((large - .52) * 3);
+          c0 = c0 * (1 - carbon * .58) + oil * 6;
+          c1 = c1 * (1 - carbon * .58) + oil * 6;
+          c2 = c2 * (1 - carbon * .58) + oil * 7;
+          localRoughness = lerp(localRoughness, .16, oil * .65) + carbon * .12;
+          localHeight += directional * 4;
+        } else if (mat === 4) {
+          const nylon = (fibre - .5) * 18;
+          const mouldSeam = Math.pow(Math.abs(Math.sin((u * 3.7 + v * 1.2) * Math.PI)), 30);
+          const injectionPoint = Math.pow(clamp((.28 - cell) * 4), 3);
+          c0 += nylon - mouldSeam * 14 + injectionPoint * 8;
+          c1 += nylon - mouldSeam * 13 + injectionPoint * 8;
+          c2 += nylon - mouldSeam * 11 + injectionPoint * 7;
+          localHeight += nylon * .5 + mouldSeam * 18 + injectionPoint * 7;
+          localRoughness += mouldSeam * .12;
+        } else if (mat === 5) {
+          const rib = .5 + .5 * Math.sin(u * 430 + Math.sin(v * 12) * 3);
+          c0 += (rib - .5) * 17; c1 += (rib - .5) * 17; c2 += (rib - .5) * 16;
+          localHeight += rib * 13;
+          localRoughness += .05;
+        } else if (mat === 6) {
+          const anneal = Math.exp(-Math.pow((u - .77) / .08, 2));
+          const brassNoise = (noise - .5) * 21 + (grain - .5) * 8;
+          c0 += brassNoise + anneal * 18;
+          c1 += brassNoise * .72 + anneal * 5;
+          c2 += brassNoise * .28 - anneal * 4;
+          const primer = Math.exp(-Math.pow((u - .94) / .045, 2)) * Math.exp(-Math.pow((v - .5) / .22, 2));
+          c0 = lerp(c0, 92, primer); c1 = lerp(c1, 24, primer); c2 = lerp(c2, 20, primer);
+          localHeight += anneal * 9 + primer * 4;
+          localRoughness = .27 + anneal * .10;
+        } else if (mat === 7) {
+          const oxide = grime * clamp((1 - noise) * .9 + (1 - cell) * .4);
+          c0 -= oxide * 27; c1 -= oxide * 23; c2 -= oxide * 19;
+          const scratch = clamp((directional - .73) * 4);
+          c0 += scratch * 28; c1 += scratch * 25; c2 += scratch * 22;
+          localHeight += directional * 6 + edge * 9;
+        } else {
+          const warp = Math.sin(u * 230) * Math.sin(v * 47);
+          const weft = Math.sin(v * 230) * Math.sin(u * 47);
+          const weave = (warp + weft) * 4 + (fibre - .5) * 10;
+          c0 += weave; c1 += weave; c2 += weave;
+          localHeight += (warp + weft) * 8;
+          localRoughness = .86 + Math.abs(warp + weft) * .04;
+        }
+
+        // Only the three painted substrates receive a finish pigment; links, brass, rubber and cloth remain themselves.
+        if (mat === 0 || mat === 2 || mat === 4) {
+          let paint = 0, p0 = 0, p1 = 0, p2 = 0;
+          if (finish === 0 && mat === 2) { paint = .78; p0 = 34; p1 = 37; p2 = 35; }
+          else if (finish === 1) { paint = clamp((noise - .17) * 3.9 + .26); p0 = 164; p1 = 142; p2 = 103; }
+          else if (finish === 2) { paint = clamp((noise - .19) * 4.2 + .20); p0 = 73; p1 = 84; p2 = 56; }
+          else if (finish === 3) {
+            const cloud = clamp((large - .24) * 2.35 + (directional - .5) * .25);
+            paint = cloud * (.82 - wear * .33); p0 = 135; p1 = 116; p2 = 76;
+          } else if (finish === 4) {
+            paint = clamp(.72 + broad * .24 - wear * .45 + (noise - .5) * .14); p0 = 215; p1 = 216; p2 = 203;
+          }
+          if (paint > 0) {
+            const chip = clamp((grain - (.79 - wear * .33)) * 6 + (1 - cell) * .18);
+            paint *= 1 - chip * .72;
+            c0 = lerp(c0, p0, paint); c1 = lerp(c1, p1, paint); c2 = lerp(c2, p2, paint);
+            if (finish > 0 && finish < 5 && chip > 0) {
+              const chip0 = mat === 4 ? 24 : 29, chip1 = mat === 4 ? 27 : 31, chip2 = mat === 4 ? 25 : 29;
+              c0 = lerp(c0, chip0, chip * .56); c1 = lerp(c1, chip1, chip * .56); c2 = lerp(c2, chip2, chip * .56);
+            }
+            localMetalness *= 1 - paint * .86;
+            localRoughness = lerp(localRoughness, .72, paint);
+            localHeight += paint * 5 - chip * 12;
+          }
+          const bare = edge * .72 + clamp((grain - .955) * 15) * wear * .15;
+          c0 = lerp(c0, mat === 4 ? 24 : 108, bare);
+          c1 = lerp(c1, mat === 4 ? 27 : 108, bare);
+          c2 = lerp(c2, mat === 4 ? 25 : 102, bare);
+          localRoughness += bare * .12;
+        }
+
+        // Contact dust is strongest in recesses and at the seams of the stamped parts.
+        c0 *= 1 - dust * .28; c1 *= 1 - dust * .28; c2 *= 1 - dust * .25;
+        localHeight -= dust * 11;
+        albedo[index] = clamp(c0, 0, 255); albedo[index + 1] = clamp(c1, 0, 255); albedo[index + 2] = clamp(c2, 0, 255); albedo[index + 3] = 255;
+        height[index] = height[index + 1] = height[index + 2] = clamp(localHeight, 0, 255); height[index + 3] = 255;
+        orm[index] = clamp(1 - dust * .58, 0, 1) * 255;
+        orm[index + 1] = clamp(localRoughness, .05, 1) * 255;
+        orm[index + 2] = clamp(localMetalness, 0, 1) * 255;
+        orm[index + 3] = 255;
+      }
+      if ((y & 31) === 0) {
+        if (!alive()) throw new Error('Cancelled');
+        await pause();
+      }
+    }
+
+    const albedoCanvas = makeCanvas(size);
+    const heightCanvas = makeCanvas(size);
+    const ormCanvas = makeCanvas(size);
+    const albedoCtx = albedoCanvas.getContext('2d', { willReadFrequently: true });
+    const heightCtx = heightCanvas.getContext('2d', { willReadFrequently: true });
+    const ormCtx = ormCanvas.getContext('2d', { willReadFrequently: true });
+    putPixels(albedoCtx, albedo, size);
+    putPixels(heightCtx, height, size);
+    putPixels(ormCtx, orm, size);
+
+    // Deterministic machining scratches and worn contact marks are drawn after the pixel pass.
+    const scratchCount = Math.round((mat === 8 ? 120 : mat === 6 ? 170 : 240) + wear * (mat < 2 ? 260 : 130));
+    for (let j = 0; j < scratchCount; j++) {
+      const x = rand() * size;
+      const y = (.05 + rand() * .88) * size;
+      const length = (.001 + Math.pow(rand(), 3) * (mat === 1 ? .22 : .12)) * size;
+      const dy = (rand() - .5) * length * (mat === 1 ? .10 : .28);
+      const alpha = (.035 + rand() * .18) * (.25 + wear * .75);
+      albedoCtx.strokeStyle = mat === 6 ? `rgba(244,208,121,${alpha})` : `rgba(190,185,166,${alpha})`;
+      albedoCtx.lineWidth = (.18 + rand() * .7) * size / 2048;
+      albedoCtx.beginPath(); albedoCtx.moveTo(x, y); albedoCtx.lineTo(x + length, y + dy); albedoCtx.stroke();
+      heightCtx.strokeStyle = `rgba(205,205,205,${alpha * .60})`;
+      heightCtx.lineWidth = albedoCtx.lineWidth * 1.3;
+      heightCtx.beginPath(); heightCtx.moveTo(x, y); heightCtx.lineTo(x + length, y + dy); heightCtx.stroke();
+    }
+
+    if (mat === 0) {
+      for (let j = 0; j < 8; j++) {
+        const x = (.08 + rand() * .84) * size, y = (.29 + rand() * .53) * size;
+        stain(albedoCtx, x, y, size * (.008 + rand() * .018), `rgba(38,25,15,${.10 + grime * .22})`);
+        stain(ormCtx, x, y, size * (.007 + rand() * .014), `rgba(35,23,15,${.08 + grime * .18})`);
+      }
+    } else if (mat === 1) {
+      // Gas-block soot and uneven heat blooms are deliberately separate from the lathe grain.
+      for (let j = 0; j < 7; j++) {
+        const x = (.24 + rand() * .38) * size, y = (.20 + rand() * .65) * size;
+        stain(albedoCtx, x, y, size * (.010 + rand() * .025), `rgba(24,18,17,${grime * (.12 + rand() * .22)})`);
+      }
+    } else if (mat === 4) {
+      albedoCtx.strokeStyle = `rgba(22,25,22,${.18 + grime * .18})`;
+      heightCtx.strokeStyle = 'rgba(40,40,40,.45)';
+      for (let j = 0; j < 4; j++) {
+        const x = (.16 + j * .22) * size;
+        albedoCtx.lineWidth = heightCtx.lineWidth = size / 420;
+        albedoCtx.beginPath(); albedoCtx.moveTo(x, .12 * size); albedoCtx.lineTo(x + .01 * size, .92 * size); albedoCtx.stroke();
+        heightCtx.beginPath(); heightCtx.moveTo(x, .12 * size); heightCtx.lineTo(x + .01 * size, .92 * size); heightCtx.stroke();
+      }
+      for (let j = 0; j < 5; j++) stain(albedoCtx, (.1 + rand() * .8) * size, (.3 + rand() * .5) * size, size * .012, 'rgba(14,16,14,.16)');
+    } else if (mat === 5) {
+      albedoCtx.strokeStyle = 'rgba(117,117,108,.22)';
+      for (let j = 0; j < 24; j++) {
+        const y = (.12 + j / 29) * size;
+        albedoCtx.lineWidth = size / 900;
+        albedoCtx.beginPath(); albedoCtx.moveTo(.08 * size, y); albedoCtx.lineTo(.92 * size, y + size * .008); albedoCtx.stroke();
+      }
+    } else if (mat === 6) {
+      // A sealed primer and annealed neck sit beside the vector head-stamp below.
+      stain(albedoCtx, .94 * size, .5 * size, .045 * size, 'rgba(91,25,21,.45)');
+      stain(heightCtx, .94 * size, .5 * size, .035 * size, 'rgba(80,80,80,.45)');
+    } else if (mat === 7) {
+      albedoCtx.strokeStyle = `rgba(27,31,29,${.18 + grime * .24})`;
+      for (let j = 0; j < 14; j++) {
+        const y = (.10 + rand() * .78) * size;
+        albedoCtx.lineWidth = size / 700;
+        albedoCtx.beginPath(); albedoCtx.moveTo(.04 * size, y); albedoCtx.lineTo((.18 + rand() * .74) * size, y + size * (.006 + rand() * .018)); albedoCtx.stroke();
+      }
+    } else {
+      // Woven Cordura has orthogonal warp/weft and a heavy stitched perimeter.
+      albedoCtx.strokeStyle = 'rgba(171,164,138,.19)';
+      heightCtx.strokeStyle = 'rgba(180,180,160,.30)';
+      for (let j = 0; j < 28; j++) {
+        const p = (j + .5) / 28 * size;
+        albedoCtx.lineWidth = heightCtx.lineWidth = size / 1600;
+        albedoCtx.beginPath(); albedoCtx.moveTo(p, 0); albedoCtx.lineTo(p + size * .012, size); albedoCtx.stroke();
+        albedoCtx.beginPath(); albedoCtx.moveTo(0, p); albedoCtx.lineTo(size, p + size * .012); albedoCtx.stroke();
+        heightCtx.beginPath(); heightCtx.moveTo(p, 0); heightCtx.lineTo(p + size * .012, size); heightCtx.stroke();
+        heightCtx.beginPath(); heightCtx.moveTo(0, p); heightCtx.lineTo(size, p + size * .012); heightCtx.stroke();
+      }
+      albedoCtx.strokeStyle = 'rgba(210,196,159,.52)'; heightCtx.strokeStyle = 'rgba(210,205,177,.55)';
+      albedoCtx.lineWidth = heightCtx.lineWidth = size / 180;
+      albedoCtx.strokeRect(size * .07, size * .07, size * .86, size * .86);
+      heightCtx.strokeRect(size * .07, size * .07, size * .86, size * .86);
+    }
+
+    // Vector-only technical markings occupy the reserved v < .25 label strip.
+    const label = size * .00315;
+    if (mat === 0) {
+      if (serialEnabled) mark(albedoCtx, heightCtx, serial, size * .055, size * .035, label);
+      mark(albedoCtx, heightCtx, 'M249', size * .055, size * .102, label * 1.22);
+      mark(albedoCtx, heightCtx, '5.56MM', size * .055, size * .174, label * .92);
+      mark(albedoCtx, heightCtx, 'SAFE FIRE', size * .49, size * .052, label * .78);
+    } else if (mat === 1) {
+      mark(albedoCtx, heightCtx, 'HOT BARREL', size * .052, size * .035, label * .86);
+      mark(albedoCtx, heightCtx, '100 200 300 400', size * .052, size * .145, label * .62);
+    } else if (mat === 2) {
+      mark(albedoCtx, heightCtx, 'SLOT 1 2 3 4 5 6', size * .035, size * .038, label * .58);
+      mark(albedoCtx, heightCtx, '7 8 9 10 11 12', size * .035, size * .145, label * .58);
+    } else if (mat === 3) {
+      mark(albedoCtx, heightCtx, 'NITRIDE', size * .055, size * .042, label * .95);
+      mark(albedoCtx, heightCtx, 'M249 BOLT', size * .055, size * .145, label * .67);
+    } else if (mat === 4) {
+      mark(albedoCtx, heightCtx, 'M249', size * .055, size * .038, label * 1.05);
+      mark(albedoCtx, heightCtx, 'POLYMER', size * .055, size * .145, label * .70);
+    } else if (mat === 6) {
+      mark(albedoCtx, heightCtx, 'FN 5.56', size * .05, size * .04, label * .82);
+      mark(albedoCtx, heightCtx, 'LOT 24', size * .05, size * .145, label * .72);
+    } else if (mat === 7) {
+      mark(albedoCtx, heightCtx, 'M27', size * .07, size * .05, label * 1.04);
+      mark(albedoCtx, heightCtx, 'LINK', size * .07, size * .15, label * .72);
+    } else if (mat === 8) {
+      mark(albedoCtx, heightCtx, '100 RD', size * .055, size * .04, label * .82);
+      mark(albedoCtx, heightCtx, 'CORDURA', size * .055, size * .145, label * .66);
+    }
+
+    // A tiny warning triangle is a vector mark too; no native fonts or bitmap labels are used.
+    if (mat === 0 || mat === 1) {
+      albedoCtx.fillStyle = 'rgba(207,173,90,.50)';
+      albedoCtx.beginPath(); albedoCtx.moveTo(size * .87, size * .055); albedoCtx.lineTo(size * .90, size * .12); albedoCtx.lineTo(size * .84, size * .12); albedoCtx.closePath(); albedoCtx.fill();
+      heightCtx.fillStyle = 'rgb(112,112,100)';
+      heightCtx.beginPath(); heightCtx.moveTo(size * .87, size * .055); heightCtx.lineTo(size * .90, size * .12); heightCtx.lineTo(size * .84, size * .12); heightCtx.closePath(); heightCtx.fill();
+    }
+
+    const finalAlbedo = albedoCtx.getImageData(0, 0, size, size).data;
+    const finalHeight = heightCtx.getImageData(0, 0, size, size).data;
+    const finalOrm = ormCtx.getImageData(0, 0, size, size).data;
+    const normal = await normalFromHeight(finalHeight, size);
+    await emit({ mat, n: size, data: [finalAlbedo.buffer, normal.buffer, finalOrm.buffer], id: o && o.id });
+    if (!alive()) throw new Error('Cancelled');
+    await pause();
+  }
+}
+
+let worker=null,bakeId=0,baking=true,textureReady=false,allocated=false,bakeTimer,workerURL=null;
+const workerSource='const job='+textureJob.toString()+';onmessage=e=>job(e.data,m=>postMessage(m,m.data)).then(()=>postMessage({done:true,id:e.data.id})).catch(e=>postMessage({error:e.message}));';
+function updateExportState(){for(let id of ['glb','zip'])$('#'+id).disabled=baking||!textureReady}updateExportState();
+async function receiveTile(msg,id){if(id!==bakeId)return;let {mat,n,data}=msg,rect=atlasLayout[mat];for(let k=0;k<3;k++){if(id!==bakeId)return;let pixels=new Uint8Array(data[k]);atlasContexts[k].putImageData(new ImageData(new Uint8ClampedArray(data[k]),n,n),rect.x,rect.y);gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);for(let y=0;y<n;y+=128){if(id!==bakeId)return;gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.texSubImage2D(gl.TEXTURE_2D,0,rect.x,rect.y+y,n,Math.min(128,n-y),gl.RGBA,gl.UNSIGNED_BYTE,pixels.subarray(y*n*4,Math.min(n,y+128)*n*4));await yieldTask()}}renderRevision++;$('#bakeStatus').textContent='Baking '+materials[mat][0]+' · '+(mat+1)+'/9';}
+async function rebake(){let id=++bakeId;if(worker){worker.terminate();worker=null}baking=true;textureReady=false;updateExportState();let time=performance.now();toast('Rebaking textures...',true);$('#bakeStatus').textContent='Generating deterministic PBR maps…' ;if(!allocated){if(gl.getParameter(gl.MAX_TEXTURE_SIZE)<4096){baking=false;$('#bakeStatus').textContent='GPU limit: 4096² atlases unsupported.';updateExportState();toast('Требуется поддержка текстур 4096².');return}for(let k=0;k<3;k++){if(id!==bakeId)return;gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,atlasCanvases[k]);await nextFrame()}allocated=true}
+ const options={finish:state.finish,wear:state.wear,grime:state.grime,heat:state.heat,seed:state.seed,serial:state.serial,serialEnabled:state.serialEnabled,id};let pending=Promise.resolve();
+ const fail=error=>{if(id!==bakeId)return;if(worker){worker.terminate();worker=null}baking=false;textureReady=false;updateExportState();$('#bakeStatus').textContent='Bake failed. Change a finish to retry.';toast('Texture bake failed: '+error)};
+ const handle=msg=>{if(id!==bakeId)return;if(msg.error){fail(msg.error);return}if(msg.done){pending=pending.then(async()=>{if(id!==bakeId)return;for(let k=0;k<3;k++){if(id!==bakeId)return;gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR);await nextFrame()}if(id!==bakeId)return;bakeMs=performance.now()-time;$('#statBake').textContent=(bakeMs/1000).toFixed(2)+' s (async)';$('#bakeStatus').textContent='PBR READY · Albedo / normal / ORM · mipmapped';renderRevision++;baking=false;textureReady=true;updateExportState();if(worker){worker.terminate();worker=null}toast(finishes[state.finish][0]+' · textures ready')}).catch(e=>fail(e.message))}else pending=pending.then(()=>receiveTile(msg,id)).catch(e=>fail(e.message))};
+ const fallback=()=>textureJob(options,async m=>{handle(m);await pending},()=>id===bakeId).then(()=>handle({done:true})).catch(e=>fail(e.message));
+ try{if(typeof Worker==='undefined'||typeof OffscreenCanvas==='undefined')throw Error('Worker canvas unavailable');if(!workerURL)workerURL=URL.createObjectURL(new Blob([workerSource],{type:'text/javascript'}));worker=new Worker(workerURL);worker.onmessage=e=>handle(e.data);worker.onerror=e=>{e.preventDefault();if(id!==bakeId)return;worker.terminate();worker=null;fallback()};worker.postMessage(options)}catch(e){fallback()}}
+function scheduleBake(){clearTimeout(bakeTimer);++bakeId;if(worker){worker.terminate();worker=null}baking=true;textureReady=false;updateExportState();bakeTimer=setTimeout(rebake,220)}
+document.querySelectorAll('[data-finish]').forEach(b=>b.onclick=()=>{state.finish=+b.dataset.finish;document.querySelectorAll('[data-finish]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));scheduleBake()});
+for(let k of ['wear','grime','heat'])$('#'+k).oninput=e=>{state[k]=e.target.value/100;$('#'+k+'Value').textContent=e.target.value+'%';scheduleBake()};$('#serialEnabled').onchange=e=>{state.serialEnabled=e.target.checked;scheduleBake()};$('#serial').oninput=e=>{state.serial=e.target.value.toUpperCase();scheduleBake()};$('#randomSeed').onclick=()=>{state.seed=Math.floor(rng(state.seed)()*4294967296);$('#seedLabel').textContent='SEED '+state.seed+' · DETERMINISTIC';scheduleBake()};
+setTimeout(rebake,80);
+
+function downloadBlob(blob,name){let url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
+function canvasBlob(c){return new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(Error('PNG encoding failed')),'image/png'))}
+function assetReadme(){return `M249 / SAW · FIELD EQUIPMENT ARCHIVE
+Standalone procedural visual game asset, not CAD or manufacturing data.
+Units: meters; +X bore, +Y up; length 1.041m.
+Current configuration and posed named meshes are exported, not animation clips.
+Catmull–Rom belt, constant cartridge pitch; merged by material.
+Albedo: sRGB. Normal: tangent-space +Y. ORM: R=AO G=roughness B=metalness.
+Atlas: 4096x4096, 8px inset; phosphate/barrel 2048, other surfaces 1024.
+UV atlas rectangles: ${JSON.stringify(atlasLayout)}
+Seed: ${state.seed}; finish: ${finishes[state.finish][0]}; wear: ${state.wear}; grime: ${state.grime}; heat: ${state.heat}.
+Serial: ${state.serialEnabled?state.serial:'disabled'}
+Configuration: ${JSON.stringify(state)}
+Triangles: ${triangles}. No downloaded textures or external libraries.
+Performance depends on device, resolution and driver; asynchronous texture synthesis.
+Series architecture inherited from the AR15 viewer present in this repository.
+`}
+const crcTable=Uint32Array.from({length:256},(_,i)=>{let c=i;for(let k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;return c>>>0});
+function crc32(data){let c=0xffffffff;for(let b of data)c=crcTable[(c^b)&255]^(c>>>8);return(c^0xffffffff)>>>0}
+async function zipStore(entries){let chunks=[],central=[],offset=0;for(let [name,blob] of entries){let data=new Uint8Array(await blob.arrayBuffer()),filename=new TextEncoder().encode(name),crc=crc32(data),header=new Uint8Array(30+filename.length),v=new DataView(header.buffer);v.setUint32(0,0x04034b50,true);v.setUint16(4,20,true);v.setUint16(6,0x800,true);v.setUint16(12,33,true);v.setUint32(14,crc,true);v.setUint32(18,data.length,true);v.setUint32(22,data.length,true);v.setUint16(26,filename.length,true);header.set(filename,30);chunks.push(header,data);let c=new Uint8Array(46+filename.length),d=new DataView(c.buffer);d.setUint32(0,0x02014b50,true);d.setUint16(4,20,true);d.setUint16(6,20,true);d.setUint16(8,0x800,true);d.setUint16(14,33,true);d.setUint32(16,crc,true);d.setUint32(20,data.length,true);d.setUint32(24,data.length,true);d.setUint16(28,filename.length,true);d.setUint32(42,offset,true);c.set(filename,46);central.push(c);offset+=header.length+data.length;await nextFrame()}let size=central.reduce((s,c)=>s+c.length,0),end=new Uint8Array(22),v=new DataView(end.buffer);v.setUint32(0,0x06054b50,true);v.setUint16(8,entries.length,true);v.setUint16(10,entries.length,true);v.setUint32(12,size,true);v.setUint32(16,offset,true);return new Blob([...chunks,...central,end],{type:'application/zip'})}
+function gltfVertices(b,r){
+ const data=new Float32Array(b.count*12);
+ for(let i=0;i<b.count;i+=3){
+  const base=i*12,p0=b.data.subarray(base,base+3),p1=b.data.subarray(base+12,base+15),p2=b.data.subarray(base+24,base+27),e1=V.sub(p1,p0),e2=V.sub(p2,p0);
+  const du1=(b.data[base+18]-b.data[base+6])*r[2],dv1=(b.data[base+19]-b.data[base+7])*r[3],du2=(b.data[base+30]-b.data[base+6])*r[2],dv2=(b.data[base+31]-b.data[base+7])*r[3],det=du1*dv2-du2*dv1;
+  let t,bitangent;if(Math.abs(det)>1e-14){t=V.mul(V.sub(V.mul(e1,dv2),V.mul(e2,dv1)),1/det);bitangent=V.mul(V.sub(V.mul(e2,du1),V.mul(e1,du2)),1/det)}
+  for(let k=0;k<3;k++){
+   const o=(i+k)*12,n=Array.from(b.data.subarray(o+3,o+6));let tangent=t&&V.sub(t,V.mul(n,V.dot(n,t)));
+   if(!tangent||V.dot(tangent,tangent)<1e-14)tangent=V.cross(Math.abs(n[1])<.9?[0,1,0]:[1,0,0],n);
+   tangent=V.norm(tangent);const sign=bitangent&&V.dot(V.cross(n,tangent),bitangent)<0?-1:1;
+   data.set(b.data.subarray(o,o+6),o);data[o+6]=r[0]+b.data[o+6]*r[2];data[o+7]=r[1]+b.data[o+7]*r[3];data.set([...tangent,sign],o+8);
+  }
+ }
+ return data;
+}
+
+async function createGLB(){let json={asset:{version:'2.0',generator:'Field Equipment Archive · procedural M249 / SAW'},scene:0,scenes:[{nodes:[]}],nodes:[],meshes:[],accessors:[],bufferViews:[],buffers:[{byteLength:0}],images:[],textures:[],samplers:[{magFilter:9729,minFilter:9987,wrapS:33071,wrapT:33071}],materials:materials.map(m=>({name:m[0],pbrMetallicRoughness:{baseColorTexture:{index:0},metallicRoughnessTexture:{index:2},metallicFactor:1,roughnessFactor:1},normalTexture:{index:1,scale:.62},occlusionTexture:{index:2},doubleSided:true})),extras:{readme:assetReadme()}},chunks=[],offset=0;
+ function add(data,target,stride){let bytes=data instanceof Uint8Array?data:new Uint8Array(data.buffer),index=json.bufferViews.length;json.bufferViews.push({buffer:0,byteOffset:offset,byteLength:bytes.length,...(target?{target}:{}),...(stride?{byteStride:stride}:{})});chunks.push(bytes);let pad=(4-bytes.length%4)%4;if(pad)chunks.push(new Uint8Array(pad));offset+=bytes.length+pad;return index}
+ for(let k=0;k<3;k++){let png=await canvasBlob(atlasCanvases[k]),view=add(new Uint8Array(await png.arrayBuffer()));json.images.push({bufferView:view,mimeType:'image/png'});json.textures.push({sampler:0,source:k});await nextFrame()}
+ for(let b of batches){if(!b.visible)continue;let mat=effectiveMaterial(b),r=atlasLayout[mat].uv,data=gltfVertices(b,r);if(b.tint||b.group==='boxShell'&&state.translucent){let variant=JSON.parse(JSON.stringify(json.materials[mat]));variant.name=b.name;variant.pbrMetallicRoughness.baseColorFactor=[...(b.tint||[1,1,1]).map(x=>Math.pow(x,2.2)),b.group==='boxShell'&&state.translucent?(b.alpha||.26):1];if(variant.pbrMetallicRoughness.baseColorFactor[3]<1)variant.alphaMode='BLEND';mat=json.materials.length;json.materials.push(variant)}let view=add(data,34962,48),pos=json.accessors.length;json.accessors.push({bufferView:view,byteOffset:0,componentType:5126,count:b.count,type:'VEC3',min:b.min,max:b.max},{bufferView:view,byteOffset:12,componentType:5126,count:b.count,type:'VEC3'},{bufferView:view,byteOffset:24,componentType:5126,count:b.count,type:'VEC2'},{bufferView:view,byteOffset:32,componentType:5126,count:b.count,type:'VEC4'});json.scenes[0].nodes.push(json.nodes.length);json.nodes.push({name:b.name,mesh:json.meshes.length,...(b.matrix.some((x,i)=>Math.abs(x-(i%5===0?1:0))>1e-8)?{matrix:Array.from(b.matrix)}:{})});json.meshes.push({name:b.name,primitives:[{attributes:{POSITION:pos,NORMAL:pos+1,TEXCOORD_0:pos+2,TANGENT:pos+3},material:mat,mode:4}]});await nextFrame()}
+ json.buffers[0].byteLength=offset;let text=new TextEncoder().encode(JSON.stringify(json)),padded=new Uint8Array(Math.ceil(text.length/4)*4);padded.fill(32);padded.set(text);let header=new Uint32Array([0x46546c67,2,12+8+padded.length+8+offset]),jh=new Uint32Array([padded.length,0x4e4f534a]),bh=new Uint32Array([offset,0x004e4942]);return new Blob([header,jh,padded,bh,...chunks],{type:'model/gltf-binary'})}
+let exporting=false;
+document.addEventListener('keydown',e=>{if(exporting&&/^[1-8rawe]$/i.test(e.key)){e.preventDefault();e.stopImmediatePropagation()}},true);
+async function exportAsset(type){if(exporting||(!textureReady||baking)&&type!=='png')return;exporting=true;let locked=[...document.querySelectorAll('button,input')].map(el=>[el,el.disabled]);locked.forEach(([el])=>el.disabled=true);clearTimeout(beltTimer);if(beltBuiltCount!==state.count||beltBuiltSag!==state.sag)rebuildBelt();updateModels(10);toast('Preparing '+type.toUpperCase()+' export...',true);try{if(type==='png'){draw();let c=document.createElement('canvas');c.width=canvas.width;c.height=canvas.height;let ctx=c.getContext('2d'),g=ctx.createRadialGradient(c.width*.5,c.height*.48,0,c.width*.5,c.height*.48,c.width*.7);g.addColorStop(0,'#403a30');g.addColorStop(1,'#191714');ctx.fillStyle=g;ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(canvas,0,0);downloadBlob(await canvasBlob(c),'lmg_m249_viewport.png')}else if(type==='glb')downloadBlob(await createGLB(),'lmg_m249_'+finishes[state.finish][0].toLowerCase().replaceAll(' ','_')+'.glb');else{let entries=[];for(let k=0;k<3;k++)entries.push([['albedo.png','normal.png','orm.png'][k],await canvasBlob(atlasCanvases[k])]);let c=document.createElement('canvas');c.width=c.height=4096;let ctx=c.getContext('2d');for(let [channel,name] of [[0,'ao.png'],[1,'roughness.png'],[2,'metalness.png']]){for(let y=0;y<4096;y+=128){let image=atlasContexts[2].getImageData(0,y,4096,128);for(let i=0;i<image.data.length;i+=4){let value=image.data[i+channel];image.data[i]=image.data[i+1]=image.data[i+2]=value;image.data[i+3]=255}ctx.putImageData(image,0,y);await nextFrame()}entries.push([name,await canvasBlob(c)])}entries.push(['README.txt',new Blob([assetReadme()],{type:'text/plain;charset=utf-8'})]);downloadBlob(await zipStore(entries),'lmg_m249_pbr_textures.zip')}toast(type.toUpperCase()+' exported · local file')}catch(e){toast('Export failed: '+e.message)}finally{exporting=false;locked.forEach(([el,disabled])=>el.disabled=disabled);updateExportState()}}
+for(let type of ['glb','png','zip'])$('#'+type).onclick=()=>exportAsset(type);
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(worker)worker.terminate();toast('WebGL context lost. Waiting for GPU recovery…',true)});canvas.addEventListener('webglcontextrestored',()=>location.reload());
+addEventListener('pagehide',e=>{if(e.persisted)return;++bakeId;if(worker)worker.terminate();if(workerURL)URL.revokeObjectURL(workerURL);for(let b of [...batches,ground])gl.deleteBuffer(b.buffer);textures.forEach(t=>gl.deleteTexture(t));gl.deleteProgram(prog)});
+window.viewerDiagnostics=()=>({triangles,atlasLayout,belt:window.beltDiagnostics?window.beltDiagnostics():null,activeTriangles:batches.filter(b=>b.visible).reduce((n,b)=>n+b.count/3,0),batches:batches.length,firstFrameMs:firstFrame,softwareGPU,renderScale,buildMs,bakeMs,baking,webgl:webgl2?2:1,seed:state.seed,finish:finishes[state.finish][0],glError:gl.getError(),textureCount:textures.length,configuration:{...state},parts:batches.map(b=>({name:b.name,group:b.group,material:materials[effectiveMaterial(b)][0],visible:b.visible,triangles:b.count/3,matrix:Array.from(b.matrix)}))});
+})();
+</script>
+</body>
+</html>
