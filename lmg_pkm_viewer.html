@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>ПКМ / 7.62R / Field Equipment Archive</title>
+<style>
+:root{--bg:#17191c;--panel:#1d2024;--line:#3e4652;--text:#e5eaf0;--muted:#a3acb8;--accent:#8c9fd4;--mono:ui-monospace,SFMono-Regular,Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:13px/1.5 system-ui,sans-serif}button,input{font:inherit}button{color:inherit;background:transparent;border:1px solid var(--line);cursor:pointer;min-height:44px;border-radius:3px}button:hover{background:#ffffff09;border-color:#76808a}button[aria-pressed=true]{border-color:var(--accent);background:#8c9fd414;color:#b1c2ed}button:disabled{opacity:.4;cursor:wait}:focus-visible{outline:2px solid var(--accent);outline-offset:4px}input{accent-color:var(--accent)}svg{display:block}header{height:76px;display:flex;align-items:center;gap:16px;padding:0 28px;border-bottom:1px solid var(--line);background:#191c20;position:relative;z-index:4}.brand{color:var(--accent);border:1px solid #4a5676;padding:9px}.brand svg{width:23px;height:23px}.brand-name{font-weight:650;font-size:12px;letter-spacing:2px}.edition{font:9px var(--mono);letter-spacing:1.7px;color:var(--muted);margin-top:5px}.header-spacer{flex:1}.offline{font:10px var(--mono);letter-spacing:1px;color:var(--muted);display:flex;align-items:center;gap:8px;margin-right:12px}.offline i{width:5px;height:5px;border-radius:50%;background:#a9bb97;box-shadow:0 0 9px #a9bb9733}.icon-button{width:44px;display:grid;place-items:center}.icon-button svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.4}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 320px;height:calc(100dvh - 76px)}.stage{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 48%,#363e4b 0%,#292f38 33%,#20242a 63%,#17191c 100%)}.stage:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 140px #0003;z-index:-1}#viewport{width:100%;height:100%;display:block;touch-action:none;cursor:grab}#viewport:active{cursor:grabbing}.scene-heading{position:absolute;left:36px;top:31px;pointer-events:none}.eyebrow{font:9px var(--mono);letter-spacing:2.4px;color:var(--accent);display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";width:22px;height:1px;background:var(--accent)}h1{font-size:46px;font-weight:450;letter-spacing:-1.9px;line-height:1.1;margin:15px 0 9px}.scene-heading p{color:var(--muted);font-size:12px;margin:0}.scene-heading p span{font-family:var(--mono);font-size:10px;color:#777f88;padding:0 9px}.scene-index{position:absolute;right:28px;top:33px;text-align:right;font:10px/1.9 var(--mono);color:#858e97;letter-spacing:1px}.scene-index strong{display:block;color:#c7cdd2;font-weight:400;font-size:12px}.view-label{position:absolute;left:36px;bottom:142px;font:9px var(--mono);letter-spacing:1.8px;color:var(--muted);display:flex;gap:15px;align-items:center}.view-label i{width:6px;height:6px;border:1px solid var(--accent);transform:rotate(45deg)}.scale{position:absolute;right:32px;bottom:133px;font:9px var(--mono);color:#858e97;text-align:center}.scale:before{content:"";display:block;width:92px;border:1px solid #677079;border-top:0;height:5px;margin-bottom:7px}.render-modes{position:absolute;left:28px;bottom:64px;display:flex;gap:2px;border:1px solid #4a505766;padding:4px;background:#1d2024eb;backdrop-filter:blur(10px);border-radius:5px;max-width:calc(100% - 56px);overflow:auto}.render-modes button{border-color:transparent;font:10px var(--mono);white-space:nowrap;padding:0 12px;min-height:44px}.render-modes button[aria-pressed=true]{border-color:#667da8}.gestures{position:absolute;bottom:24px;left:36px;right:30px;display:flex;gap:17px;align-items:center;color:#919aa2;font:9px var(--mono)}.gestures b{font-weight:400;color:#c6cbd0}.gestures .right{margin-left:auto;color:#76818a}.inspector{background:var(--panel);border-left:1px solid var(--line);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#45494d transparent}.inspector section{padding:22px 22px;border-bottom:1px solid #333943}.inspector .intro{padding:25px 22px 23px}.tag{font:9px var(--mono);color:var(--accent);letter-spacing:1.4px;border:1px solid #4a5676;display:inline-block;padding:3px 7px}.intro h2{font-size:22px;letter-spacing:-.6px;font-weight:500;margin:13px 0 8px}.intro p{color:var(--muted);font-size:11px;line-height:1.8;margin:0}h3{font:9px var(--mono);letter-spacing:1.8px;color:#9ea7af;margin:0 0 14px;display:flex;justify-content:space-between}h3 span{font-size:9px;letter-spacing:0;color:#6f7a83}.camera-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.camera-grid button{font:10px var(--mono);text-align:left;padding:0 10px;display:flex;justify-content:space-between;align-items:center}.camera-grid small{color:#747d85;font-size:9px}.material{display:flex;align-items:center;width:100%;padding:9px 10px;text-align:left;gap:10px;margin:5px 0;min-height:54px;border-color:#333943}.swatch{flex:0 0 25px;width:25px;height:25px;border-radius:50%;border:1px solid #ffffff26;box-shadow:inset 0 0 5px #0006}.material strong{display:block;font-size:11px;font-weight:500}.material small{display:block;color:#8d979f;font:9px var(--mono);margin-top:3px}.material .tick{margin-left:auto;color:var(--accent);opacity:0}.material[aria-pressed=true] .tick{opacity:1}.micro{font:9px/1.8 var(--mono);color:#869199;margin:10px 0 0}.inline-check{display:flex;align-items:center;gap:8px;min-height:44px;font-size:11px;color:var(--muted);cursor:pointer}.finishes{display:grid;grid-template-columns:1fr 1fr;gap:6px}.finish{font-size:10px;padding:8px;text-align:left;display:flex;align-items:center;gap:7px}.finish .swatch{width:14px;height:14px;flex-basis:14px}.range-label{display:flex;justify-content:space-between;font:10px var(--mono);margin-top:16px;color:var(--muted)}output{color:#d7dde2}input[type=range]{width:100%;height:28px;cursor:pointer}input[type=text]{width:100%;height:44px;background:#17191c;border:1px solid var(--line);color:var(--text);border-radius:3px;font:11px var(--mono);padding:10px}.wide{width:100%;font:10px var(--mono);margin-top:8px}.config-row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:5px 0;font-size:11px;color:var(--muted)}.config-row button{font:9px var(--mono);padding:0 9px;min-width:105px}.segmented{display:flex;gap:4px;margin-top:8px}.segmented button{flex:1;font:11px var(--mono)}table{width:100%;border-collapse:collapse;font:10px/1.65 var(--mono)}td{padding:6px 0;border-bottom:1px solid #303640;color:var(--muted)}td:last-child{text-align:right;color:#d5dbe0}.download-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.download-row button{font:11px var(--mono)}.footnote{padding:19px 22px;color:#6e7983;font:9px/1.8 var(--mono)}.sheet-handle{display:none}#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#292d32;border:1px solid #6e5b43;box-shadow:0 8px 30px #0005;padding:12px 20px;border-radius:4px;font:11px var(--mono);z-index:20;transition:.2s;max-width:90vw}#toast.visible{opacity:1;transform:translate(-50%,0)}#error{display:none;position:absolute;inset:30%;padding:24px;background:var(--panel);border:1px solid var(--accent);z-index:6;min-width:260px;height:max-content}dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);max-width:450px;padding:28px}dialog::backdrop{background:#0009}dialog h2{margin-top:0;font-weight:500}dialog p{color:var(--muted);font-size:12px}dialog button{padding:0 20px;float:right}.loading-dot{position:absolute;right:28px;bottom:25px;font:9px var(--mono);color:var(--accent)}button{min-height:44px!important}@media(min-width:1400px){.scene-heading{left:48px;top:42px}h1{font-size:58px}.render-modes{left:40px}.view-label,.gestures{left:48px}}@media(max-width:1100px){header{padding:0 20px}.scene-index{display:none}.gestures{gap:10px;font-size:8px}.gestures .right{display:none}.render-modes{left:20px;max-width:calc(100% - 40px)}.render-modes button{padding:0 9px}.scene-heading{left:28px}h1{font-size:40px}}@media(max-width:899px){.workspace{display:block;height:calc(100dvh - 76px)}.stage{height:calc(100% - 58px)}.inspector{position:fixed;bottom:0;left:0;right:0;height:58px;z-index:8;border:1px solid var(--line);border-radius:14px 14px 0 0;transition:height .25s;overflow:hidden;box-shadow:0 -10px 50px #0003}.inspector.open{height:72dvh;overflow:auto}.sheet-handle{display:flex;width:100%;height:58px;align-items:center;justify-content:space-between;padding:0 24px;border:0;border-radius:14px 14px 0 0;background:var(--panel);position:sticky;top:0;z-index:2;font:10px var(--mono);letter-spacing:1.2px}.sheet-handle:before{content:"";position:absolute;left:calc(50% - 18px);top:6px;width:36px;height:3px;border-radius:3px;background:#5b6269}.inspector section{padding:19px 24px}.camera-grid{grid-template-columns:repeat(4,1fr)}#materials{display:grid;grid-template-columns:1fr 1fr;gap:4px}.material{margin:0}.brand-name{font-size:10px;letter-spacing:1px}.edition{font-size:8px;letter-spacing:1px}.offline{margin-right:0}.header-spacer{min-width:0}.scene-heading{top:25px}.scale{display:none}#toast{bottom:75px}.finishes{grid-template-columns:repeat(3,1fr)}.render-modes{bottom:56px}.view-label{bottom:126px}.gestures{bottom:20px}}@media(max-width:540px){header{gap:8px;padding:0 13px}.brand{padding:7px}.brand svg{width:20px;height:20px}.offline{font-size:0;gap:0;margin:0 5px}.edition{font-size:7px}.brand-name{font-size:9px}.icon-button{width:38px;min-width:38px}.scene-heading{left:22px}.scene-heading p{font-size:10px}h1{font-size:38px}.scene-heading p span{padding:0 4px}.gestures{left:22px;right:15px;gap:12px}.gestures .desktop{display:none}.camera-grid{grid-template-columns:1fr 1fr}.view-label{left:22px}.render-modes{left:14px;max-width:calc(100% - 28px)}.render-modes button{padding:0 10px}.finishes{grid-template-columns:1fr 1fr}.material strong{font-size:10px}.material small{font-size:8px}.material{padding:8px;gap:7px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.belt-builder{background:linear-gradient(130deg,#8c9fd40b,transparent)}.belt-builder h3{color:var(--accent)}input[type=range]{min-height:44px}input[type=checkbox]{width:16px;height:16px} @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.phase{font:10px/1.7 var(--mono);color:var(--accent);min-height:38px}.feed-panel{background:#8c9fd408}.feed-hud{position:absolute;left:36px;bottom:174px;max-width:430px;padding:10px 14px;border-left:2px solid var(--accent);background:#17191cd9;color:#bdcbed;font:10px/1.7 var(--mono);pointer-events:none}.feed-hud[hidden]{display:none}@media(max-width:899px){.feed-hud{left:18px;bottom:157px;max-width:calc(100% - 36px);font-size:9px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1 23 7v10l-11 6L1 17V7zM1 7l11 6 11-6M12 13v10M7 4l11 6v7M6 10v7l6 3"/></svg></div>
+ <div><div class="brand-name">FIELD EQUIPMENT ARCHIVE</div><div class="edition">INTERACTIVE ASSET STUDY / SERIES 08 · PERMANENT LINKS</div></div>
+ <div class="header-spacer"></div><div class="offline"><i></i>OFFLINE READY</div>
+ <button class="icon-button" id="auto" aria-label="Автовращение (A)" aria-pressed="false" title="Auto rotate · A"><svg viewBox="0 0 24 24"><path d="M20 8a9 9 0 1 0 1 8M20 3v6h-6"/></svg></button>
+ <button class="icon-button" id="reset" aria-label="Сбросить камеру (R)" title="Reset · R"><svg viewBox="0 0 24 24"><path d="M5 9V4m0 5h5M5 9a8 8 0 1 1-1 7"/></svg></button>
+ <button class="icon-button" id="help" aria-label="Управление и информация" title="Controls"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8a3 3 0 1 1 4 3c-1 1-1 2-1 3m0 2v1"/></svg></button>
+</header>
+<main class="workspace">
+ <div class="stage" id="stage">
+  <canvas id="viewport" tabindex="0" aria-label="3D-модель ПКМ / 7.62R. Ракурсы: 1–8. R — сброс, A — вращение, W — сетка, E — разборка."></canvas>
+  <div class="scene-heading"><div class="eyebrow">GENERAL PURPOSE / 008</div><h1>ПКМ / 7.62R</h1><p>Неразрывная связь.<span>/</span>Сначала назад. Затем вперёд.</p></div>
+  <div class="scene-index">ASSET INDEX<strong>FE–PKM / 1984</strong>7.62 × 54R</div>
+  <div class="view-label"><i></i><span id="viewName">HERO PERSPECTIVE</span><span>55 MM</span></div>
+  <div class="scale">1:1 METRIC ASSET</div>
+  <div class="render-modes" role="group" aria-label="Режим рендера" id="renderModes"></div>
+  <div class="gestures"><span><b>DRAG</b> Orbit</span><span><b>SCROLL / PINCH</b> Zoom</span><span class="desktop"><b>SHIFT</b> Pan</span><span class="desktop"><b>2× CLICK</b> Focus</span><span class="right">PROCEDURAL · NO EXTERNAL ASSETS</span></div>
+  <div id="feedHud" class="feed-hud" hidden></div>
+  <div id="error" role="alert"></div>
+ </div>
+ <aside class="inspector" id="inspector" aria-label="Инспектор ассета">
+  <button class="sheet-handle" id="sheet" aria-expanded="false" aria-controls="inspectorContent">ASSET INSPECTOR <span id="sheetArrow">↑</span></button>
+  <div id="inspectorContent">
+  <section class="intro"><div class="tag">GAME ASSET / PROCEDURAL</div><h2>Два такта. Одна лента.</h2><p>ПКМ / единый пулемёт · 7.62 × 54R.<br>Воронёная сталь, берёза, патрон с закраиной.<br>Нерассыпная лента. Двухтактная подача.</p></section>
+  <section><h3>CAMERA <span>01 — 08</span></h3><div class="camera-grid" id="cameras"></div></section>
+  <section><h3>MATERIALS <span>09 SURFACES</span></h3><div id="materials"></div><label class="inline-check"><input type="checkbox" id="isolate"> Изолировать выбранный материал</label><p class="micro">Выберите поверхность для подсветки.<br>Повторный клик — показать всё.</p></section>
+  <section><h3>FINISH / ОКРАСКА</h3><div class="finishes" id="finishes"></div>
+   <label class="range-label" for="wear">Wear / износ <output id="wearValue">28%</output></label><input id="wear" type="range" min="0" max="100" value="28">
+   <label class="range-label" for="grime">Grime / загрязнение <output id="grimeValue">48%</output></label><input id="grime" type="range" min="0" max="100" value="48">
+   <label class="range-label" for="heat">Barrel heat / побежалость <output id="heatValue">55%</output></label><input id="heat" type="range" min="0" max="100" value="55">
+   <label class="inline-check"><input id="serialEnabled" type="checkbox" checked> Serial number / маркировка</label><input id="serial" type="text" aria-label="Серийный номер" value="АГ 1247" maxlength="22" spellcheck="false">
+   <div class="segmented" role="group" aria-label="Материал гильз"><button data-case="0" aria-pressed="true">Латунь</button><button data-case="1" aria-pressed="false">Стальной лак</button></div><button class="wide" id="randomSeed">↻ &nbsp; Randomize wear seed</button><p class="micro" id="seedLabel">SEED 19841247 · DETERMINISTIC</p>
+  </section>
+  <section><h3>CONFIGURATION</h3><div id="configuration"></div></section>
+   <section class="belt-builder"><h3>BELT BUILDER <span>PERMANENT LINKS</span></h3><label class="range-label" for="count">Visible cartridges <output id="countValue">28 rounds</output></label><input id="count" type="range" min="0" max="50" value="28"><label class="range-label" for="sag">Провисание <output id="sagValue">50%</output></label><input id="sag" type="range" min="0" max="100" value="50"><p class="micro">Звенья остаются соединёнными. Закраина выступает за корпус гильзы. Каждый 4-й патрон — зелёный трассер.</p></section>
+   <section class="feed-panel"><h3>FEED CYCLE <span>EXTRACT → CHAMBER</span></h3><label class="range-label" for="feed">Двухтактная подача <output id="feedValue">0%</output></label><input id="feed" type="range" min="0" max="100" value="0"><p class="phase" id="phase" aria-live="polite">01 / Патрон в звене · закраина за захватом</p><button id="playFeed" class="wide" aria-pressed="false">▶ Демонстрация цикла · C</button><label class="inline-check"><input id="cutaway" type="checkbox" checked> Учебный разрез коробки</label><p class="micro">−X: извлечение НАЗАД → опускание → +X: досылание. Пустое звено остаётся в ленте; гильза уходит вниз. Замедленная схема, не симуляция выстрела.</p></section>
+  <section><h3>EXPLODED VIEW <span id="explodedValue">0%</span></h3><label class="micro" for="exploded">Разнесение узлов / disassembly axes</label><input id="exploded" type="range" min="0" max="100" value="0"></section>
+   <section><h3>SPECIFICATIONS</h3><table><tbody><tr><td>Калибр</td><td>7.62 × 54R</td></tr><tr><td>Длина</td><td>1173 mm</td></tr><tr><td>Ствол</td><td>645 mm</td></tr><tr><td>Масса</td><td>7.5 kg</td></tr><tr><td>Темп</td><td>650 выстр./мин</td></tr><tr><td>Начальная скорость</td><td>825 m/s</td></tr><tr><td>Питание</td><td>Нерассыпная лента</td></tr><tr><td>Автоматика</td><td>Газоотвод / длинный ход</td></tr></tbody></table></section>
+  <section><h3>MESH STATS <span id="apiName">WEBGL</span></h3><table><tbody id="stats"></tbody></table><p class="micro" id="bakeStatus" aria-live="polite">Preparing procedural surfaces…</p></section>
+  <section><h3>EXPORT <span>LOCAL ONLY</span></h3><div class="download-row"><button id="glb">↓ GLB</button><button id="png">↓ PNG</button><button id="zip">↓ ZIP</button></div><p class="micro">GLB · Current configuration + PBR<br>ZIP · Five PBR maps + packed ORM + README</p></section>
+  <div class="footnote">FIELD EQUIPMENT ARCHIVE / 008<br>METERS · RIGHT-HANDED · +X BORE<br>Artist-built visual reference. Not CAD.</div>
+  </div>
+ </aside>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="helpDialog"><h2>Inspect every surface.</h2><p>ЛКМ — орбита. ПКМ или Shift + ЛКМ — панорама. Колесо — масштаб. Двойной клик — фокус на реальной точке поверхности. На сенсорном экране: один палец — орбита, два — масштаб и панорама.</p><p>1–8 — камеры · R — сброс · A — автовращение · W — каркас · E — разнесение узлов · B — сошки · C — цикл подачи, T — крышка. Tab — переход по интерфейсу, стрелки — слайдеры.</p><p>Все текстуры синтезируются локально. Серийный номер: кириллица, цифры и дефис. Все девять материалов имеют карты albedo, normal, roughness, metalness и AO. ZIP и GLB доступны после завершения перепекания. Это художественный игровой ассет, а не производственный чертёж.</p><form method="dialog"><button>Понятно</button></form></dialog>
+<script>
+'use strict';
+(() => {
+const $=s=>document.querySelector(s), TAU=Math.PI*2, clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), mix=(a,b,t)=>a+(b-a)*t;
+const nextFrame=()=>new Promise(r=>requestAnimationFrame(r));
+const yieldTask=()=>new Promise(r=>setTimeout(r,0));
+const started=performance.now();
+function rng(seed){let s=seed>>>0;return()=>{s+=0x6D2B79F5;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+const V={add:(a,b)=>a.map((x,i)=>x+b[i]),sub:(a,b)=>a.map((x,i)=>x-b[i]),mul:(a,s)=>a.map(x=>x*s),dot:(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm:a=>{let l=Math.hypot(...a)||1;return a.map(x=>x/l)}};
+const Q={axis:(v,a)=>[...V.mul(V.norm(v),Math.sin(a/2)),Math.cos(a/2)],mul:(a,b)=>[a[3]*b[0]+a[0]*b[3]+a[1]*b[2]-a[2]*b[1],a[3]*b[1]-a[0]*b[2]+a[1]*b[3]+a[2]*b[0],a[3]*b[2]+a[0]*b[1]-a[1]*b[0]+a[2]*b[3],a[3]*b[3]-V.dot(a,b)],rotate:(q,v)=>{let t=V.mul(V.cross(q,v),2);return V.add(v,V.add(V.mul(t,q[3]),V.cross(q,t)))}};
+const M={identity:()=>new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]),mul:(a,b)=>{let o=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)for(let k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k];return o},perspective:(f,a,n,z)=>{let t=1/Math.tan(f/2);return new Float32Array([t/a,0,0,0,0,t,0,0,0,0,(z+n)/(n-z),-1,0,0,2*z*n/(n-z),0])},look:(eye,target)=>{let z=V.norm(V.sub(eye,target)),x=V.norm(V.cross([0,1,0],z)),y=V.cross(z,x);return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-V.dot(x,eye),-V.dot(y,eye),-V.dot(z,eye),1])},rigid:(q,p,t=[0,0,0])=>{let x=Q.rotate(q,[1,0,0]),y=Q.rotate(q,[0,1,0]),z=Q.rotate(q,[0,0,1]),d=V.sub(V.add(p,t),Q.rotate(q,p));return new Float32Array([...x,0,...y,0,...z,0,...d,1])},point:(m,p)=>[m[0]*p[0]+m[4]*p[1]+m[8]*p[2]+m[12],m[1]*p[0]+m[5]*p[1]+m[9]*p[2]+m[13],m[2]*p[0]+m[6]*p[1]+m[10]*p[2]+m[14]],inverseRigid:m=>{let o=new Float32Array([m[0],m[4],m[8],0,m[1],m[5],m[9],0,m[2],m[6],m[10],0,0,0,0,1]);o[12]=-V.dot([m[0],m[1],m[2]],m.slice(12,15));o[13]=-V.dot([m[4],m[5],m[6]],m.slice(12,15));o[14]=-V.dot([m[8],m[9],m[10]],m.slice(12,15));return o}};
+const materials=[['bluedsteel','Воронёная сталь','BLUE BLACK / OILED / RIVETED','#52617a'],['barrelsteel','Термическая сталь','FLUTED / STRAW → VIOLET','#756c88'],['parkerized','Фосфатированная сталь','STAMPED / LINKED / OXIDIZED','#626c59'],['wood','Лакированная берёза','GRAIN / AMBER VARNISH / DENTS','#b66b35'],['bakelite','Бакелит','MARBLED / RIBBED / WORN','#9d472c'],['polymer','Поздний полимер','BLACK / MOLDED / SCUFFED','#40464d'],['brass','Латунные гильзы','RIMMED / SEALED / HEADSTAMP','#c9a458'],['lacquered','Стальные гильзы','OLIVE LACQUER / 7.62 × 54R','#828854'],['canvas','Брезент','WOVEN / STITCHED / BRASS','#7d7955']];
+function packAtlas(){return [[0,0,2048],[2048,0,2048],[0,2048,1024],[1024,2048,1024],[2048,2048,1024],[3072,2048,1024],[0,3072,1024],[1024,3072,1024],[2048,3072,1024]].map(([x,y,s])=>({x,y,s,uv:[(x+8)/4096,(y+8)/4096,(s-16)/4096,(s-16)/4096]}))}
+const atlasLayout=packAtlas(),state={finish:1,wear:.28,grime:.48,heat:.55,seed:19841247,serial:'АГ 1247',serialEnabled:true,selected:-1,isolate:false,mode:0,exploded:0,cover:0,bipod:1,container:0,barrel:0,stock:0,optic:0,sling:0,regulator:0,count:28,sag:.5,auto:false,cases:0,feed:0,playing:false,cutaway:true};
+const batches=[];
+function batch(name,material,group='receiver',explode=[0,0,0]){let b={name,material,group,explode,raw:[],matrix:M.identity(),visible:true};batches.push(b);return b}
+function vertex(b,p,n,uv,e,bar){b.raw.push(...p,...n,uv[0],uv[1],e,...bar)}
+function triangle(b,a,c,d){let n=V.cross(V.sub(c.p,a.p),V.sub(d.p,a.p));if(V.dot(n,n)<1e-28)return;if(V.dot(n,V.add(V.add(a.n,c.n),d.n))<0)[c,d]=[d,c];[a,c,d].forEach((v,i)=>vertex(b,v.p,v.n,v.uv,v.e,[i===0?1:0,i===1?1:0,i===2?1:0]))}
+function makeSurface(b,nu,nv,fn,uvFn=(u,v)=>[.04+.92*u,.31+.65*(1-v)]){let grid=[];for(let j=0;j<=nv;j++)for(let i=0;i<=nu;i++){let u=i/nu,v=j/nv,o=fn(u,v);if(!o.n){let h=.0001,du=V.sub(fn(clamp(u+h),v).p,fn(clamp(u-h),v).p),dv=V.sub(fn(u,clamp(v+h)).p,fn(u,clamp(v-h)).p);o.n=V.norm(V.cross(du,dv))}o.uv=uvFn(u,v);o.e=o.e||0;grid.push(o)}for(let j=0;j<nv;j++)for(let i=0;i<nu;i++){let k=j*(nu+1)+i,a=grid[k],c=grid[k+1],d=grid[k+nu+1],e=grid[k+nu+2];triangle(b,a,c,e);triangle(b,a,e,d)}}
+function patch(b,nu,nv,fn,uv){makeSurface(b,nu,nv,fn,uv)}
+function box(b,center,size,r=.0004,n=3,q=[0,0,0,1],special=false){let h=size.map(x=>x/2);r=Math.min(r,...h.map(x=>x*.8));let inner=h.map(x=>x-r),sample=(u,h)=>{let e=r/(2*h);return u<1/n?u*n*e:u>1-1/n?1-(1-u)*n*e:e+(u-1/n)/(1-2/n)*(1-2*e)};n=Math.max(3,n);for(let axis=0;axis<3;axis++)for(let s of [-1,1]){let a=(axis+1)%3,c=(axis+2)%3;makeSurface(b,n,n,(u,v)=>{let p=[0,0,0];p[axis]=s*h[axis];p[a]=(sample(u,h[a])*2-1)*h[a];p[c]=(sample(v,h[c])*2-1)*h[c];let nearest=p.map((x,i)=>clamp(x,-inner[i],inner[i])),normal=V.norm(V.sub(p,nearest)),rounded=V.add(nearest,V.mul(normal,r));return{p:V.add(center,Q.rotate(q,rounded)),n:Q.rotate(q,normal),e:1-Math.max(...normal.map(Math.abs))+.15*(Math.abs(p[a])>inner[a]||Math.abs(p[c])>inner[c]?1:0)}},(u,v)=>[.04+.92*sample(u,h[a]),(special&&axis===2?0:.31)+(special&&axis===2?.25:.65)*(1-sample(v,h[c]))])}}
+function basis(a,b){let d=V.norm(V.sub(b,a)),u=V.norm(V.cross(d,Math.abs(d[1])>.9?[1,0,0]:[0,1,0]));return[d,u,V.cross(d,u)]}
+function disk(b,c,axis,r,inner=0,segments=40){let [d,u,v]=basis(c,V.add(c,axis));makeSurface(b,segments,1,(s,t)=>{let rr=mix(inner,r,t),a=s*TAU;return{p:V.add(c,V.add(V.mul(u,Math.cos(a)*rr),V.mul(v,Math.sin(a)*rr))),n:d,e:t>.66?.5:0}})}
+function cylinder(b,a,c,r1,r2=r1,seg=40,rings=6,caps=true){let [d,u,v]=basis(a,c),length=Math.hypot(...V.sub(c,a));makeSurface(b,seg,rings,(s,t)=>{let th=s*TAU,rad=V.add(V.mul(u,Math.cos(th)),V.mul(v,Math.sin(th))),bevel=Math.min(.00035,r1*.15),rr=mix(r1,r2,t)-bevel*(t===0||t===1?1:0);return{p:V.add(V.add(a,V.mul(d,length*t)),V.mul(rad,rr)),n:V.norm(V.add(rad,V.mul(d,(r1-r2)/length+(t===0?-.24:t===1?.24:0)))),e:t===0||t===1?.7:0}});if(caps){disk(b,a,V.mul(d,-1),r1-.0003,0,seg);disk(b,c,d,r2-.0003,0,seg)}}
+function tube(b,a,c,ro,ri,seg=48,rings=8){cylinder(b,a,c,ro,ro,seg,rings,false);let [d,u,v]=basis(a,c);makeSurface(b,seg,rings,(s,t)=>{let rad=V.add(V.mul(u,Math.cos(s*TAU)),V.mul(v,Math.sin(s*TAU)));return{p:V.add(V.add(a,V.mul(V.sub(c,a),t)),V.mul(rad,ri)),n:V.mul(rad,-1),e:t===0||t===1?.4:0}});disk(b,a,V.mul(d,-1),ro-.0002,ri,seg);disk(b,c,d,ro-.0002,ri,seg)}
+function catmull(points,t){let f=clamp(t)*(points.length-1),i=Math.min(points.length-2,Math.floor(f)),u=f-i,p0=points[Math.max(0,i-1)],p1=points[i],p2=points[i+1],p3=points[Math.min(points.length-1,i+2)];return p1.map((x,k)=>.5*((2*x)+(-p0[k]+p2[k])*u+(2*p0[k]-5*x+4*p2[k]-p3[k])*u*u+(-p0[k]+3*x-3*p2[k]+p3[k])*u*u*u))}
+function sweep(b,points,r,steps=32,sides=10){makeSurface(b,sides,steps,(u,t)=>{let p=catmull(points,t),d=V.norm(V.sub(catmull(points,clamp(t+.001)),catmull(points,clamp(t-.001)))),a=V.norm(V.cross(d,Math.abs(d[2])<.9?[0,0,1]:[0,1,0])),c=V.cross(d,a),n=V.add(V.mul(a,Math.cos(u*TAU)),V.mul(c,Math.sin(u*TAU)));return{p:V.add(p,V.mul(n,r)),n,e:.2}})}
+function lathe(b,center,profile,seg=40){let [d,u,v]=basis(center,V.add(center,[1,0,0]));makeSurface(b,seg,(profile.length-1)*4,(s,t)=>{let f=t*(profile.length-1),i=Math.min(profile.length-2,Math.floor(f)),k=f-i,px=mix(profile[i][0],profile[i+1][0],k),r=mix(profile[i][1],profile[i+1][1],k),rad=V.add(V.mul(u,Math.cos(s*TAU)),V.mul(v,Math.sin(s*TAU)));return{p:V.add(center,V.add(V.mul(d,px),V.mul(rad,r))),e:k<.1?.4:0}})}
+
+function mergeBatches(){for(let b of batches){if(!b.raw)continue;b.data=new Float32Array(b.raw);b.raw=null;b.count=b.data.length/12;b.min=[Infinity,Infinity,Infinity];b.max=[-Infinity,-Infinity,-Infinity];for(let i=0;i<b.data.length;i+=12)for(let k=0;k<3;k++){b.min[k]=Math.min(b.min[k],b.data[i+k]);b.max[k]=Math.max(b.max[k],b.data[i+k])}b.center=V.mul(V.add(b.min,b.max),.5)}}
+function extrude(b,poly,z,depth,bevel=.00035){
+ const xs=poly.map(p=>p[0]),ys=poly.map(p=>p[1]),x0=Math.min(...xs),y0=Math.min(...ys),dx=Math.max(...xs)-x0,dy=Math.max(...ys)-y0;let area=poly.reduce((s,p,i)=>{let q=poly[(i+1)%poly.length];return s+p[0]*q[1]-q[0]*p[1]},0);if(area<0)poly=poly.slice().reverse();
+ const cross=(a,c,d)=>(c[0]-a[0])*(d[1]-a[1])-(c[1]-a[1])*(d[0]-a[0]),ids=poly.map((_,i)=>i),faces=[];
+ while(ids.length>3){let found=false;for(let j=0;j<ids.length;j++){let a=ids[(j+ids.length-1)%ids.length],c=ids[j],d=ids[(j+1)%ids.length];if(cross(poly[a],poly[c],poly[d])<=1e-12)continue;if(ids.some(k=>k!==a&&k!==c&&k!==d&&cross(poly[a],poly[c],poly[k])>=-1e-12&&cross(poly[c],poly[d],poly[k])>=-1e-12&&cross(poly[d],poly[a],poly[k])>=-1e-12))continue;faces.push([a,c,d]);ids.splice(j,1);found=true;break}if(!found)throw Error('Invalid extrusion polygon: '+b.name)}faces.push(ids);
+ const inset=poly.map((p,i)=>{let prev=poly[(i+poly.length-1)%poly.length],next=poly[(i+1)%poly.length],a=V.norm([p[1]-prev[1],prev[0]-p[0],0]),c=V.norm([next[1]-p[1],p[0]-next[0],0]),n=V.add(a,c),k=bevel/Math.max(.25,1+V.dot(a,c));return[p[0]-n[0]*k,p[1]-n[1]*k]});
+ for(let s of [-1,1])for(let f of faces)triangle(b,...f.map(i=>({p:[...inset[i],z+s*depth/2],n:[0,0,s],uv:[.04+(poly[i][0]-x0)/dx*.92,.96-(poly[i][1]-y0)/dy*.65],e:0})));
+ for(let i=0;i<poly.length;i++){let j=(i+1)%poly.length,p=poly[i],q=poly[j],n=V.norm([q[1]-p[1],p[0]-q[0],0]);makeSurface(b,4,2,(u,v)=>({p:[mix(p[0],q[0],u),mix(p[1],q[1],u),z+(v-.5)*(depth-2*bevel)],n,e:.3}));for(let s of [-1,1])makeSurface(b,4,2,(u,v)=>({p:[mix(mix(p[0],q[0],u),mix(inset[i][0],inset[j][0],u),v),mix(mix(p[1],q[1],u),mix(inset[i][1],inset[j][1],u),v),z+s*(depth/2-bevel+v*bevel)],n:V.norm([n[0]*(1-v),n[1]*(1-v),s*v]),e:.5}))}
+}
+function mark(b,origin,w,h,rect,axis='side'){
+ makeSurface(b,1,1,(u,v)=>({p:axis==='top'?[origin[0]+u*w,origin[1],origin[2]+v*h]:[origin[0]+u*w,origin[1]+v*h,origin[2]],n:axis==='top'?[0,1,0]:[0,0,Math.sign(origin[2])],e:0}),(u,v)=>[rect[0]+(axis==='side'&&origin[2]<0?1-u:u)*rect[2],rect[1]+(1-v)*rect[3]]);
+}
+function screw(b,p,axis,r=.0022){let end=V.add(p,V.mul(axis,.0012));cylinder(b,p,end,r,r,16,2);let [d,u,v]=basis(p,end);for(let dir of [u,v])sweep(b,[V.add(end,V.mul(dir,-r*.6)),V.add(end,V.mul(dir,r*.6))],.00018,2,4)}
+/*
+ * PKM geometry source.  The host supplies the small WebGL geometry vocabulary:
+ * batch, makeSurface, patch, box, disk, cylinder, tube, sweep, catmull,
+ * lathe, extrude, mark, mergeBatches, V, Q and TAU.  Nothing in this file
+ * owns renderer state; every surface is emitted into a named batch.
+ *
+ * Coordinates are metres, the bore points along +X, +Y is up, and the origin
+ * is the centre of the receiver.  This is game geometry, not a manufacturing
+ * drawing: all sheet parts have a visible section and every hard silhouette
+ * gets a small procedural bevel from the host primitives.
+ */
+
+const PKM_MATERIAL = Object.freeze({
+  bluedsteel: 0,
+  barrelsteel: 1,
+  parkerized: 2,
+  wood: 3,
+  bakelite: 4,
+  polymer: 5,
+  brass: 6,
+  lacquered: 7,
+  canvas: 8,
+});
+
+const PKM_DIMENSIONS = Object.freeze({
+  overall: 1.173,
+  barrel: 0.645,
+  chamber: 0.082,
+  muzzle: 0.727,
+  massKg: 7.5,
+  rimDiameter: 0.0135,
+  cartridgeLength: 0.077,
+  beltPitch: 0.016,
+});
+
+function pkmMakeBatch(name, material, group, explode, made) {
+  const b = batch(name, material, group, explode || [0, 0, 0]);
+  if (made) made.push(b);
+  return b;
+}
+
+function pkmAxisBasis(origin, axis) {
+  const d = V.norm(axis);
+  const ref = Math.abs(d[1]) > 0.9 ? [0, 0, 1] : [0, 1, 0];
+  const u = V.norm(V.cross(d, ref));
+  return [d, u, V.cross(d, u)];
+}
+
+function pkmRod(b, a, c, radius, segments = 12, rings = 3) {
+  cylinder(b, a, c, radius, radius, segments, rings);
+}
+
+function pkmRivet(b, p, side = 1, radius = 0.0021) {
+  const a = [0, 0, side < 0 ? -1 : 1];
+  cylinder(b, p, V.add(p, V.mul(a, 0.0020)), radius, radius * 0.78, 12, 2);
+  disk(b, V.add(p, V.mul(a, 0.00201)), a, radius * 0.76, 0, 12);
+}
+
+function pkmScrew(b, p, side = 1, radius = 0.0020) {
+  const a = [0, 0, side < 0 ? -1 : 1];
+  cylinder(b, p, V.add(p, V.mul(a, 0.0014)), radius, radius * .86, 12, 2);
+  const q = Q.axis(a, Math.PI * .25);
+  box(b, V.add(p, V.mul(a, .00145)), [radius * 1.35, radius * .22, radius * .22], .00012, 3, q);
+}
+
+function pkmLatheAxis(b, center, axis, profile, radialSegments = 16) {
+  const [d, u, v] = pkmAxisBasis(center, axis);
+  const n = Math.max(8, radialSegments | 0);
+  makeSurface(b, n, Math.max(1, profile.length - 1), (s, t) => {
+    const f = t * (profile.length - 1);
+    const i = Math.min(profile.length - 2, Math.floor(f));
+    const k = f - i;
+    const along = mix(profile[i][0], profile[i + 1][0], k);
+    const radius = mix(profile[i][1], profile[i + 1][1], k);
+    const angle = s * TAU;
+    const radial = V.add(V.mul(u, Math.cos(angle)), V.mul(v, Math.sin(angle)));
+    return {
+      p: V.add(V.add(center, V.mul(d, along)), V.mul(radial, radius)),
+      n: V.norm(V.sub(radial,V.mul(d,(profile[i+1][1]-profile[i][1])/Math.max(.00001,profile[i+1][0]-profile[i][0])))),
+      e: i === 0 || i === profile.length - 2 ? .6 : 0,
+    };
+  });
+}
+
+function pkmTorus(b, center, axis, major, minor, segments = 16, tubeSegments = 5) {
+  const [d, u, v] = pkmAxisBasis(center, axis);
+  makeSurface(b, segments, tubeSegments, (s, t) => {
+    const a = s * TAU;
+    const q = t * TAU;
+    const radial = V.add(V.mul(u, Math.cos(a)), V.mul(v, Math.sin(a)));
+    const normal = V.add(V.mul(radial, Math.cos(q)), V.mul(d, Math.sin(q)));
+    return {
+      p: V.add(center, V.add(V.mul(radial, major + minor * Math.cos(q)), V.mul(d, minor * Math.sin(q)))),
+      n: normal,
+      e: .2,
+    };
+  });
+}
+
+function pkmHelix(b, center, axis, radius, pitch, turns, tubeRadius, segments = 44) {
+  const [d, u, v] = pkmAxisBasis(center, axis);
+  const points = [];
+  const count = Math.max(8, Math.ceil(segments * turns));
+  for (let i = 0; i <= count; i++) {
+    const t = i / count;
+    const a = t * turns * TAU;
+    points.push(V.add(V.add(center, V.mul(d, t * pitch * turns)),
+      V.add(V.mul(u, Math.cos(a) * radius), V.mul(v, Math.sin(a) * radius))));
+  }
+  sweep(b, points, tubeRadius, count, 5);
+}
+
+function pkmRib(b, a, c, width, depth, materialRotation) {
+  const d = V.norm(V.sub(c, a));
+  const q = Q.axis([0, 0, 1], Math.atan2(d[1], d[0]));
+  box(b, V.mul(V.add(a, c), .5), [Math.hypot(c[0] - a[0], c[1] - a[1]), width, depth], .00035, 4, materialRotation || q);
+}
+
+function pkmRaisedDigit(b, digit, origin, scale = .004, side = 1) {
+  // Seven-segment relief glyphs keep the gas-regulator numbers geometry-born.
+  const segments = {
+    1: ['b', 'c'], 2: ['a', 'b', 'g', 'e', 'd'], 3: ['a', 'b', 'g', 'c', 'd'],
+    4: ['f', 'g', 'b', 'c'], 5: ['a', 'f', 'g', 'c', 'd'],
+    6: ['a', 'f', 'g', 'e', 'c', 'd'], 7: ['a', 'b', 'c'],
+    8: ['a', 'b', 'c', 'd', 'e', 'f', 'g'], 9: ['a', 'b', 'c', 'd', 'f', 'g'],
+  }[digit] || [];
+  const z = origin[2] + side * .0015;
+  const map = {
+    a: [.5, 1, 1, 0], b: [1, .5, 0, 1], c: [1, -.5, 0, 1],
+    d: [.5, -1, 1, 0], e: [0, -.5, 0, 1], f: [0, .5, 0, 1], g: [.5, 0, 1, 0],
+  };
+  for (const s of segments) {
+    const m = map[s];
+    const horizontal = !!m[3];
+    const cx = origin[0] + m[0] * scale;
+    const cy = origin[1] + m[1] * scale;
+    box(b, [cx, cy, z], [horizontal ? scale * .85 : scale * .16, horizontal ? scale * .16 : scale * .85, .0012], .00008, 3);
+  }
+}
+
+function pkmCyrillicPA(b, letter, origin, scale = .005, side = 1) {
+  // Minimal П and А path glyphs used for the raised safety marks.
+  const z = origin[2] + side * .0014;
+  const line = (a, c) => pkmRod(b, [origin[0] + a[0] * scale, origin[1] + a[1] * scale, z],
+    [origin[0] + c[0] * scale, origin[1] + c[1] * scale, z], .00042, 7, 2);
+  if (letter === 'П') {
+    line([-.55, -.65], [-.55, .65]); line([-.55, .65], [.55, .65]); line([.55, .65], [.55, -.65]);
+  } else {
+    line([-.65, -.65], [0, .70]); line([0, .70], [.65, -.65]); line([-.35, -.05], [.35, -.05]);
+  }
+}
+
+function pkmCartridge(caseBatch, bulletBatch, center, axis, tracer = false, tracerTipBatch = null) {
+  const d = V.norm(axis);
+  // 7.62x54R: the broad extractor flange is intentionally separated by a
+  // narrow groove so it reads as rimmed ammunition even at inspection scale.
+  const caseProfile = [
+    [-.0270, .0061], [-.0268, .00675], [-.0252, .00675], [-.0245, .0061],
+    [.0080, .0057], [.0150, .0055], [.0200, .00435], [.0270, .0043],
+  ];
+  pkmLatheAxis(caseBatch, center, d, caseProfile, 16);
+  disk(caseBatch, V.add(center, V.mul(d, -.027)), V.mul(d,-1), .0061, 0, 16);
+  cylinder(caseBatch, V.add(center, V.mul(d, -.0271)), V.add(center, V.mul(d, -.0268)), .0024, .0024, 12, 1);
+  const bulletProfile = [
+    [.0260, .0039], [.0300, .0039], [.0350, .00375], [.0410, .00315],
+    [.0460, .00225], [.0500, .0001],
+  ];
+  pkmLatheAxis(bulletBatch, center, d, bulletProfile, 16);
+  pkmTorus(bulletBatch, V.add(center, V.mul(d, .0292)), d, .00385, .00012, 12, 3);
+  disk(bulletBatch, V.add(center, V.mul(d, .0500)), d, .0001, 0, 12);
+  if (tracer && tracerTipBatch) {
+    pkmLatheAxis(tracerTipBatch, center, d, [[.041, .0032], [.046, .0023], [.050, .00015]], 16);
+    tracerTipBatch.tint = [.12, .33, .09];
+    tracerTipBatch.tracer = true;
+  }
+}
+
+function pkmLink(linkBatch, center, nextCenter, roundAxis, tangent, index) {
+  const d = V.norm(roundAxis);
+  const t = V.norm(tangent);
+  const u=V.norm(V.cross(d,t));
+  pkmTorus(linkBatch, V.add(center, V.mul(d, -.0065)), d, .0063, .00043, 14, 4);
+  const bridgeStart=linkBatch.raw.length;
+  if (nextCenter) {
+    for(const side of [-1,1]){
+      const offset=V.add(V.mul(d,-.0065),V.mul(u,side*.0063));
+      pkmRod(linkBatch,V.add(center,offset),V.add(nextCenter,offset),.00043,6,1);
+    }
+  }
+  return bridgeStart;
+}
+
+function pkmBeltCurve(sag = .5, count = 50) {
+  const s = clamp(Number(sag) || 0);
+  const shape=a=>[[.035,.105,0],[.035,.105,.055],[.035,.065,.115],
+    [.035,.01-a*(.08+.13*s),.14+a*(.32-.1*s)],
+    [.035,-.055-a*(.08+.13*s),.15+a*(.30-.1*s)],
+    [.035,-.075,.20],[.035,-.075,.165]];
+  const wanted=Math.max(.29,(count-1)*PKM_DIMENSIONS.beltPitch);
+  let lo=0,hi=2;
+  for(let i=0;i<18;i++){const a=(lo+hi)/2;if(pkmPathLength(shape(a))<wanted)lo=a;else hi=a}
+  return shape((lo+hi)/2);
+}
+
+function pkmPathLength(points, steps = 260) {
+  let length = 0;
+  let last = catmull(points, 0);
+  for (let i = 1; i <= steps; i++) {
+    const point = catmull(points, i / steps);
+    length += Math.hypot(...V.sub(point, last));
+    last = point;
+  }
+  return length;
+}
+
+function pkmPathAtDistance(points, wanted, steps = 260) {
+  const total = pkmPathLength(points, steps);
+  const target = clamp(wanted, 0, total);
+  let travelled = 0;
+  let before = catmull(points, 0);
+  for (let i = 1; i <= steps; i++) {
+    const t = i / steps;
+    const after = catmull(points, t);
+    const segment = Math.hypot(...V.sub(after, before));
+    if (travelled + segment >= target) {
+      const k = (target - travelled) / Math.max(1e-9, segment);
+      const at = mix((i - 1) / steps, t, k);
+      const a = catmull(points, clamp(at - .002));
+      const c = catmull(points, clamp(at + .002));
+      return { p: catmull(points, at), tangent: V.norm(V.sub(c, a)), t: at, length: total };
+    }
+    travelled += segment;
+    before = after;
+  }
+  return { p: catmull(points, 1), tangent: V.norm(V.sub(catmull(points, 1), catmull(points, .998))), t: 1, length: total };
+}
+
+function beltDiagnostics(count = 50, sag = .5) {
+  const points = pkmBeltCurve(sag,count);
+  const length = pkmPathLength(points);
+  const n = Math.max(0, Math.min(50, Math.round(Number(count) || 0)));
+  return {
+    count: n,
+    pitch: PKM_DIMENSIONS.beltPitch,
+    length,
+    occupied: Math.max(0, (n - 1) * PKM_DIMENSIONS.beltPitch),
+    rimDiameter: PKM_DIMENSIONS.rimDiameter,
+    clearOfAdjacentLinks: PKM_DIMENSIONS.beltPitch - .0135,
+    path: points,
+  };
+}
+
+/* Build only the linked ammunition.  The host may call this independently
+ * when the belt slider changes; the returned array is also convenient for
+ * replacing just these GPU batches without rebuilding the receiver. */
+function buildBelt(count = 28, sag = .5) {
+  if (count && typeof count === 'object') {
+    sag = count.sag == null ? .5 : count.sag;
+    count = count.count == null ? 28 : count.count;
+  }
+  const n = Math.max(0, Math.min(50, Math.round(Number(count) || 0)));
+  const made = [];
+  if (!n) return made;
+  const linkBatch = pkmMakeBatch('Belt links · permanent non-disintegrating stamped steel', PKM_MATERIAL.parkerized, 'beltLinks', [.08, -.18, .05], made);
+  linkBatch.beltRole = 'permanent-linked';
+  // Station zero is link-only. Do not create empty round/tracer batches: the
+  // assembler computes bounds from emitted vertices and Infinity is invalid.
+  const caseBatch = n > 1 ? pkmMakeBatch('Rounds · 7.62x54R rimmed cases / primer marks', PKM_MATERIAL.brass, 'rounds', [.08, -.18, .05], made) : null;
+  const bulletBatch = n > 1 ? pkmMakeBatch('Rounds · ogival bullets / cannelure', PKM_MATERIAL.brass, 'rounds', [.08, -.18, .05], made) : null;
+  const tracerBatch = n >= 4 ? pkmMakeBatch('Rounds · every fourth green tracer tip', PKM_MATERIAL.brass, 'rounds', [.08, -.18, .05], made) : null;
+  const primerBatch = n >= 5 ? pkmMakeBatch('Rounds · lacquer seal / primer cup', PKM_MATERIAL.lacquered, 'rounds', [.08, -.18, .05], made) : null;
+  if (caseBatch) {
+    caseBatch.calibre = '7.62x54R';
+    caseBatch.caseMaterial = true;
+  }
+  if (tracerBatch) {
+    tracerBatch.tint = [.12, .33, .09];
+    tracerBatch.tracer = true;
+    tracerBatch.caseMaterial = false;
+  }
+  const stations = [];
+  const points = pkmBeltCurve(sag,n);
+  const diag = beltDiagnostics(n, sag);
+  const samples=Array.from({length:n+1},(_,i)=>pkmPathAtDistance(points,i*PKM_DIMENSIONS.beltPitch));
+  const deltas=samples.map((sample,i)=>i?V.sub(samples[i-1].p,sample.p):[0,0,-PKM_DIMENSIONS.beltPitch]);
+  for(const b of made)b.beltDeltas=[];
+  for (let i = 0; i < n; i++) {
+    const starts=made.map(b=>b.raw.length);
+    const sample = samples[i];
+    const round = sample.p;
+    const axis = [1, 0, 0];
+    const nextSample = samples[i+1];
+    stations.push({ start: sample.p, end: nextSample.p, center: round, tangent: sample.tangent, distance: i * PKM_DIMENSIONS.beltPitch });
+    if (i > 0) pkmCartridge(caseBatch, bulletBatch, round, axis, i % 4 === 3, i % 4 === 3 ? tracerBatch : null);
+    const bridgeStart=pkmLink(linkBatch,round,i<n-1?nextSample.p:null,axis,sample.tangent,i);
+    // One thin lacquer seal per fourth station keeps the green-tip cadence
+    // readable without adding a second full cartridge to the batch.
+    if (i % 4 === 0) {
+      if (i > 0 && primerBatch) pkmTorus(primerBatch, V.add(round, [-.0272, 0, 0]), [1, 0, 0], .00245, .00022, 10, 3);
+    }
+    for(let j=0;j<made.length;j++){
+      const b=made[j],span=V.sub(nextSample.p,round);
+      for(let k=starts[j];k<b.raw.length;k+=12){
+        const blend=b===linkBatch&&k>=bridgeStart?clamp(V.dot(V.sub(b.raw.slice(k,k+3),round),span)/Math.max(1e-10,V.dot(span,span))):0;
+        b.beltDeltas.push(...deltas[i].map((v,a)=>mix(v,deltas[i+1][a],blend)));
+      }
+    }
+  }
+  linkBatch.countHint = n;
+  linkBatch.pitch = PKM_DIMENSIONS.beltPitch;
+  linkBatch.path = points;
+  linkBatch.beltStations = stations;
+  if (caseBatch) caseBatch.beltStations = stations;
+  if (bulletBatch) bulletBatch.beltStations = stations;
+  return made;
+}
+
+function pkmAddReceiver(made) {
+  let b = pkmMakeBatch('Receiver · stamped box shell / folded sheet edges', PKM_MATERIAL.bluedsteel, 'receiver', [0, .02, 0], made);
+  box(b, [-.005, .037, 0], [.300, .105, .116], .0005, 5,[0,0,0,1],true);
+  // Folded side rails are separate material-bearing sheet strips, not decals.
+  for (const z of [-.061, .061]) {
+    box(b, [-.012, .091, z], [.284, .016, .006], .0015, 4);
+    box(b, [-.012, -.018, z], [.284, .014, .006], .0015, 4);
+    for (const x of [-.126, -.092, -.050, .002, .058, .111]) pkmRivet(b, [x, .046, z], z, .0022);
+  }
+  // Lower stamped trigger housing is a real extruded section with an open
+  // lower profile; the dark interior remains visible in the ejection side.
+  b = pkmMakeBatch('Receiver · lower stamped trigger housing / feed throat', PKM_MATERIAL.bluedsteel, 'receiver', [-.01, -.035, 0], made);
+  extrude(b, [
+    [-.145, .015], [.136, .015], [.136, -.028], [.087, -.074],
+    [.015, -.074], [-.020, -.054], [-.078, -.054], [-.108, -.034], [-.145, -.018],
+  ], 0, .106, .0012);
+  for (const z of [-.056, .056]) {
+    box(b, [-.005, -.046, z], [.105, .010, .006], .0010, 4);
+    box(b, [.090, -.024, z], [.011, .038, .006], .0008, 4);
+  }
+  b = pkmMakeBatch('Receiver · right ejection window / recessed soot surround', PKM_MATERIAL.parkerized, 'receiver', [.02, .02, .067], made);
+  const rz = .0605;
+  box(b, [.041, .042, rz], [.101, .040, .004], .0009, 4);
+  for (const [x, y, sx, sy] of [[-.012, .042, .014, .046], [.094, .042, .014, .046], [.041, .066, .101, .012], [.041, .018, .101, .012]])
+    box(b, [x, y, rz + .002], [sx, sy, .004], .0006, 4);
+  box(b, [.041, .042, rz + .004], [.069, .020, .002], .0003, 3);
+  b.window = 'ejection-down-right';
+  b = pkmMakeBatch('Receiver · weld beads / stamped longitudinal seams', PKM_MATERIAL.parkerized, 'hardware', [0, .02, 0], made);
+  for (const z of [-.064, .064]) {
+    for (let x = -.112; x < .11; x += .018) pkmRod(b, [x, .092, z], [x + .007, .092, z], .00052, 6, 2);
+    for (const x of [-.11, -.048, .026, .094]) pkmRivet(b, [x, -.012, z], z, .0016);
+  }
+  b = pkmMakeBatch('Receiver · trunnion / barrel socket / locking shoulders', PKM_MATERIAL.parkerized, 'receiver', [.07, .055, 0], made);
+  box(b, [.112, .049, 0], [.054, .088, .104], .0022, 5);
+  tube(b, [.095, .074, 0], [.132, .074, 0], .020, .014, 28, 4);
+  for (const z of [-.052, .052]) {
+    pkmRivet(b, [.116, .087, z], z, .0023);
+    box(b, [.107, .021, z], [.025, .012, .007], .0006, 3);
+  }
+}
+
+function pkmAddCover(made) {
+  let b = pkmMakeBatch('Cover · hinged stamped feed cover with folded lip', PKM_MATERIAL.bluedsteel, 'cover', [.13, .044, 0], made);
+  b.pivot = [.13, .044, 0];
+  b.axis = 'Z';
+  b.openRotation = -1.38;
+  b.closedRotation = 0;
+  b.animation = 'hinge-negative-z-rear-up';
+  box(b, [.005, .103, 0], [.270, .021, .104], .0026, 5);
+  box(b, [-.113, .094, 0], [.018, .031, .104], .0011, 4);
+  box(b, [.120, .094, 0], [.022, .031, .104], .0011, 4);
+  for (const z of [-.048, .048]) {
+    box(b, [.012, .116, z], [.225, .008, .007], .0006, 4);
+    pkmRivet(b, [-.070, .104, z], z, .0018);
+    pkmRivet(b, [.076, .104, z], z, .0018);
+  }
+  b = pkmMakeBatch('Cover mechanism · internal feed tray / cartridge guide', PKM_MATERIAL.parkerized, 'coverMechanism', [.13, .044, 0], made);
+  box(b, [.021, .082, 0], [.220, .009, .093], .0010, 4);
+  box(b, [-.078, .088, 0], [.027, .018, .096], .0010, 4);
+  for (const z of [-.035, .035]) pkmRod(b, [-.084, .094, z], [.082, .094, z], .0012, 10, 2);
+  b = pkmMakeBatch('Cover mechanism · paired feed fingers / rocker lever', PKM_MATERIAL.parkerized, 'coverMechanism', [.13, .044, 0], made);
+  for (const z of [-.025, .025]) {
+    box(b, [-.010, .099, z], [.010, .032, .006], .0005, 3);
+    pkmRod(b, [-.005, .113, z], [.040, .119, z], .0013, 10, 2);
+  }
+  pkmRod(b, [.016, .114, -.032], [.016, .114, .032], .0040, 16, 3);
+  pkmTorus(b, [.016, .114, 0], [0, 0, 1], .0042, .0010, 16, 4);
+  b = pkmMakeBatch('Cover mechanism · feed rocker roller / return springs', PKM_MATERIAL.parkerized, 'coverMechanism', [.13, .044, 0], made);
+  cylinder(b, [.073, .109, -.031], [.073, .109, .031], .0032, .0032, 16, 3);
+  for (const z of [-.026, .026]) pkmHelix(b, [-.026, .107, z], [1, 0, 0], .0030, .006, 5, .00055, 30);
+  b = pkmMakeBatch('Cover mechanism · hinge leaves / latch / catch', PKM_MATERIAL.parkerized, 'coverMechanism', [.13, .044, 0], made);
+  cylinder(b, [.13, .044, -.060], [.13, .044, .060], .0041, .0041, 18, 3);
+  box(b, [.118, .070, 0], [.026, .013, .068], .0008, 4);
+  box(b, [-.128, .087, 0], [.020, .012, .050], .0007, 4);
+  pkmRivet(b, [.121, .078, .052], 1, .0017);
+}
+
+function pkmAddBarrelAndGas(made) {
+  let b = pkmMakeBatch('Barrel · quick-change tapered fluted 645 mm tube', PKM_MATERIAL.barrelsteel, 'barrel', [.30, .073, 0], made);
+  const base = [.082, .073, 0];
+  const profile=[
+    [0, .0140], [.014, .0140], [.032, .0111], [.086, .0100], [.180, .0093],
+    [.300, .0087], [.435, .00825], [.540, .0079], [.602, .0077], [.645, .00755],
+  ];
+  makeSurface(b,96,48,(u,t)=>{
+    const x=t*.645,a=u*TAU;
+    let i=0;while(i<profile.length-2&&x>profile[i+1][0])i++;
+    const radius=mix(profile[i][1],profile[i+1][1],(x-profile[i][0])/(profile[i+1][0]-profile[i][0]));
+    const flute=.0007*Math.pow((1+Math.cos(a*12))/2,3)*clamp((x-.035)/.018)*clamp((.58-x)/.018);
+    return {p:[base[0]+x,base[1]+Math.cos(a)*(radius-flute),Math.sin(a)*(radius-flute)],e:.1};
+  });
+  b = pkmMakeBatch('Barrel · chamber collar / quick-release lugs', PKM_MATERIAL.parkerized, 'barrel', [.11, .073, 0], made);
+  tube(b, [.058, .073, 0], [.101, .073, 0], .0190, .0141, 28, 4);
+  for (let i = 0; i < 12; i++) {
+    const a = i * TAU / 12;
+    const q = Q.axis([1, 0, 0], a);
+    box(b, [.077, .073 + Math.cos(a) * .0175, Math.sin(a) * .0175], [.031, .0040, .0052], .0004, 3, q);
+  }
+  b = pkmMakeBatch('Barrel · conical slotted flash suppressor / carbon interior', PKM_MATERIAL.barrelsteel, 'barrel', [.70, .073, 0], made);
+  pkmLatheAxis(b, [.680, .073, 0], [1, 0, 0], [[0, .0104], [.018, .0125], [.047, .0100]], 28);
+  const soot = pkmMakeBatch('Barrel · flash suppressor slots / baked carbon', PKM_MATERIAL.parkerized, 'barrel', [.70, .073, 0], made);
+  for (let i = 0; i < 8; i++) {
+    const a = i * TAU / 8;
+    box(soot, [.708, .073 + Math.cos(a) * .0108, Math.sin(a) * .0108], [.024, .0020, .0048], .00025, 3, Q.axis([1, 0, 0], a));
+  }
+  disk(soot, [.727, .073, 0], [1, 0, 0], .0088, .0040, 28);
+  b = pkmMakeBatch('Carry handle · folding side barrel handle / hinge', PKM_MATERIAL.parkerized, 'carryHandle', [.25, .073, .020], made);
+  b.pivot = [.255, .078, .016]; b.foldRotation = -1.18; b.axis = 'X';
+  cylinder(b, [.254, .080, -.015], [.254, .080, .030], .0038, .0038, 16, 3);
+  pkmRod(b, [.254, .082, .022], [.254, .135, .052], .0030, 14, 3);
+  pkmRod(b, [.254, .135, .052], [.254, .143, .020], .0042, 14, 3);
+  pkmTorus(b, [.254, .143, .020], [0, 1, 0], .0050, .0013, 14, 4);
+  pkmRivet(b, [.254, .081, .032], 1, .0020);
+
+  b = pkmMakeBatch('Gas · open gas tube under barrel / vent collar', PKM_MATERIAL.parkerized, 'gas', [.34, -.005, 0], made);
+  tube(b, [.205, .045, 0], [.510, .045, 0], .0069, .0043, 24, 8);
+  for (const x of [.221, .302, .383, .464]) box(b, [x, .045, .0070], [.024, .002, .003], .0002, 3);
+  b = pkmMakeBatch('Gas regulator · three-position drum / raised 1 2 3', PKM_MATERIAL.parkerized, 'regulator', [.305, .046, 0], made);
+  b.pivot = [.305, .040, 0]; b.positions = [1, 2, 3];
+  cylinder(b, [.305, .040, -.014], [.305, .040, .014], .0094, .0094, 24, 4);
+  for (const a of [-.75, 0, .75]) {
+    const z = Math.sin(a) * .0102, y = .040 + Math.cos(a) * .0102;
+    cylinder(b, [.305, y - .002, z], [.305, y + .002, z], .0020, .0016, 10, 2);
+  }
+  pkmRaisedDigit(b, 1, [.296, .051, .014], .0037, 1);
+  pkmRaisedDigit(b, 2, [.305, .051, .014], .0037, 1);
+  pkmRaisedDigit(b, 3, [.314, .051, .014], .0037, 1);
+  b = pkmMakeBatch('Gas piston · long rod / piston cup', PKM_MATERIAL.parkerized, 'piston', [.34, -.005, 0], made);
+  pkmRod(b, [.258, .030, 0], [.493, .030, 0], .0037, 16, 4);
+  pkmLatheAxis(b, [.493, .030, 0], [1, 0, 0], [[-.010, .0065], [-.004, .0080], [.007, .0080], [.012, .0055]], 18);
+  b = pkmMakeBatch('Gas return spring · exposed helical compression spring', PKM_MATERIAL.parkerized, 'spring', [.35, .030, 0], made);
+  pkmHelix(b, [.320, .030, 0], [1, 0, 0], .0090, .033, 7, .00075, 42);
+  b = pkmMakeBatch('Front sight · hood / post / gas-block soot', PKM_MATERIAL.parkerized, 'gas', [.61, .073, 0], made);
+  box(b, [.610, .085, 0], [.027, .030, .032], .0012, 4);
+  box(b, [.610, .106, 0], [.013, .029, .006], .0007, 3);
+  box(b, [.610, .089, 0], [.004, .032, .005], .0005, 3);
+}
+
+function pkmAddBoltAndControls(made) {
+  let b = pkmMakeBatch('Bolt · long carrier / locking face / extractor claw', PKM_MATERIAL.parkerized, 'bolt', [.04, .045, 0], made);
+  box(b, [.014, .047, 0], [.175, .052, .088], .0020, 5);
+  cylinder(b, [.105, .047, -.036], [.105, .047, .036], .013, .013, 20, 3);
+  for (const z of [-.038, .038]) {
+    box(b, [.085, .047, z], [.022, .037, .006], .0007, 3);
+    pkmRivet(b, [.018, .074, z], z, .0017);
+  }
+  b = pkmMakeBatch('Charging handle · right-side reciprocating handle / wear path', PKM_MATERIAL.parkerized, 'charging', [.015, .048, .066], made);
+  b.pivot = [.018, .048, .066]; b.travel = [-.036, .036]; b.animation = 'reciprocates-x';
+  box(b, [.018, .049, .068], [.047, .014, .010], .0010, 4);
+  box(b, [-.010, .049, .072], [.012, .020, .025], .0012, 4);
+  pkmRod(b, [-.008, .049, .080], [-.008, .049, .101], .0035, 14, 3);
+  pkmTorus(b, [-.008, .049, .102], [0, 1, 0], .0046, .0010, 14, 4);
+  b = pkmMakeBatch('Pistol grip · ribbed bakelite shell / tang', PKM_MATERIAL.bakelite, 'grip', [-.025, -.100, 0], made);
+  extrude(b, [[-.060, -.010], [.025, -.010], [.021, -.150], [-.006, -.181], [-.046, -.165], [-.067, -.054]], 0, .064, .0020);
+  for (let y = -.043; y > -.152; y -= .014) box(b, [-.023, y, .034], [.053, .0020, .004], .00025, 3);
+  for (let y = -.043; y > -.152; y -= .014) box(b, [-.023, y, -.034], [.053, .0020, .004], .00025, 3);
+  b = pkmMakeBatch('Trigger · curved trigger / stamped guard', PKM_MATERIAL.parkerized, 'trigger', [-.008, -.115, 0], made);
+  pkmRod(b, [-.010, -.060, -.019], [.004, -.097, -.019], .0023, 12, 3);
+  pkmRod(b, [.004, -.097, -.019], [.016, -.115, -.019], .0023, 12, 3);
+  pkmRod(b, [.016, -.115, -.019], [.006, -.132, -.019], .0023, 12, 3);
+  pkmRod(b, [.006, -.132, -.019], [-.013, -.128, -.019], .0023, 12, 3);
+  pkmRod(b, [-.013, -.128, -.019], [-.010, -.060, -.019], .0023, 12, 3);
+  pkmRod(b, [.002, -.080, -.024], [.007, -.112, -.024], .0026, 12, 3);
+  b = pkmMakeBatch('Safety · flag lever / raised Cyrillic П А marks', PKM_MATERIAL.parkerized, 'safety', [-.070, -.010, .063], made);
+  b.pivot = [-.070, -.010, .063]; b.labels = ['П', 'А'];
+  cylinder(b, [-.070, -.006, .058], [-.070, -.006, .066], .0043, .0043, 16, 2);
+  box(b, [-.070, -.004, .067], [.030, .006, .006], .0008, 4, Q.axis([0, 0, 1], -.35));
+  pkmCyrillicPA(b, 'П', [-.095, -.002, .064], .006, 1);
+  pkmCyrillicPA(b, 'А', [-.041, -.002, .064], .006, 1);
+}
+
+function pkmAddStockAndCleaning(made) {
+  let b = pkmMakeBatch('Stock · skeletal lacquered wood upper rail / comb', PKM_MATERIAL.wood, 'stock', [-.27, .015, 0], made);
+  b.variant = 'wood-or-polymer';
+  box(b, [-.274, .084, 0], [.286, .034, .073], .0040, 5);
+  box(b, [-.417, .035, 0], [.038, .170, .073], .0040, 5);
+  box(b, [-.286, -.074, 0], [.250, .034, .073], .0040, 5);
+  box(b, [-.160, .018, 0], [.053, .165, .073], .0035, 5);
+  // Side cheek and grain-like relief ribs make the large window read as a
+  // cut-through skeleton instead of a solid rectangular stock block.
+  for (const z of [-.038, .038]) {
+    pkmRod(b, [-.397, .080, z], [-.195, .080, z], .0020, 12, 3);
+    pkmRod(b, [-.397, -.075, z], [-.195, -.075, z], .0020, 12, 3);
+  }
+  b = pkmMakeBatch('Stock · window cheek plates / sling wear edges', PKM_MATERIAL.wood, 'stock', [-.28, .015, 0], made);
+  for (const z of [-.040, .040]) {
+    box(b, [-.300, .016, z], [.205, .016, .006], .0014, 4);
+    box(b, [-.402, .015, z], [.017, .151, .006], .0014, 4);
+  }
+  b = pkmMakeBatch('Buttplate · serrated shoulder pad / folding toe', PKM_MATERIAL.parkerized, 'buttplate', [-.44, .012, 0], made);
+  box(b, [-.438, .022, 0], [.017, .186, .082], .0020, 5);
+  for (let y = -.060; y < .102; y += .014) box(b, [-.448, y, 0], [.005, .005, .070], .0005, 3);
+  box(b, [-.447, -.076, 0], [.015, .028, .084], .0012, 4);
+  pkmRivet(b, [-.447, .073, .042], 1, .0020);
+  pkmRivet(b, [-.447, -.034, .042], 1, .0020);
+  b = pkmMakeBatch('Cleaning · under-stock rod / PPI service pen', PKM_MATERIAL.parkerized, 'cleaning', [-.25, -.12, 0], made);
+  pkmRod(b, [-.405, -.113, 0], [-.092, -.113, 0], .0022, 12, 3);
+  box(b, [-.344, -.113, .006], [.073, .012, .012], .0012, 4);
+  box(b, [-.344, -.113, -.006], [.052, .010, .010], .0010, 4);
+  b.penal = true;
+  b.explodedVisible = 'PPI pen inside cleaning case';
+}
+
+function pkmAddSightsMountOptic(made) {
+  let b = pkmMakeBatch('Rear sight · sector leaf / elevation slider / 1-15 scale', PKM_MATERIAL.parkerized, 'rearSight', [.105, .110, 0], made);
+  box(b, [.102, .115, 0], [.046, .012, .072], .0010, 4);
+  box(b, [.098, .143, 0], [.068, .009, .061], .0010, 4);
+  for (let i = 1; i <= 15; i++) {
+    const x = .069 + i * .0040;
+    box(b, [x, .151, .035], [.0010, .007, .002], .00015, 3);
+  }
+  b.scale = '1-15 x100m';
+  for (const z of [-.040, .040]) pkmRivet(b, [.102, .108, z], z, .0018);
+  b = pkmMakeBatch('Mount · dovetail side rail / PSO-1 compatible clamp', PKM_MATERIAL.parkerized, 'mount', [.03, .055, .071], made);
+  b.compatibility = 'PSO-1';
+  box(b, [.015, .061, .068], [.190, .012, .010], .0009, 4);
+  for (let x = -.060; x < .106; x += .018) box(b, [x, .061, .075], [.006, .018, .013], .0005, 3);
+  for (const x of [-.060, .080]) pkmRivet(b, [x, .059, .080], 1, .0020);
+  b = pkmMakeBatch('Optic · PSO-1 replacement body / objective and ocular caps', PKM_MATERIAL.parkerized, 'optic', [.03, .14, .071], made);
+  b.visible = false;
+  b.pivot = [.015, .072, .071]; b.option = 'PSO-1';
+  tube(b, [-.038, .089, .073], [.082, .089, .073], .018, .014, 24, 6);
+  cylinder(b, [-.060, .089, .073], [-.038, .089, .073], .021, .018, 24, 3);
+  cylinder(b, [.082, .089, .073], [.104, .089, .073], .018, .015, 24, 3);
+  disk(b, [-.061, .089, .073], [-1, 0, 0], .016, 0, 24);
+}
+
+function pkmAddBipod(made) {
+  // The gas tube is centred at y=.045; keep the hinge on its underside rather
+  // than leaving the folded bipod floating below the receiver.
+  let b = pkmMakeBatch('Bipod hinge · front gas-tube bracket / spring latch', PKM_MATERIAL.parkerized, 'bipodHinge', [.49, .038, 0], made);
+  b.pivot = [.49, .038, 0]; b.foldRotation = -1.20; b.axis = 'Z';
+  box(b, [.490, .058, 0], [.034, .039, .092], .0020, 5);
+  cylinder(b, [.490, .038, -.055], [.490, .038, .055], .0060, .0060, 20, 3);
+  box(b, [.472, .029, 0], [.010, .012, .062], .0008, 4);
+  for (const side of [-1, 1]) {
+    const z = side * .031;
+    b = pkmMakeBatch(`Bipod ${side < 0 ? 'left' : 'right'} · stamped ribbed folding leg / pointed foot`, PKM_MATERIAL.parkerized, side < 0 ? 'bipodL' : 'bipodR', [.36, .038, side * .05], made);
+    b.pivot = [.49, .038, z]; b.foldRotation = -1.20; b.axis = 'Z';
+    pkmRod(b, [.490, .028, z], [.386, -.205, side * .067], .0055, 16, 5);
+    pkmRod(b, [.386, -.205, side * .067], [.329, -.224, side * .070], .0042, 14, 4);
+    for (let i = 0; i < 5; i++) {
+      const k = i / 5;
+      const a = V.add([.490, .028, z], V.mul(V.sub([.386, -.205, side * .067], [.490, .028, z]), k));
+      box(b, a, [.012, .005, .018], .0005, 3, Q.axis([0, 0, 1], -.55));
+    }
+    pkmLatheAxis(b, [.321, -.226, side * .070], V.norm([-.9, -.35, 0]), [[-.010, .001], [.000, .007], [.020, .003]], 12);
+    box(b, [.445, -.099, z], [.018, .011, .012], .0007, 4);
+  }
+  b = pkmMakeBatch('Bipod hinge · dual detent springs / release tabs', PKM_MATERIAL.parkerized, 'bipodHinge', [.49, .038, 0], made);
+  pkmHelix(b, [.490, .038, -.031], [0, 0, 1], .007, .011, 4, .00065, 24);
+  pkmHelix(b, [.490, .038, .031], [0, 0, 1], .007, .011, 4, .00065, 24);
+}
+
+function pkmAddAmmoBox(made) {
+  let b = pkmMakeBatch('Ammo box · 100-round pressed steel can / reinforcing ribs', PKM_MATERIAL.parkerized, 'ammoBox', [.015, -.16, .115], made);
+  b.capacity = 100; b.mount = 'right-side';
+  box(b, [.015, -.160, .115], [.192, .125, .103], .0040, 5);
+  for (const z of [.066, .164]) {
+    for (const x of [-.063, -.013, .037, .087]) box(b, [x, -.160, z], [.014, .098, .004], .0010, 4);
+  }
+  for (const x of [-.076, .106]) box(b, [x, -.160, .115], [.006, .104, .097], .0010, 4);
+  box(b, [.015, -.095, .115], [.125, .008, .084], .0010, 4);
+  b = pkmMakeBatch('Ammo lid · hinged lid / wire carrying handle / latch', PKM_MATERIAL.parkerized, 'ammoLid', [.015, -.095, .115], made);
+  b.pivot = [-.082, -.098, .115]; b.openRotation = -1.28; b.closedRotation = 0;
+  box(b, [.015, -.094, .115], [.192, .014, .103], .0030, 5);
+  cylinder(b, [-.081, -.085, .063], [-.081, -.085, .167], .0030, .0030, 14, 2);
+  const handle = [[-.050, -.078, .060], [-.050, -.052, .060], [.080, -.052, .060], [.080, -.078, .060]];
+  sweep(b, handle, .0028, 18, 6);
+  box(b, [.086, -.088, .115], [.016, .018, .059], .0010, 4);
+  for (const z of [.078, .152]) pkmRivet(b, [.093, -.078, z], 1, .0018);
+  b = pkmMakeBatch('Ammo box · belt output window / hinged guide and latch', PKM_MATERIAL.parkerized, 'ammoBox', [.015, -.16, .18], made);
+  box(b, [.012, -.137, .169], [.060, .006, .044], .0008, 4);
+  for (const z of [.150, .188]) box(b, [.012, -.137, z], [.065, .010, .005], .0006, 4);
+  box(b, [.075, -.099, .168], [.016, .010, .041], .0008, 4);
+  pkmRivet(b, [.074, -.090, .184], 1, .0017);
+}
+
+function pkmAddSlingHardwareAndFeed(made) {
+  let b = pkmMakeBatch('Sling · woven canvas strap / brass swivel hardware', PKM_MATERIAL.canvas, 'sling', [-.20, -.06, .085], made);
+  const path = [[-.430, .012, .077], [-.340, -.008, .079], [-.190, -.018, .080], [.005, -.015, .081], [.180, -.006, .080], [.300, .012, .068]];
+  sweep(b, path, .0030, 34, 8);
+  for (const p of [path[0], path[path.length - 1]]) {
+    tube(b, [p[0], p[1], p[2] - .005], [p[0], p[1], p[2] + .005], .0052, .0035, 18, 3);
+    pkmTorus(b, p, [0, 1, 0], .0060, .0010, 16, 4);
+  }
+  b = pkmMakeBatch('Hardware · receiver pins / sling studs / stamped fasteners', PKM_MATERIAL.parkerized, 'hardware', [0, 0, 0], made);
+  for (const z of [-.066, .066]) {
+    for (const x of [-.130, -.074, .075, .124]) pkmRivet(b, [x, .036, z], z, .0018);
+    pkmScrew(b, [-.112, -.006, z], z, .0018);
+  }
+  // The independent feed round demonstrates the two-stroke sequence without
+  // moving the linked belt geometry.  Runtime code consumes these contracts.
+  const feedCenter = [.035, .105, 0];
+  const feedExplode = [.08, -.18, .05];
+  const feedCase = pkmMakeBatch('Feed round · animated case / 7.62x54R rim', PKM_MATERIAL.brass, 'feedRound', feedExplode, made);
+  feedCase.animation = 'extract-back-lower-chamber-forward';
+  feedCase.feedPhases = ['bolt-back / rim extraction', 'round lowered', 'bolt-forward / chambering', 'belt advances one link'];
+  feedCase.caseMaterial = true;
+  const feedProjectile = pkmMakeBatch('Feed round · animated projectile / ogive', PKM_MATERIAL.brass, 'feedRound', feedExplode, made);
+  feedProjectile.animation = feedCase.animation;
+  feedProjectile.feedPhases = feedCase.feedPhases;
+  feedProjectile.caseMaterial = false;
+  pkmCartridge(feedCase, feedProjectile, feedCenter, [1, 0, 0], false);
+  // Keep the ejection start at the chamber mouth; its runtime path supplies
+  // the downward throw after the shell clears the bolt face.
+  b = pkmMakeBatch('Eject · animated empty shell / downward ejection path', PKM_MATERIAL.brass, 'eject', feedExplode, made);
+  b.caseMaterial = true;
+  b.animation = 'empty-case-downward';
+  pkmLatheAxis(b,[.118,.073,0],[1,0,0],[[-.027,.00675],[-.025,.00675],[-.024,.0061],[.015,.0055],[.020,.00435],[.027,.0043]],16);
+  disk(b,[.091,.073,0],[-1,0,0],.00675,0,16);
+  return made;
+}
+
+/* Static PKM assembly.  The caller normally resets its batch list, calls
+ * buildModel(), then appends buildBelt(count, sag) before mergeBatches(). */
+function buildModel() {
+  const made = [];
+  pkmAddReceiver(made);
+  pkmAddCover(made);
+  pkmAddBarrelAndGas(made);
+  pkmAddBoltAndControls(made);
+  pkmAddStockAndCleaning(made);
+  pkmAddSightsMountOptic(made);
+  pkmAddBipod(made);
+  pkmAddAmmoBox(made);
+  pkmAddSlingHardwareAndFeed(made);
+  for(const b of made)if(b.group==='buttplate')for(let i=0;i<b.raw.length;i+=12)b.raw[i]+=.0085;
+  return made;
+}
+
+
+buildModel();buildBelt(state.count,state.sag);mergeBatches();
+const canvas=$('#viewport'),gl=canvas.getContext('webgl2',{alpha:true,antialias:true,preserveDrawingBuffer:true})||canvas.getContext('webgl',{alpha:true,antialias:true,preserveDrawingBuffer:true});
+if(!gl){$('#error').style.display='block';$('#error').textContent='WebGL недоступен. Включите аппаратное ускорение браузера.';return}
+const fragmentHighp=gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER,gl.HIGH_FLOAT).precision>0;
+const webgl2=typeof WebGL2RenderingContext!=='undefined'&&gl instanceof WebGL2RenderingContext,derivatives=webgl2||gl.getExtension('OES_standard_derivatives');
+$('#apiName').textContent=webgl2?'WEBGL 2':'WEBGL 1';
+const vertexSource=`precision highp float;attribute vec3 aPos,aNormal,aBary,aFeedDelta;uniform float uFeedIndex;attribute vec2 aUV;attribute float aEdge;uniform mat4 uModel,uVP;varying vec3 vPos,vNormal,vBary;varying vec2 vUV;varying float vEdge;void main(){vec4 p=uModel*vec4(aPos+aFeedDelta*uFeedIndex,1.);vPos=p.xyz;vNormal=mat3(uModel)*aNormal;vUV=aUV;vEdge=aEdge;vBary=aBary;gl_Position=uVP*p;}`;
+const fragmentSource=`precision highp float;varying vec3 vPos,vNormal,vBary;varying vec2 vUV;varying float vEdge;uniform sampler2D uAlbedo,uNormal,uORM;uniform vec4 uRect;uniform vec3 uEye;uniform float uWear,uGrime,uMetal,uDim,uSelected,uHeat,uAniso,uGround,uTexture,uAlpha;uniform vec3 uTint;uniform int uMode;const float PI=3.14159265;
+vec3 aces(vec3 x){return clamp((x*(2.51*x+.03))/(x*(2.43*x+.59)+.14),0.,1.);}vec3 fresnel(float x,vec3 f){return f+(1.-f)*pow(clamp(1.-x,0.,1.),5.);}float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+vec3 light(vec3 n,vec3 v,vec3 l,vec3 radiance,vec3 base,float rough,float metal){vec3 h=normalize(v+l),t=normalize(vec3(1.,.0001,0.)-n*n.x),b=cross(n,t);float nv=max(dot(n,v),.001),nl=max(dot(n,l),.001),nh=max(dot(n,h),0.),vh=max(dot(v,h),0.),aspect=sqrt(1.-.8*uAniso),ax=max(.035,rough*rough/aspect),ay=max(.035,rough*rough*aspect);float d=pow(dot(h,t)/ax,2.)+pow(dot(h,b)/ay,2.)+nh*nh;float D=1./(PI*ax*ay*d*d+.00001);float gv=2.*nv/(nv+sqrt(pow(ax*dot(v,t),2.)+pow(ay*dot(v,b),2.)+nv*nv));float gl=2.*nl/(nl+sqrt(pow(ax*dot(l,t),2.)+pow(ay*dot(l,b),2.)+nl*nl));vec3 f=fresnel(vh,mix(vec3(.04),base,metal));return((1.-f)*(1.-metal)*base/PI+D*gv*gl*f/(4.*nv*nl+.0001))*radiance*nl;}
+void main(){if(uGround>.5){float sh=exp(-pow(vPos.z/.072,2.)-pow((vPos.x+.035)/.44,6.));float mag=exp(-pow((vPos.x-.075)/.05,2.)-pow(vPos.z/.05,2.));float grid=(1.-smoothstep(.0,.008,abs(fract(vPos.x*10.)-.5)))+(1.-smoothstep(.0,.008,abs(fract(vPos.z*10.)-.5)));float fade=exp(-length(vPos.xz)*2.);gl_FragColor=vec4(vec3(.045,.050,.055),clamp(sh*.26+mag*.13+grid*fade*.035,0.,.5));return;}
+vec2 uv=uRect.xy+clamp(vUV,.001,.999)*uRect.zw;vec3 tex=texture2D(uAlbedo,uv).rgb,orm=texture2D(uORM,uv).rgb;vec3 base=pow(tex*uTint,vec3(2.2));float rough=clamp(orm.g,.17,.96),metal=orm.b,ao=orm.r;vec3 N=normalize(vNormal),n=N;
+#ifdef DERIVATIVES
+vec3 dp1=dFdx(vPos),dp2=dFdy(vPos);vec2 du1=dFdx(vUV),du2=dFdy(vUV);vec3 T=cross(dp2,N)*du1.x+cross(N,dp1)*du2.x,B=cross(dp2,N)*du1.y+cross(N,dp1)*du2.y;float inv=inversesqrt(max(max(dot(T,T),dot(B,B)),.00000001));vec3 map=texture2D(uNormal,uv).xyz*2.-1.;map.xy*=.62;n=normalize(mat3(T*inv,B*inv,N)*map);
+#endif
+float grain=hash(floor(vPos.xy*19000.)+floor(vPos.zz*27000.));float edge=smoothstep(.07,.43,vEdge)*uWear*(.25+grain*.75)*uMetal;base=mix(base,vec3(.27,.29,.30),edge*.40);rough=mix(rough,.31,edge);ao*=1.-uGrime*.12*(1.-max(n.y,0.));
+vec3 view=normalize(uEye-vPos),color;if(uMode==2){color=n*.5+.5;}else if(uMode==3){color=vec3(rough);}else if(uMode==4){color=vec3(ao);}else if(uMode==5){vec2 c=floor(vUV*24.);color=mix(vec3(.15,.19,.22),vec3(.72,.77,.79),mod(c.x+c.y,2.));color=mix(color,vec3(.82,.35,.13),step(.94,fract(vUV.x*6.)));}else{if(uMode==6){base=vec3(.34,.32,.29);rough=.7;metal=0.;n=N;}vec3 env=mix(vec3(.12,.15,.20),vec3(.46,.49,.52),n.y*.5+.5);vec3 f=fresnel(max(dot(n,view),0.),mix(vec3(.04),base,metal));vec3 refl=reflect(-view,n);float softbox=pow(max(0.,dot(refl,normalize(vec3(-.2,1.,.6)))),8.)+pow(max(0.,dot(refl,normalize(vec3(.6,.3,-1.)))),16.);color=(base*(1.-metal)*env*.58+f*(env+softbox*vec3(2.1,2.35,2.8))*(.44+.58*(1.-rough)))*ao;color+=light(n,view,normalize(vec3(-.35,1.3,1.)),vec3(3.8,3.65,3.35),base,rough,metal);color+=light(n,view,normalize(vec3(.8,.25,-1.)),vec3(1.8,2.15,2.8),base,rough,metal);color+=light(n,view,normalize(vec3(-.7,.7,-.2)),vec3(2.5,1.9,1.25),base,rough,metal);color=pow(aces(color*1.12),vec3(1./2.2));}
+if(uMode==1){float edgeLine;
+#ifdef DERIVATIVES
+vec3 d=fwidth(vBary)*1.15;vec3 s=smoothstep(vec3(0.),d,vBary);edgeLine=1.-min(min(s.x,s.y),s.z);
+#else
+edgeLine=1.-step(.035,min(min(vBary.x,vBary.y),vBary.z));
+#endif
+color=mix(vec3(.075,.09,.105),vec3(.56,.69,.91),edgeLine);}
+color*=uDim;color+=vec3(.055,.10,.22)*uSelected*pow(1.-abs(dot(N,view)),2.);gl_FragColor=vec4(color,uAlpha);}`;
+function program(vs,fs){let p=gl.createProgram();for(let [type,src] of [[gl.VERTEX_SHADER,vs],[gl.FRAGMENT_SHADER,fs]]){if(webgl2){src=src.replace(/attribute /g,'in ').replace(/varying /g,type===gl.VERTEX_SHADER?'out ':'in ').replace(/texture2D/g,'texture');if(type===gl.FRAGMENT_SHADER)src='out vec4 fragColor;\n'+src.replace(/gl_FragColor/g,'fragColor');src='#version 300 es\n'+(type===gl.FRAGMENT_SHADER?'precision highp float;\n':'')+(derivatives?'#define DERIVATIVES\n':'')+src}else if(type===gl.FRAGMENT_SHADER&&derivatives)src='#extension GL_OES_standard_derivatives : enable\n#define DERIVATIVES\n'+src;if(type===gl.FRAGMENT_SHADER&&!fragmentHighp)src=src.replace(/precision highp float/g,'precision mediump float').replace('.00000001','.0001');let sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));gl.attachShader(p,sh);gl.deleteShader(sh)}gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(p));return p}
+let prog;try{prog=program(vertexSource,fragmentSource)}catch(e){$('#error').style.display='block';$('#error').textContent=e.message;return}gl.useProgram(prog);
+const attributes={};for(let [name,size,offset] of [['aPos',3,0],['aNormal',3,12],['aUV',2,24],['aEdge',1,32],['aBary',3,36]]){let loc=gl.getAttribLocation(prog,name);attributes[name]={loc,size,offset}}
+const U={};for(let name of ['uModel','uVP','uEye','uRect','uAlbedo','uNormal','uORM','uWear','uGrime','uMetal','uDim','uSelected','uHeat','uAniso','uGround','uMode','uTexture','uTint','uAlpha','uFeedIndex'])U[name]=gl.getUniformLocation(prog,name);
+const feedAttribute=gl.getAttribLocation(prog,'aFeedDelta');
+function upload(b){if(b.beltDeltas){b.feedBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b.feedBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(b.beltDeltas),gl.STATIC_DRAW)}b.buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b.buffer);gl.bufferData(gl.ARRAY_BUFFER,b.data,gl.STATIC_DRAW)}batches.forEach(upload);
+const ground={raw:[]};makeSurface(ground,1,1,(u,v)=>({p:[(u-.5)*3,-.32,(v-.5)*3],n:[0,1,0],e:0}));ground.data=new Float32Array(ground.raw);ground.count=ground.data.length/12;ground.matrix=M.identity();upload(ground);
+function bind(b){if(b.feedBuffer){gl.bindBuffer(gl.ARRAY_BUFFER,b.feedBuffer);gl.enableVertexAttribArray(feedAttribute);gl.vertexAttribPointer(feedAttribute,3,gl.FLOAT,false,0,0)}else{gl.disableVertexAttribArray(feedAttribute);gl.vertexAttrib3f(feedAttribute,0,0,0)}gl.bindBuffer(gl.ARRAY_BUFFER,b.buffer);for(let a of Object.values(attributes))if(a.loc>=0){gl.enableVertexAttribArray(a.loc);gl.vertexAttribPointer(a.loc,a.size,gl.FLOAT,false,48,a.offset)}}
+const atlasCanvases=Array.from({length:3},()=>{let c=document.createElement('canvas');c.width=c.height=4096;return c}),atlasContexts=atlasCanvases.map(c=>c.getContext('2d',{willReadFrequently:true}));
+for(let i=0;i<9;i++)for(let k=0;k<3;k++){let r=atlasLayout[i],c=atlasContexts[k];c.fillStyle=k===0?materials[i][3]:k===1?'#8080ff':([0,1,2,6,7].includes(i)?'#f2a3eb':'#f2b500');c.fillRect(r.x,r.y,r.s,r.s)}
+const textures=Array.from({length:3},(_,i)=>{let t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,t);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,1,1,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array(i===0?[66,68,72,255]:i===1?[128,128,255,255]:[240,170,220,255]));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);return t});
+gl.uniform1i(U.uAlbedo,0);gl.uniform1i(U.uNormal,1);gl.uniform1i(U.uORM,2);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);
+let toastTimer;function toast(text,hold=false){$('#toast').textContent=text;$('#toast').classList.add('visible');clearTimeout(toastTimer);if(!hold)toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3200)}
+const camera={yaw:.36,pitch:.24,distance:1.65,target:[.12,-.04,0]},desired={...camera,target:[...camera.target]},presets=[['Hero',.36,.24,1.65,[.12,-.04,0]],['Left',Math.PI,.02,1.95,[.13,-.065,0]],['Right',0,.02,1.95,[.13,-.065,0]],['Top',0,1.56,1.85,[.12,0,0]],['Muzzle',Math.PI/2,.12,.38,[.70,.073,0]],['Feed tray',.42,.65,.55,[.015,.095,0]],['Bipod',.55,.05,.75,[.43,-.10,0]],['Belt detail',.75,.42,.37,[.035,.065,.115]]];
+function setCamera(i){let p=presets[i];desired.yaw=p[1];desired.pitch=p[2];desired.distance=p[3];desired.target=[...p[4]];state.auto=false;$('#auto').setAttribute('aria-pressed','false');$('#viewName').textContent=p[0].toUpperCase()+' PERSPECTIVE';document.querySelectorAll('[data-camera]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.camera===i)))}
+function effectiveMaterial(b){if(b.material===3&&b.group==='stock'||b.material===4&&b.group==='grip')return state.stock?5:b.material;if(b.caseMaterial)return state.cases?7:6;return b.material}
+function feedPose(t){let x=0,y=0,z=0,bolt=0,index=0,phase=0,eject=0;const smooth=t=>{t=clamp(t);return t*t*(3-2*t)};if(t<.3){phase=0;x=-.081*smooth(t/.3);bolt=x}else if(t<.47){phase=1;x=-.081;y=-.032*smooth((t-.3)/.17);bolt=-.081}else if(t<.73){phase=2;x=mix(-.081,.083,smooth((t-.47)/.26));y=-.032;bolt=mix(-.081,0,smooth((t-.47)/.26))}else{phase=t<.89?3:4;x=.083;y=-.032;index=smooth((t-.73)/.16);eject=smooth((t-.89)/.11)}return{x,y,z,bolt,index,phase,eject}}
+const phases=['01 / Захват закраины → извлечение НАЗАД · −X','02 / Патрон свободен от звена → опускание','03 / Затвор вперёд → досылание · +X','04 / Протяжка на одно звено · лента не рассыпается','05 / Выброс гильзы ВНИЗ · звено остаётся в ленте'];
+function syncFeed(){let p=feedPose(state.feed);$('#feed').value=Math.round(state.feed*100);$('#feedValue').textContent=Math.round(state.feed*100)+'%';let label=state.count?phases[p.phase]:'НЕТ ПАТРОНОВ / добавьте ленту';if($('#phase').textContent!==label)$('#phase').textContent=label;$('#feedHud').textContent=label;$('#feedHud').hidden=state.feed===0&&!state.playing}
+const anim={cover:0,bipod:1,barrel:0,regulator:0,explode:0};
+function updateModels(dt){let t=1-Math.exp(-dt*9);for(let k of ['cover','bipod','barrel','regulator'])anim[k]=mix(anim[k],Number(state[k]),t);anim.explode=mix(anim.explode,state.exploded,t);let cycle=feedPose(state.feed);
+ for(let b of batches){let g=b.group,trans=V.mul(b.explode,anim.explode),q=[0,0,0,1],p=[0,0,0];
+  if(['cover','coverMechanism'].includes(g)){q=Q.axis([0,0,1],-anim.cover*1.48);p=[.13,.044,0]}
+  if(g==='bipodL'||g==='bipodR'){p=b.pivot;q=Q.axis([0,0,1],-(1-anim.bipod)*1.1)}
+  if(['barrel','carryHandle'].includes(g))trans=V.add(trans,[anim.barrel*.17,anim.barrel*.16,0]);
+  if(g==='regulator'){q=Q.axis([0,0,1],anim.regulator*TAU/3);p=b.pivot}
+  if(['bolt','piston','charging'].includes(g))trans[0]+=cycle.bolt;
+  if(g==='feedRound')trans=V.add(trans,[cycle.x,cycle.y,cycle.z]);
+  if(g==='eject'){trans=V.add(trans,[0,-cycle.eject*.17,.024*cycle.eject]);q=Q.axis([0,0,1],cycle.eject*1.2);p=[.118,.073,0]}
+  if(g==='buttplate'){q=Q.axis([0,0,1],anim.explode*.7);p=[-.435,.005,0]}
+  b.matrix=M.rigid(q,p,trans);
+  b.visible=!(g==='ammoBox'&&state.container||g==='ammoLid'&&state.container||g==='mount'&&state.optic===0||g==='optic'&&state.optic!==2||g==='sling'&&!state.sling||g==='cleaning'&&anim.explode<.02||g==='feedRound'&&(!state.count||state.feed>=.89)||g==='eject'&&(!state.count||state.feed<.89));
+ }
+}
+const rendererInfo=gl.getExtension('WEBGL_debug_renderer_info'),softwareGPU=rendererInfo&&/swiftshader|llvmpipe|software/i.test(gl.getParameter(rendererInfo.UNMASKED_RENDERER_WEBGL));
+let renderScale=softwareGPU?.5:1,renderRevision=0,lastRenderKey="";
+let eye=[0,0,1],vp=M.identity(),last=performance.now(),fpsFrames=0,fpsStart=last,firstFrame=0,bakeMs=0;
+function render(now){let dt=Math.min(.4,(now-last)/1000);last=now;let rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,1.5)*renderScale,w=Math.max(1,Math.round(rect.width*dpr)),h=Math.max(1,Math.round(rect.height*dpr));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}let s=1-Math.exp(-dt*11);if(state.playing&&!downloading){state.feed=(state.feed+dt/7)%1;syncFeed()}if(state.auto&&!downloading)desired.yaw+=dt*.20;for(let k of ['yaw','pitch','distance'])camera[k]=mix(camera[k],desired[k],s);camera.target=camera.target.map((x,i)=>mix(x,desired.target[i],s));let fit=Math.max(1,1.45/(w/h));eye=V.add(camera.target,V.mul([Math.sin(camera.yaw)*Math.cos(camera.pitch),Math.sin(camera.pitch),Math.cos(camera.yaw)*Math.cos(camera.pitch)],camera.distance*fit));vp=M.mul(M.perspective(.63,w/h,.008,14),M.look(eye,camera.target));updateModels(dt);let key=[w,h,renderRevision,state.mode,state.selected,state.isolate,...Object.values(state),...Object.values(anim).map(x=>x.toFixed(5)),camera.yaw.toFixed(5),camera.pitch.toFixed(5),camera.distance.toFixed(5),...camera.target.map(x=>x.toFixed(5))].join("|");if(key!==lastRenderKey){draw();lastRenderKey=key;fpsFrames++}if(!firstFrame){firstFrame=performance.now()-started;$('#statFirst').textContent=Math.round(firstFrame)+' ms'}if(now-fpsStart>600){$('#statFps').textContent=fpsFrames?Math.round(fpsFrames*1000/(now-fpsStart))+' fps'+(renderScale<1?' · '+Math.round(renderScale*100)+'%':''):'idle · on demand';fpsStart=now;fpsFrames=0}requestAnimationFrame(render)}
+function draw(){
+ if(gl.isContextLost())return;gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(prog);
+ for(let i=0;i<3;i++){gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,textures[i])}
+ gl.uniformMatrix4fv(U.uVP,false,vp);gl.uniform3fv(U.uEye,eye);gl.uniform1f(U.uFeedIndex,feedPose(state.feed).index);gl.uniform1f(U.uWear,state.wear);gl.uniform1f(U.uGrime,state.grime);gl.uniform1i(U.uMode,state.mode);gl.uniform1f(U.uGround,1);gl.uniformMatrix4fv(U.uModel,false,ground.matrix);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);bind(ground);gl.drawArrays(gl.TRIANGLES,0,ground.count);gl.depthMask(true);gl.disable(gl.BLEND);gl.uniform1f(U.uGround,0);
+ const transparent=[];
+ function part(b,alpha=1){let mat=effectiveMaterial(b),selected=state.selected<0||state.selected===mat;if(!b.visible||state.isolate&&!selected)return;gl.uniform4fv(U.uRect,atlasLayout[mat].uv);gl.uniform1f(U.uMetal,[0,1,2,6,7].includes(mat)?1:0);gl.uniform1f(U.uAniso,mat===0?.65:mat===1?.8:mat===6||mat===7?.38:0);gl.uniform1f(U.uDim,selected?1:.18);gl.uniform1f(U.uSelected,state.selected===mat?1:0);gl.uniform1f(U.uHeat,mat===1?state.heat:0);gl.uniform1f(U.uAlpha,alpha);gl.uniform3fv(U.uTint,b.tint||[1,1,1]);gl.uniformMatrix4fv(U.uModel,false,b.matrix);bind(b);gl.drawArrays(gl.TRIANGLES,0,b.count)}
+ for(let b of batches){if(state.cutaway&&(state.feed>0||state.playing)&&['receiver','cover','gas'].includes(b.group))transparent.push(b);else part(b)}
+ if(transparent.length){transparent.sort((a,b)=>Math.hypot(...V.sub(M.point(b.matrix,b.center),eye))-Math.hypot(...V.sub(M.point(a.matrix,a.center),eye)));gl.enable(gl.BLEND);gl.depthMask(false);for(let b of transparent)part(b,.12);gl.depthMask(true);gl.disable(gl.BLEND)}
+}
+const modes=['Shaded','Wireframe','Normals','Roughness','AO','UV checker','Clay'];
+const finishes=[['Арсенальный','#34445e'],['Строевой','#6a7180'],['Поздний полимерный','#30353d'],['Зелёный полевой','#606b48'],['Зимний','#d4d6d4'],['Убитый','#80654d']];
+$('#renderModes').innerHTML=modes.map((n,i)=>`<button data-mode="${i}" aria-pressed="${i===0}">${n}</button>`).join('');
+$('#cameras').innerHTML=presets.map((p,i)=>`<button data-camera="${i}" aria-pressed="${i===0}">${p[0]}<small>${i+1}</small></button>`).join('');
+$('#materials').innerHTML=materials.map((m,i)=>`<button class="material" data-material="${m[0]}" data-index="${i}" aria-pressed="false"><span class="swatch" style="background:radial-gradient(circle at 35% 25%,${m[3]},#1a1713)"></span><span><strong>${m[1]}</strong><small>${m[2]}</small></span><span class="tick">◦</span></button>`).join('');
+$('#finishes').innerHTML=finishes.map((p,i)=>`<button class="finish" data-finish="${i}" aria-pressed="${i===state.finish}"><span class="swatch" style="background:${p[1]}"></span>${p[0]}</button>`).join('');
+const configs=[['cover','Крышка коробки',['Закрыта','Открыта']],['bipod','Сошки',['Сложены','Разложены']],['container','Короб',['100 патронов','Снят']],['barrel','Быстросъёмный ствол',['Установлен','Снят']],['stock','Приклад / рукоятка',['Дерево / бакелит','Полимер']],['optic','Оптика',['Нет','Кронштейн','ПСО-1']],['sling','Ремень',['Нет','Есть']],['regulator','Газовый регулятор',['1','2','3']]];
+$('#configuration').innerHTML=configs.map(([key,label,values])=>`<div class="config-row"><span>${label}</span><button data-config="${key}" aria-label="${label}: ${values[Number(state[key])]}" aria-pressed="${!!state[key]}">${values[Number(state[key])]}</button></div>`).join('');
+function syncConfig(){for(let [key,label,values] of configs){let b=$('[data-config="'+key+'"]');b.textContent=values[state[key]];b.setAttribute('aria-pressed',String(!!state[key]));b.setAttribute('aria-label',label+': '+b.textContent)}}
+const buildMs=performance.now()-started;let triangles=0;
+$('#stats').innerHTML=[['Треугольники / active','<span id="activeTriangles"></span>'],['Вершины / all','<span id="vertices"></span>'],['Именованные батчи','<span id="batchCount"></span>'],['PBR-атласы','3 × 4096²'],['Материалы','2 × 2048² / 7 × 1024²'],['Сборка',Math.round(buildMs)+' ms'],['Первый кадр','<span id="statFirst">…</span>'],['Перепекание','<span id="statBake">…</span>'],['Производительность','<span id="statFps">…</span>']].map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join('');
+function updateStats(){triangles=batches.reduce((s,b)=>s+b.count/3,0);$('#activeTriangles').textContent=batches.filter(b=>b.visible).reduce((s,b)=>s+b.count/3,0).toLocaleString('en-US');$('#vertices').textContent=(triangles*3).toLocaleString('en-US');$('#batchCount').textContent=batches.length}
+updateModels(10);updateStats();
+function setMode(i){state.mode=i;document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.mode===i)))}
+document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>setMode(+b.dataset.mode));document.querySelectorAll('[data-camera]').forEach(b=>b.onclick=()=>setCamera(+b.dataset.camera));
+document.querySelectorAll('[data-material]').forEach(b=>b.onclick=()=>{let i=+b.dataset.index;state.selected=state.selected===i?-1:i;document.querySelectorAll('[data-material]').forEach(x=>x.setAttribute('aria-pressed',String(+x.dataset.index===state.selected)))});
+$('#isolate').onchange=e=>state.isolate=e.target.checked;
+document.querySelectorAll('[data-config]').forEach(b=>b.onclick=()=>{let k=b.dataset.config,c=configs.find(x=>x[0]===k);state[k]=(Number(state[k])+1)%c[2].length;syncConfig();updateModels(0);updateStats()});
+document.querySelectorAll('[data-case]').forEach(b=>b.onclick=()=>{state.cases=+b.dataset.case;document.querySelectorAll('[data-case]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});
+$('#feed').oninput=e=>{state.feed=+e.target.value/100;state.playing=false;$('#playFeed').setAttribute('aria-pressed','false');$('#playFeed').textContent='▶ Демонстрация цикла · C';syncFeed()};
+$('#playFeed').onclick=()=>{state.playing=!state.playing;$('#playFeed').setAttribute('aria-pressed',String(state.playing));$('#playFeed').textContent=state.playing?'Ⅱ Пауза · C':'▶ Демонстрация цикла · C';if(state.playing){state.cover=1;syncConfig();setCamera(5)}syncFeed()};
+$('#cutaway').onchange=e=>state.cutaway=e.target.checked;
+let beltTimer,beltBuiltCount=state.count,beltBuiltSag=state.sag;
+function rebuildBelt(){beltBuiltCount=state.count;beltBuiltSag=state.sag;for(let i=batches.length-1;i>=0;i--)if(['beltLinks','rounds'].includes(batches[i].group)){gl.deleteBuffer(batches[i].buffer);if(batches[i].feedBuffer)gl.deleteBuffer(batches[i].feedBuffer);batches.splice(i,1)}buildBelt(state.count,state.sag);mergeBatches();for(let b of batches)if(!b.buffer)upload(b);updateModels(0);updateStats();renderRevision++}
+for(let k of ['count','sag'])$('#'+k).oninput=e=>{state[k]=k==='count'?+e.target.value:+e.target.value/100;$('#'+k+'Value').textContent=e.target.value+(k==='sag'?'%':' rounds');clearTimeout(beltTimer);beltTimer=setTimeout(rebuildBelt,90);syncFeed()};
+$('#exploded').oninput=e=>{state.exploded=e.target.value/100;if(state.exploded>.3)desired.distance=2.2;$('#explodedValue').textContent=e.target.value+'%'};
+$('#auto').onclick=()=>{state.auto=!state.auto;$('#auto').setAttribute('aria-pressed',String(state.auto))};$('#reset').onclick=()=>setCamera(0);$('#help').onclick=()=>$('#helpDialog').showModal();
+function syncSheet(){let collapsed=matchMedia('(max-width:899px)').matches&&!$('#inspector').classList.contains('open');$('#inspectorContent').inert=collapsed;$('#inspectorContent').setAttribute('aria-hidden',String(collapsed))}
+$('#sheet').onclick=()=>{let open=$('#inspector').classList.toggle('open');$('#sheet').setAttribute('aria-expanded',String(open));$('#sheetArrow').textContent=open?'↓':'↑';syncSheet()};addEventListener('resize',syncSheet);syncSheet();
+document.addEventListener('keydown',e=>{if(downloading||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||$('#helpDialog').open||e.ctrlKey||e.metaKey||e.altKey)return;let k=e.key.toLowerCase();if(k>='1'&&k<='8'){setCamera(+k-1);e.preventDefault()}if(k==='r')setCamera(0);if(k==='a')$('#auto').click();if(k==='w')setMode(state.mode===1?0:1);if(k==='c')$('#playFeed').click();if(k==='b')$('[data-config="bipod"]').click();if(k==='t')$('[data-config="cover"]').click();if(k==='e'){$('#exploded').value=state.exploded>.5?0:100;$('#exploded').dispatchEvent(new Event('input'))}if(e.target===canvas&&e.key.startsWith('Arrow')){e.preventDefault();desired.yaw+=(e.key==='ArrowLeft'?-.1:e.key==='ArrowRight'?.1:0);desired.pitch=clamp(desired.pitch+(e.key==='ArrowUp'?.1:e.key==='ArrowDown'?-.1:0),-1.5,1.56)}});
+const pointers=new Map();let previousGesture=null;
+function gesture(){let p=[...pointers.values()];return{x:p.reduce((s,a)=>s+a.x,0)/p.length,y:p.reduce((s,a)=>s+a.y,0)/p.length,d:p.length>1?Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y):0,n:p.length}}
+function pan(dx,dy){let forward=V.norm(V.sub(camera.target,eye)),right=V.norm(V.cross(forward,[0,1,0])),up=V.cross(right,forward),scale=Math.hypot(...V.sub(eye,camera.target))*.65/canvas.clientHeight;desired.target=V.add(desired.target,V.add(V.mul(right,-dx*scale),V.mul(up,dy*scale)))}
+canvas.onpointerdown=e=>{if(downloading)return;canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});previousGesture=gesture();state.auto=false;$('#auto').setAttribute('aria-pressed','false')};
+canvas.onpointermove=e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});let g=gesture(),p=previousGesture;previousGesture=g;if(!p||p.n!==g.n)return;let dx=g.x-p.x,dy=g.y-p.y;if(g.n>1){desired.distance=clamp(desired.distance*p.d/Math.max(1,g.d),.07,3.8);pan(dx,dy)}else if(e.buttons===2||e.shiftKey)pan(dx,dy);else{desired.yaw-=dx*.006;desired.pitch=clamp(desired.pitch+dy*.006,-1.5,1.56)}$('#viewName').textContent='CUSTOM PERSPECTIVE';document.querySelectorAll('[data-camera]').forEach(b=>b.setAttribute('aria-pressed','false'))};
+for(let event of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(event,e=>{pointers.delete(e.pointerId);previousGesture=pointers.size?gesture():null});canvas.oncontextmenu=e=>e.preventDefault();canvas.addEventListener('wheel',e=>{e.preventDefault();if(downloading)return;desired.distance=clamp(desired.distance*Math.exp(clamp(e.deltaY,-200,200)*.001),.07,3.8)},{passive:false});
+function rayTriangle(o,d,a,b,c){let e1=V.sub(b,a),e2=V.sub(c,a),h=V.cross(d,e2),det=V.dot(e1,h);if(Math.abs(det)<1e-10)return Infinity;let inv=1/det,s=V.sub(o,a),u=V.dot(s,h)*inv;if(u<0||u>1)return Infinity;let q=V.cross(s,e1),v=V.dot(d,q)*inv;if(v<0||u+v>1)return Infinity;let t=V.dot(e2,q)*inv;return t>0?t:Infinity}
+canvas.ondblclick=e=>{if(downloading)return;let r=canvas.getBoundingClientRect(),f=V.norm(V.sub(camera.target,eye)),right=V.norm(V.cross(f,[0,1,0])),up=V.cross(right,f),x=(2*(e.clientX-r.left)/r.width-1)*Math.tan(.63/2)*r.width/r.height,y=(1-2*(e.clientY-r.top)/r.height)*Math.tan(.63/2),dir=V.norm(V.add(f,V.add(V.mul(right,x),V.mul(up,y)))),best=Infinity,hit=null;for(let b of batches){if(!b.visible||state.isolate&&state.selected>=0&&effectiveMaterial(b)!==state.selected)continue;let inv=M.inverseRigid(b.matrix),o=M.point(inv,eye),d=V.sub(M.point(inv,V.add(eye,dir)),o);let lo=0,hi=Infinity;for(let k=0;k<3;k++){if(Math.abs(d[k])<1e-8){if(o[k]<b.min[k]||o[k]>b.max[k])hi=-1}else{let t1=(b.min[k]-o[k])/d[k],t2=(b.max[k]-o[k])/d[k];lo=Math.max(lo,Math.min(t1,t2));hi=Math.min(hi,Math.max(t1,t2))}}if(hi<lo)continue;for(let i=0;i<b.data.length;i+=36){let a=b.data.subarray(i,i+3),c=b.data.subarray(i+12,i+15),dd=b.data.subarray(i+24,i+27),t=rayTriangle(o,d,a,c,dd);if(t<best){best=t;hit=b}}}if(hit){desired.target=V.add(eye,V.mul(dir,best));desired.distance=.32;$('#viewName').textContent='DETAIL FOCUS';toast(hit.name)}};
+requestAnimationFrame(render);
+
+async function textureJob(o, emit, alive = () => true) {
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const unit = (x, fallback) => {
+    x = Number(x);
+    return Number.isFinite(x) ? clamp(x > 1 ? x / 100 : x) : fallback;
+  };
+  const finish = clamp(Number(o && (o.finish ?? o.finishIndex)) || 0, 0, 5) | 0;
+  const wear0 = unit(o && o.wear, .35), grime0 = unit(o && o.grime, .48), heat0 = unit(o && (o.heat ?? o.barrelHeat), .55);
+  const wear = finish === 5 ? Math.max(.9, wear0) : wear0;
+  const grime = finish === 5 ? Math.max(.86, grime0) : grime0;
+  const heat = heat0;
+  const seed = ((Number(o && o.seed) || 0) >>> 0) || 0x504B4D31;
+  const serial = String(o && o.serial != null ? o.serial : 'АГ 1247').slice(0, 20);
+  const serialEnabled = !(o && o.serialEnabled === false);
+  const pause = () => new Promise(resolve => setTimeout(resolve, 0));
+  const yieldMain = typeof OffscreenCanvas === 'undefined';
+  const yieldRows = async (y, stride = 32) => {
+    if ((y & (stride - 1)) === 0) { if (!alive()) throw Error('Cancelled'); if (yieldMain) await pause(); }
+  };
+  const bases = [
+    [22, 28, 38], [43, 45, 48], [49, 55, 55], [139, 77, 34], [74, 35, 22],
+    [27, 30, 31], [181, 125, 45], [67, 77, 54], [43, 45, 40]
+  ];
+  const rough0 = [.43, .38, .70, .34, .48, .62, .29, .56, .87];
+  const metal0 = [.91, .98, .90, 0, 0, 0, .93, .88, 0];
+
+  function rng(value) {
+    let state = value >>> 0;
+    return () => {
+      state = (state + 0x6D2B79F5) >>> 0;
+      let t = state;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function hash2(x, y, s = 0) {
+    x |= 0; y |= 0; s |= 0;
+    let n = Math.imul(x ^ s, 374761393) + Math.imul(y, 668265263);
+    n = Math.imul(n ^ (n >>> 13), 1274126177);
+    return ((n ^ (n >>> 16)) >>> 0) / 4294967295;
+  }
+  function vnoise(x, y, s) {
+    const ix = Math.floor(x), iy = Math.floor(y), fx0 = x - ix, fy0 = y - iy;
+    const fx = fx0 * fx0 * (3 - 2 * fx0), fy = fy0 * fy0 * (3 - 2 * fy0);
+    return lerp(lerp(hash2(ix, iy, s), hash2(ix + 1, iy, s), fx),
+      lerp(hash2(ix, iy + 1, s), hash2(ix + 1, iy + 1, s), fx), fy);
+  }
+  function pnoise(x, y, period, s) {
+    x = ((x % period) + period) % period; y = ((y % period) + period) % period;
+    const ix = Math.floor(x), iy = Math.floor(y), fx0 = x - ix, fy0 = y - iy;
+    const fx = fx0 * fx0 * (3 - 2 * fx0), fy = fy0 * fy0 * (3 - 2 * fy0);
+    return lerp(lerp(hash2(ix, iy, s), hash2((ix + 1) % period, iy, s), fx),
+      lerp(hash2(ix, (iy + 1) % period, s), hash2((ix + 1) % period, (iy + 1) % period, s), fx), fy);
+  }
+  function fbm(x, y, s) {
+    let v = 0, a = .55;
+    for (let i = 0; i < 4; i++) { v += vnoise(x, y, s + i * 17) * a; x *= 2; y *= 2; a *= .5; }
+    return v;
+  }
+  function pfbm(x, y, s) {
+    let v = 0, a = .55, p = 8;
+    for (let i = 0; i < 4; i++) { v += pnoise(x, y, p, s + i * 17) * a; x *= 2; y *= 2; p *= 2; a *= .5; }
+    return v;
+  }
+  function pstreak(x, y, s) {
+    return pnoise(x * .125, y * 32, 64, s) * .7 + pnoise(x * .5, y * 96, 128, s + 1) * .3;
+  }
+  function worley(x, y, s) {
+    const ix = Math.floor(x), iy = Math.floor(y);
+    let d = 2;
+    for (let yy = -1; yy <= 1; yy++) for (let xx = -1; xx <= 1; xx++) {
+      const qx = ix + xx, qy = iy + yy;
+      d = Math.min(d, Math.hypot(qx + hash2(qx, qy, s) - x, qy + hash2(qx, qy, s + 91) - y));
+    }
+    return d;
+  }
+  function anisotropic(x, y, s) {
+    return pnoise(x * 46, y * 3, 128, s) * .62 + pnoise(x * 3, y * 180, 256, s + 31) * .38;
+  }
+  function sample(field, ix, iy, fx, fy, width) {
+    const i = iy * width + ix;
+    return lerp(lerp(field[i], field[i + 1], fx), lerp(field[i + width], field[i + width + 1], fx), fy);
+  }
+
+  const glyphs = Object.freeze({
+    А:[14,17,17,31,17,17,17], Б:[30,17,17,30,17,17,30], В:[30,17,17,30,17,17,30],
+    Г:[31,16,16,16,16,16,16], Д:[14,17,17,17,17,17,31], Е:[31,16,16,30,16,16,31],
+    Ж:[21,21,10,31,10,21,21], З:[30,1,1,14,1,1,30], И:[17,25,25,21,19,19,17],
+    К:[17,18,20,24,20,18,17], Л:[7,9,9,17,17,17,17], М:[17,27,21,21,17,17,17],
+    Н:[17,17,17,31,17,17,17], О:[14,17,17,17,17,17,14], П:[31,17,17,17,17,17,17],
+    Р:[30,17,17,30,16,16,16], С:[14,17,16,16,16,17,14], Т:[31,4,4,4,4,4,4],
+    У:[17,17,10,4,4,4,4],
+    '0':[14,17,19,21,25,17,14], '1':[4,12,4,4,4,4,14], '2':[14,17,1,2,4,8,31],
+    '3':[30,1,1,14,1,1,30], '4':[2,6,10,18,31,2,2], '5':[31,16,16,30,1,1,30],
+    '6':[14,16,16,30,17,17,14], '7':[31,1,2,4,8,8,8], '8':[14,17,17,14,17,17,14],
+    '9':[14,17,17,15,1,1,14], '-':[0,0,0,31,0,0,0], '/':[1,2,4,8,16,0,0],
+    '.':[0,0,0,0,0,6,6], ' ':[0,0,0,0,0,0,0]
+  });
+  function glyph(ctx, ch, x, y, step) {
+    const p = glyphs[ch] || glyphs['-'];
+    ctx.beginPath();
+    for (let row = 0; row < 7; row++) for (let col = 0; col < 5; col++) {
+      if (p[row] & (1 << (4 - col))) ctx.rect(x + col * step, y + row * step, step * .84, step * .84);
+    }
+    ctx.fill();
+  }
+  function vectorText(ctx, text, x, y, step) {
+    for (const ch of String(text).toUpperCase()) { glyph(ctx, ch, x, y, step); x += step * 6; }
+  }
+  function makeCanvas(size) {
+    const c = typeof OffscreenCanvas !== 'undefined' ? new OffscreenCanvas(size, size) : document.createElement('canvas');
+    c.width = c.height = size;
+    return c;
+  }
+  function pixels(ctx, bytes, size) {
+    const image = ctx.createImageData(size, size);
+    image.data.set(bytes); ctx.putImageData(image, 0, 0);
+  }
+  function stain(ctx, x, y, radius, color) {
+    const g = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    g.addColorStop(0, color); g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g; ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+  }
+  async function normalFromHeight(height, size) {
+    const normal = new Uint8ClampedArray(size * size * 4);
+    for (let y = 0; y < size; y++) {
+      const ym = y ? y - 1 : size - 1, yp = y + 1 === size ? 0 : y + 1;
+      for (let x = 0; x < size; x++) {
+        const xm = x ? x - 1 : size - 1, xp = x + 1 === size ? 0 : x + 1, i = (y * size + x) * 4;
+        const dx = (height[(y * size + xm) * 4] - height[(y * size + xp) * 4]) * .022;
+        const dy = (height[(ym * size + x) * 4] - height[(yp * size + x) * 4]) * .022;
+        const inv = 1 / Math.sqrt(dx * dx + dy * dy + 1);
+        normal[i] = clamp(dx * inv * .5 + .5) * 255;
+        normal[i + 1] = clamp(dy * inv * .5 + .5) * 255;
+        normal[i + 2] = inv * .5 * 255 + 127.5; normal[i + 3] = 255;
+      }
+      await yieldRows(y);
+    }
+    return normal;
+  }
+  function mark(ctx, heightCtx, text, rect, size, light = false) {
+    const [u, v, w, h] = rect;
+    const step = Math.max(1, Math.min(size * h / 7, size * w / Math.max(6, String(text).length * 6.05)));
+    ctx.fillStyle = light ? 'rgba(224,194,112,.74)' : 'rgba(13,16,16,.76)';
+    vectorText(ctx, text, u * size, v * size, step);
+    heightCtx.fillStyle = light ? 'rgb(166,150,100)' : 'rgb(62,62,58)';
+    vectorText(heightCtx, text, u * size, v * size, step);
+  }
+  // UV-local engraved label strips; every rectangle is wholly inside v=.00-.25.
+  const markUV = [
+    { serial:[.045,.025,.31,.060], factory:[.045,.105,.27,.060], safe:[.46,.025,.19,.060], stamp:[.46,.105,.22,.060], tri:[.84,.025,.10,.100] },
+    { heat:[.04,.025,.34,.060], scale:[.04,.115,.75,.060], tri:[.84,.025,.10,.100] },
+    { gas:[.035,.025,.42,.060], range:[.035,.115,.48,.060] },
+    { rear:[.04,.025,.78,.060], mark:[.04,.115,.42,.060] },
+    { grip:[.04,.025,.32,.060], mark:[.04,.115,.55,.060] },
+    { poly:[.04,.025,.45,.060], mark:[.04,.115,.55,.060] },
+    { head:[.08,.025,.78,.060] },
+    { link:[.08,.025,.46,.060], mark:[.08,.115,.46,.060] },
+    { web:[.08,.025,.68,.060], mark:[.08,.115,.68,.060] }
+  ];
+  function triangle(ctx, heightCtx, size, rect) {
+    const [u, v, w, h] = rect, x = u * size, y = v * size;
+    ctx.strokeStyle = 'rgba(215,185,98,.74)'; ctx.lineWidth = Math.max(1, size * .002);
+    ctx.beginPath(); ctx.moveTo(x + w * size * .5, y); ctx.lineTo(x + w * size, y + h * size); ctx.lineTo(x, y + h * size); ctx.closePath(); ctx.stroke();
+    heightCtx.strokeStyle = 'rgb(154,140,90)'; heightCtx.lineWidth = ctx.lineWidth;
+    heightCtx.beginPath(); heightCtx.moveTo(x + w * size * .5, y); heightCtx.lineTo(x + w * size, y + h * size); heightCtx.lineTo(x, y + h * size); heightCtx.closePath(); heightCtx.stroke();
+  }
+
+  for (let mat = 0; mat < 9; mat++) {
+    if (!alive()) throw Error('Cancelled');
+    const size = mat < 2 ? 2048 : 1024, count = size * size;
+    const rand = rng((seed + Math.imul(mat + 1, 7919)) >>> 0), materialSeed = (seed + Math.imul(mat + 1, 379)) >>> 0;
+    const albedo = new Uint8ClampedArray(count * 4), height = new Uint8ClampedArray(count * 4), orm = new Uint8ClampedArray(count * 4);
+    const grid = 65, fieldCount = grid * grid;
+    const uCoords = new Float32Array(size), xIndices = new Uint16Array(size), xFractions = new Float32Array(size);
+    for (let x = 0; x < size; x++) {
+      const gx = x / (size - 1) * (grid - 1), ix = Math.min(grid - 2, gx | 0);
+      uCoords[x] = x / size; xIndices[x] = ix; xFractions[x] = gx - ix;
+    }
+    const macro = new Float32Array(fieldCount), streak = new Float32Array(fieldCount), cells = new Float32Array(fieldCount), broad = new Float32Array(fieldCount), fibres = new Float32Array(fieldCount);
+    for (let y = 0; y < grid; y++) for (let x = 0; x < grid; x++) {
+      const i = y * grid + x, u = x / (grid - 1), v = y / (grid - 1);
+      macro[i] = pfbm(u * 8, v * 8, materialSeed); streak[i] = pstreak(u * 16, v * 16, materialSeed + 7);
+      cells[i] = worley(u * 38, v * 38, materialSeed + 13); broad[i] = fbm(u * 13, v * 13, materialSeed + 17); fibres[i] = anisotropic(u, v, materialSeed + 23);
+    }
+    for (let y = 0; y < size; y++) {
+      const gy = y / (size - 1) * (grid - 1), iy = Math.min(grid - 2, gy | 0), fy = gy - iy, v = y / size;
+      for (let x = 0; x < size; x++) {
+        const ix = xIndices[x], fx = xFractions[x], u = uCoords[x];
+        const noise = sample(macro, ix, iy, fx, fy, grid), directional = sample(streak, ix, iy, fx, fy, grid);
+        const cell = sample(cells, ix, iy, fx, fy, grid), large = sample(broad, ix, iy, fx, fy, grid);
+        const fibre = mat === 2 || mat === 4 || mat === 8 ? sample(fibres, ix, iy, fx, fy, grid) : .5;
+        const grain = hash2(x, y, materialSeed), edge = Math.pow(1 - Math.min(u, 1 - u, v, 1 - v) * 2, 18) * wear;
+        const dust = grime * (.09 + Math.pow(1 - noise, 2) * .23 + Math.pow(1 - cell, 3) * .34), i = (y * size + x) * 4, base = bases[mat];
+        let c0 = base[0] + (noise - .5) * 18 + (grain - .5) * 10, c1 = base[1] + (noise - .5) * 18 + (grain - .5) * 10, c2 = base[2] + (noise - .5) * 18 + (grain - .5) * 10;
+        let rough = rough0[mat] + (noise - .5) * .08 + grime * .13, metal = metal0[mat], h = 127 + (noise - .5) * 18 + (grain - .5) * (mat < 2 ? 15 : 8);
+        if (mat === 0) {
+          const oil = clamp((large - .36) * 2.2) * (1 - grime * .2), pit = grime * clamp((directional - .4) * 1.8) * .35;
+          c0 = c0 * (1 - pit) + 15 * pit + oil * 8; c1 = c1 * (1 - pit) + 21 * pit + oil * 8; c2 = c2 * (1 - pit) + 25 * pit + oil * 7;
+          const silver = edge * .72 + clamp((grain - .972) * 25) * wear * .2;
+          c0 = lerp(c0, 142, silver); c1 = lerp(c1, 147, silver); c2 = lerp(c2, 151, silver); h += directional * 6 + edge * 16; rough -= oil * .13;
+        } else if (mat === 1) {
+          const breech = Math.exp(-Math.pow((u - .17) / .23, 2)), gas = Math.exp(-Math.pow((u - .51) / .16, 2));
+          const thermal = clamp(heat * (.11 + .89 * Math.max(breech, gas * .92)) * (.78 + noise * .22));
+          const lathe = .5 + .5 * Math.sin(v * 760 + directional * 11 + u * 4);
+          let t0 = 51, t1 = 54, t2 = 58;
+          if (thermal < .25) { const q = thermal / .25; t0 = lerp(51, 151, q); t1 = lerp(54, 111, q); t2 = lerp(58, 57, q); }
+          else if (thermal < .5) { const q = (thermal - .25) / .25; t0 = lerp(151, 119, q); t1 = lerp(111, 61, q); t2 = lerp(57, 45, q); }
+          else if (thermal < .74) { const q = (thermal - .5) / .24; t0 = lerp(119, 59, q); t1 = lerp(61, 45, q); t2 = lerp(45, 84, q); }
+          else { const q = (thermal - .74) / .26; t0 = lerp(59, 35, q); t1 = lerp(45, 55, q); t2 = lerp(84, 119, q); }
+          c0 = lerp(c0, t0, thermal) + (lathe - .5) * 14; c1 = lerp(c1, t1, thermal) + (lathe - .5) * 12; c2 = lerp(c2, t2, thermal) + (lathe - .5) * 13;
+          c0 -= grime * (1 - noise) * 20; c1 -= grime * (1 - noise) * 16; c2 -= grime * (1 - noise) * 11; h += lathe * 5 + edge * 8; rough += thermal * .16;
+        } else if (mat === 2) {
+          const phosphate = (fibre - .5) * 18 + (directional - .5) * 8;
+          c0 += phosphate; c1 += phosphate; c2 += phosphate; h += directional * 8 + edge * 10; rough += .04;
+        } else if (mat === 3) {
+          const rings = .5 + .5 * Math.sin(u * 74 + v * 8 + noise * 8), grainWood = (directional - .5) * 28 + (rings - .5) * 20;
+          const knot = Math.pow(clamp((.32 - Math.hypot(u - .28, v - .58)) * 5), 2) + Math.pow(clamp((.24 - Math.hypot(u - .72, v - .35)) * 6), 2);
+          c0 = 137 + grainWood + knot * 42 + (noise - .5) * 16; c1 = 70 + grainWood * .48 + knot * 19 + (noise - .5) * 10; c2 = 30 + grainWood * .22 + knot * 9;
+          const varnish = clamp(.30 + large * .64 - grime * .12), chip = clamp((grain - (.84 - wear * .3)) * 6) + edge * .32;
+          c0 = lerp(c0, 205, varnish * .25); c1 = lerp(c1, 105, varnish * .2); c2 = lerp(c2, 43, varnish * .18);
+          c0 = lerp(c0, 201, chip * .36); c1 = lerp(c1, 141, chip * .36); c2 = lerp(c2, 75, chip * .36); h += rings * 7 + knot * 10; rough = lerp(rough, .17, varnish * .7) + chip * .16;
+        } else if (mat === 4) {
+          const swirl = (fibre - .5) * 22 + Math.sin(u * 21 + v * 9) * 9, seam = Math.pow(Math.abs(Math.sin((u * 3.7 + v * 1.2) * Math.PI)), 26);
+          c0 += swirl - seam * 15; c1 += swirl * .48 - seam * 8; c2 += swirl * .26 - seam * 4; h += swirl * .5 + seam * 17; rough += seam * .12;
+        } else if (mat === 5) {
+          const rib = .5 + .5 * Math.sin(u * 430 + Math.sin(v * 12) * 3);
+          c0 += (rib - .5) * 18; c1 += (rib - .5) * 18; c2 += (rib - .5) * 17; h += rib * 12; rough += .05;
+        } else if (mat === 6) {
+          const anneal = Math.exp(-Math.pow((u - .77) / .08, 2)), brass = (noise - .5) * 22 + (grain - .5) * 8;
+          c0 += brass + anneal * 18; c1 += brass * .72 + anneal * 5; c2 += brass * .28 - anneal * 4;
+          const primer = Math.exp(-Math.pow((u - .94) / .045, 2)) * Math.exp(-Math.pow((v - .5) / .22, 2));
+          c0 = lerp(c0, 105, primer); c1 = lerp(c1, 25, primer); c2 = lerp(c2, 20, primer); h += anneal * 9 + primer * 4; rough = .27 + anneal * .1;
+        } else if (mat === 7) {
+          const oxide = grime * clamp((1 - noise) * .9 + (1 - cell) * .4), scratch = clamp((directional - .73) * 4);
+          c0 -= oxide * 28; c1 -= oxide * 23; c2 -= oxide * 18; c0 += scratch * 42; c1 += scratch * 38; c2 += scratch * 32; h += directional * 7 + edge * 9;
+          const seal = Math.exp(-Math.pow((u - .94) / .045, 2)) * Math.exp(-Math.pow((v - .5) / .22, 2));
+          c0 = lerp(c0, 101, seal); c1 = lerp(c1, 24, seal); c2 = lerp(c2, 19, seal); h += seal * 4;
+        } else {
+          const warp = Math.sin(u * 230) * Math.sin(v * 47), weft = Math.sin(v * 230) * Math.sin(u * 47), weave = (warp + weft) * 5 + (fibre - .5) * 11;
+          c0 += weave; c1 += weave; c2 += weave; h += (warp + weft) * 8; rough = .86 + Math.abs(warp + weft) * .04;
+        }
+
+        let paint = 0, p0 = 0, p1 = 0, p2 = 0;
+        if (finish === 2 && (mat === 3 || mat === 4)) { paint = .88; p0 = 25; p1 = 29; p2 = 30; }
+        else if (finish === 3 && (mat === 0 || mat === 1 || mat === 2 || mat === 3 || mat === 4 || mat === 5 || mat === 7)) { paint = clamp((large - .25) * 2.2 + (directional - .5) * .25) * (.84 - wear * .32); p0 = 70; p1 = 86; p2 = 55; }
+        else if (finish === 4 && mat !== 6 && mat !== 8) { paint = clamp(.72 + large * .22 - wear * .45 + (noise - .5) * .14); p0 = 218; p1 = 219; p2 = 207; }
+        if (paint > 0) {
+          const chip = clamp((grain - (.79 - wear * .33)) * 6 + (1 - cell) * .18);
+          paint *= 1 - chip * .72; c0 = lerp(c0, p0, paint); c1 = lerp(c1, p1, paint); c2 = lerp(c2, p2, paint);
+          if (finish > 0 && finish < 5 && chip > 0) { c0 = lerp(c0, mat === 4 ? 25 : 31, chip * .55); c1 = lerp(c1, mat === 4 ? 28 : 34, chip * .55); c2 = lerp(c2, mat === 4 ? 27 : 31, chip * .55); }
+          metal *= 1 - paint * .86; rough = lerp(rough, .72, paint); h += paint * 5 - chip * 12;
+        }
+        const contact = edge * .72 + clamp((grain - .955) * 15) * wear * .15;
+        if (mat < 3) { c0 = lerp(c0, 130, contact); c1 = lerp(c1, 133, contact); c2 = lerp(c2, 137, contact); rough += contact * .12; }
+        c0 *= 1 - dust * .29; c1 *= 1 - dust * .29; c2 *= 1 - dust * .25; h -= dust * 12;
+        albedo[i] = clamp(c0, 0, 255); albedo[i + 1] = clamp(c1, 0, 255); albedo[i + 2] = clamp(c2, 0, 255); albedo[i + 3] = 255;
+        height[i] = height[i + 1] = height[i + 2] = clamp(h, 0, 255); height[i + 3] = 255;
+        orm[i] = clamp(1 - dust * .58) * 255; orm[i + 1] = clamp(rough, .05, 1) * 255; orm[i + 2] = clamp(metal, 0, 1) * 255; orm[i + 3] = 255;
+      }
+      await yieldRows(y);
+    }
+
+    const ac = makeCanvas(size), hc = makeCanvas(size), oc = makeCanvas(size);
+    const ax = ac.getContext('2d', { willReadFrequently:true }), hx = hc.getContext('2d', { willReadFrequently:true }), ox = oc.getContext('2d', { willReadFrequently:true });
+    pixels(ax, albedo, size); pixels(hx, height, size); pixels(ox, orm, size);
+    const scratchCount = Math.round((mat === 8 ? 110 : mat === 6 ? 150 : 210) + wear * (mat < 2 ? 230 : 120));
+    for (let j = 0; j < scratchCount; j++) {
+      const x = rand() * size, y = (.05 + rand() * .88) * size, len = (.001 + Math.pow(rand(), 3) * (mat === 1 ? .22 : .12)) * size, dy = (rand() - .5) * len * (mat === 1 ? .1 : .28), a = (.035 + rand() * .18) * (.25 + wear * .75);
+      ax.strokeStyle = mat === 6 ? `rgba(244,208,121,${a})` : `rgba(205,200,180,${a})`; ax.lineWidth = (.18 + rand() * .7) * size / 2048; ax.beginPath(); ax.moveTo(x, y); ax.lineTo(x + len, y + dy); ax.stroke();
+      hx.strokeStyle = `rgba(218,218,200,${a * .6})`; hx.lineWidth = ax.lineWidth * 1.3; hx.beginPath(); hx.moveTo(x, y); hx.lineTo(x + len, y + dy); hx.stroke();
+    }
+    if (mat === 0) for (let j = 0; j < 12; j++) { const x = (.08 + rand() * .84) * size, y = (.29 + rand() * .53) * size; stain(ax, x, y, size * (.008 + rand() * .018), `rgba(22,14,11,${.12 + grime * .24})`); stain(ox, x, y, size * (.007 + rand() * .014), `rgba(24,18,12,${.1 + grime * .2})`); }
+    else if (mat === 1) for (let j = 0; j < 9; j++) { const x = (.22 + rand() * .42) * size, y = (.18 + rand() * .68) * size; stain(ax, x, y, size * (.012 + rand() * .025), `rgba(25,17,17,${grime * (.14 + rand() * .24)})`); }
+    else if (mat === 3) for (let j = 0; j < 7; j++) stain(ax, (.1 + rand() * .8) * size, (.2 + rand() * .65) * size, size * (.012 + rand() * .03), 'rgba(47,22,11,.16)');
+    else if (mat === 4) { ax.strokeStyle = `rgba(18,20,19,${.2 + grime * .2})`; hx.strokeStyle = 'rgba(43,43,40,.45)'; for (let j = 0; j < 5; j++) { const x = (.14 + j * .2) * size; ax.lineWidth = hx.lineWidth = size / 420; ax.beginPath(); ax.moveTo(x, .12 * size); ax.lineTo(x + .01 * size, .92 * size); ax.stroke(); hx.beginPath(); hx.moveTo(x, .12 * size); hx.lineTo(x + .01 * size, .92 * size); hx.stroke(); } }
+    else if (mat === 5) { ax.strokeStyle = 'rgba(125,130,125,.22)'; for (let j = 0; j < 24; j++) { const y = (.12 + j / 29) * size; ax.lineWidth = size / 900; ax.beginPath(); ax.moveTo(.08 * size, y); ax.lineTo(.92 * size, y + size * .008); ax.stroke(); } }
+    else if (mat === 6) { stain(ax, .94 * size, .5 * size, .045 * size, 'rgba(100,21,18,.55)'); stain(hx, .94 * size, .5 * size, .035 * size, 'rgba(78,70,65,.5)'); }
+    else if (mat === 7) { ax.strokeStyle = `rgba(19,26,20,${.22 + grime * .24})`; for (let j = 0; j < 16; j++) { const y = (.1 + rand() * .78) * size; ax.lineWidth = size / 700; ax.beginPath(); ax.moveTo(.04 * size, y); ax.lineTo((.18 + rand() * .74) * size, y + size * (.006 + rand() * .018)); ax.stroke(); } }
+    else { ax.strokeStyle = 'rgba(183,174,140,.2)'; hx.strokeStyle = 'rgba(188,178,143,.32)'; for (let j = 0; j < 28; j++) { const p = (j + .5) / 28 * size; ax.lineWidth = hx.lineWidth = size / 1600; ax.beginPath(); ax.moveTo(p, 0); ax.lineTo(p + size * .012, size); ax.stroke(); ax.beginPath(); ax.moveTo(0, p); ax.lineTo(size, p + size * .012); ax.stroke(); hx.beginPath(); hx.moveTo(p, 0); hx.lineTo(p + size * .012, size); hx.stroke(); hx.beginPath(); hx.moveTo(0, p); hx.lineTo(size, p + size * .012); hx.stroke(); } ax.strokeStyle = 'rgba(215,200,165,.54)'; hx.strokeStyle = 'rgba(215,204,175,.57)'; ax.lineWidth = hx.lineWidth = size / 180; ax.strokeRect(size * .07, size * .07, size * .86, size * .86); hx.strokeRect(size * .07, size * .07, size * .86, size * .86); }
+
+    const uv = markUV[mat];
+    if (mat === 0) { if (serialEnabled) mark(ax, hx, serial, uv.serial, size); mark(ax, hx, 'АГ 1247', uv.factory, size); mark(ax, hx, 'П/А', uv.safe, size); mark(ax, hx, '1984', uv.stamp, size); triangle(ax, hx, size, uv.tri); }
+    else if (mat === 1) { mark(ax, hx, 'ПКМ', uv.heat, size); mark(ax, hx, '100 200 300 400', uv.scale, size); triangle(ax, hx, size, uv.tri); }
+    else if (mat === 2) { mark(ax, hx, 'ГАЗ 1 2 3', uv.gas, size); mark(ax, hx, '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15', uv.range, size); }
+    else if (mat === 3) { mark(ax, hx, 'ПРИКЛАД', uv.rear, size); mark(ax, hx, '1984', uv.mark, size); }
+    else if (mat === 4) { mark(ax, hx, 'ПКМ', uv.grip, size); mark(ax, hx, 'БАКЕЛИТ', uv.mark, size); }
+    else if (mat === 5) { mark(ax, hx, 'ПОЛИМЕР', uv.poly, size); mark(ax, hx, 'ПРК', uv.mark, size); }
+    else if (mat === 6) mark(ax, hx, 'АГ 1247', uv.head, size, true);
+    else if (mat === 7) { mark(ax, hx, 'ЗВЕНО', uv.link, size); mark(ax, hx, 'ЛАК 7.62', uv.mark, size); }
+    else { mark(ax, hx, 'ЛЕНТА 100', uv.web, size); mark(ax, hx, 'БРЕЗЕНТ', uv.mark, size); }
+    const finalAlbedo = ax.getImageData(0, 0, size, size).data, finalHeight = hx.getImageData(0, 0, size, size).data, finalOrm = ox.getImageData(0, 0, size, size).data;
+    const normal = await normalFromHeight(finalHeight, size);
+    if (!alive()) throw Error('Cancelled');
+    await emit({ mat, n: size, data: [finalAlbedo.buffer, normal.buffer, finalOrm.buffer], id: o.id });
+    await pause();
+  }
+}
+
+let worker=null,bakeId=0,baking=true,textureReady=false,allocated=false,bakeTimer,workerURL=null;
+const workerSource='const job='+textureJob.toString()+';onmessage=e=>job(e.data,m=>postMessage(m,m.data)).then(()=>postMessage({done:true,id:e.data.id})).catch(e=>postMessage({error:e.message}));';
+function updateExportState(){for(let id of ['glb','zip'])$('#'+id).disabled=baking||!textureReady}updateExportState();
+async function receiveTile(msg,id){if(id!==bakeId)return;let {mat,n,data}=msg,rect=atlasLayout[mat];for(let k=0;k<3;k++){if(id!==bakeId)return;let pixels=new Uint8Array(data[k]);atlasContexts[k].putImageData(new ImageData(new Uint8ClampedArray(data[k]),n,n),rect.x,rect.y);gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);for(let y=0;y<n;y+=128){if(id!==bakeId)return;gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.texSubImage2D(gl.TEXTURE_2D,0,rect.x,rect.y+y,n,Math.min(128,n-y),gl.RGBA,gl.UNSIGNED_BYTE,pixels.subarray(y*n*4,Math.min(n,y+128)*n*4));await yieldTask()}}renderRevision++;$('#bakeStatus').textContent='Baking '+materials[mat][0]+' · '+(mat+1)+'/9';}
+async function rebake(){let id=++bakeId;if(worker){worker.terminate();worker=null}baking=true;textureReady=false;updateExportState();let time=performance.now();toast('Rebaking textures...',true);$('#bakeStatus').textContent='Generating deterministic PBR maps…' ;if(!allocated){if(gl.getParameter(gl.MAX_TEXTURE_SIZE)<4096){baking=false;$('#bakeStatus').textContent='GPU limit: 4096² atlases unsupported.';updateExportState();toast('Требуется поддержка текстур 4096².');return}for(let k=0;k<3;k++){if(id!==bakeId)return;gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,atlasCanvases[k]);await nextFrame()}allocated=true}
+ const options={finish:state.finish,wear:state.wear,grime:state.grime,heat:state.heat,seed:state.seed,serial:state.serial,serialEnabled:state.serialEnabled,id};let pending=Promise.resolve();
+ const fail=error=>{if(id!==bakeId)return;if(worker){worker.terminate();worker=null}baking=false;textureReady=false;updateExportState();$('#bakeStatus').textContent='Bake failed. Change a finish to retry.';toast('Texture bake failed: '+error)};
+ const handle=msg=>{if(id!==bakeId)return;if(msg.error){fail(msg.error);return}if(msg.done){pending=pending.then(async()=>{if(id!==bakeId)return;for(let k=0;k<3;k++){if(id!==bakeId)return;gl.activeTexture(gl.TEXTURE0+k);gl.bindTexture(gl.TEXTURE_2D,textures[k]);gl.generateMipmap(gl.TEXTURE_2D);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR);await nextFrame()}if(id!==bakeId)return;bakeMs=performance.now()-time;$('#statBake').textContent=(bakeMs/1000).toFixed(2)+' s (async)';$('#bakeStatus').textContent='PBR READY · Albedo / normal / ORM · mipmapped';renderRevision++;baking=false;textureReady=true;updateExportState();if(worker){worker.terminate();worker=null}toast(finishes[state.finish][0]+' · textures ready')}).catch(e=>fail(e.message))}else pending=pending.then(()=>receiveTile(msg,id)).catch(e=>fail(e.message))};
+ const fallback=()=>textureJob(options,async m=>{handle(m);await pending},()=>id===bakeId).then(()=>handle({done:true})).catch(e=>fail(e.message));
+ try{if(typeof Worker==='undefined'||typeof OffscreenCanvas==='undefined')throw Error('Worker canvas unavailable');if(!workerURL)workerURL=URL.createObjectURL(new Blob([workerSource],{type:'text/javascript'}));worker=new Worker(workerURL);worker.onmessage=e=>handle(e.data);worker.onerror=e=>{e.preventDefault();if(id!==bakeId)return;worker.terminate();worker=null;fallback()};worker.postMessage(options)}catch(e){fallback()}}
+function scheduleBake(){clearTimeout(bakeTimer);++bakeId;if(worker){worker.terminate();worker=null}baking=true;textureReady=false;updateExportState();bakeTimer=setTimeout(rebake,220)}
+document.querySelectorAll('[data-finish]').forEach(b=>b.onclick=()=>{state.finish=+b.dataset.finish;state.stock=state.finish===2?1:0;syncConfig();document.querySelectorAll('[data-finish]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));scheduleBake()});
+for(let k of ['wear','grime','heat'])$('#'+k).oninput=e=>{state[k]=e.target.value/100;$('#'+k+'Value').textContent=e.target.value+'%';scheduleBake()};$('#serialEnabled').onchange=e=>{state.serialEnabled=e.target.checked;scheduleBake()};$('#serial').oninput=e=>{state.serial=e.target.value.toUpperCase();scheduleBake()};$('#randomSeed').onclick=()=>{state.seed=Math.floor(rng(state.seed)()*4294967296);$('#seedLabel').textContent='SEED '+state.seed+' · DETERMINISTIC';scheduleBake()};
+setTimeout(rebake,80);
+
+function downloadBlob(blob,name){let url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000)}
+function canvasBlob(c){return new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(Error('PNG encoding failed')),'image/png'))}
+function assetReadme(){return `ПКМ / 7.62R · FIELD EQUIPMENT ARCHIVE
+Standalone procedural visual game asset, not CAD or manufacturing data.
+Units: meters; +X bore, +Y up; length 1.173m.
+Current configuration and posed named meshes are downloaded, not animation clips.
+Catmull–Rom non-disintegrating belt; equal arc pitch; merged ammunition batches.
+Albedo: sRGB. Normal: tangent-space +Y. ORM: R=AO G=roughness B=metalness.
+Atlas: 4096x4096, 8px inset; bluedsteel/barrel 2048, other surfaces 1024.
+UV atlas rectangles: ${JSON.stringify(atlasLayout)}
+Seed: ${state.seed}; finish: ${finishes[state.finish][0]}; wear: ${state.wear}; grime: ${state.grime}; heat: ${state.heat}.
+Serial: ${state.serialEnabled?state.serial:'disabled'}
+Configuration: ${JSON.stringify(state)}
+Triangles: ${triangles}. No downloaded textures or external libraries.
+Performance depends on device, resolution and driver; asynchronous texture synthesis.
+Series core follows the local M249 viewer. M112, PRC-152, PVS-14, SVD and PSO-1 references were not included in this checkout.
+Feed cycle: rimmed cartridge pulled BACK (-X), lowered, then chambered (+X). The belt remains linked.
+Hardware performance targets need validation on the target gaming GPU.
+`}
+const crcTable=Uint32Array.from({length:256},(_,i)=>{let c=i;for(let k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;return c>>>0});
+function crc32(data){let c=0xffffffff;for(let b of data)c=crcTable[(c^b)&255]^(c>>>8);return(c^0xffffffff)>>>0}
+async function zipStore(entries){let chunks=[],central=[],offset=0;for(let [name,blob] of entries){let data=new Uint8Array(await blob.arrayBuffer()),filename=new TextEncoder().encode(name),crc=crc32(data),header=new Uint8Array(30+filename.length),v=new DataView(header.buffer);v.setUint32(0,0x04034b50,true);v.setUint16(4,20,true);v.setUint16(6,0x800,true);v.setUint16(12,33,true);v.setUint32(14,crc,true);v.setUint32(18,data.length,true);v.setUint32(22,data.length,true);v.setUint16(26,filename.length,true);header.set(filename,30);chunks.push(header,data);let c=new Uint8Array(46+filename.length),d=new DataView(c.buffer);d.setUint32(0,0x02014b50,true);d.setUint16(4,20,true);d.setUint16(6,20,true);d.setUint16(8,0x800,true);d.setUint16(14,33,true);d.setUint32(16,crc,true);d.setUint32(20,data.length,true);d.setUint32(24,data.length,true);d.setUint16(28,filename.length,true);d.setUint32(42,offset,true);c.set(filename,46);central.push(c);offset+=header.length+data.length;await nextFrame()}let size=central.reduce((s,c)=>s+c.length,0),end=new Uint8Array(22),v=new DataView(end.buffer);v.setUint32(0,0x06054b50,true);v.setUint16(8,entries.length,true);v.setUint16(10,entries.length,true);v.setUint32(12,size,true);v.setUint32(16,offset,true);return new Blob([...chunks,...central,end],{type:'application/zip'})}
+function gltfVertices(b,r){
+ if(b.beltDeltas){const data=b.data.slice(),index=feedPose(state.feed).index;for(let i=0;i<b.count;i++)for(let k=0;k<3;k++)data[i*12+k]+=b.beltDeltas[i*3+k]*index;b={...b,data}}
+ const data=new Float32Array(b.count*12);
+ for(let i=0;i<b.count;i+=3){
+  const base=i*12,p0=b.data.subarray(base,base+3),p1=b.data.subarray(base+12,base+15),p2=b.data.subarray(base+24,base+27),e1=V.sub(p1,p0),e2=V.sub(p2,p0);
+  const du1=(b.data[base+18]-b.data[base+6])*r[2],dv1=(b.data[base+19]-b.data[base+7])*r[3],du2=(b.data[base+30]-b.data[base+6])*r[2],dv2=(b.data[base+31]-b.data[base+7])*r[3],det=du1*dv2-du2*dv1;
+  let t,bitangent;if(Math.abs(det)>1e-14){t=V.mul(V.sub(V.mul(e1,dv2),V.mul(e2,dv1)),1/det);bitangent=V.mul(V.sub(V.mul(e2,du1),V.mul(e1,du2)),1/det)}
+  for(let k=0;k<3;k++){
+   const o=(i+k)*12,n=Array.from(b.data.subarray(o+3,o+6));let tangent=t&&V.sub(t,V.mul(n,V.dot(n,t)));
+   if(!tangent||V.dot(tangent,tangent)<1e-14)tangent=V.cross(Math.abs(n[1])<.9?[0,1,0]:[1,0,0],n);
+   tangent=V.norm(tangent);const sign=bitangent&&V.dot(V.cross(n,tangent),bitangent)<0?-1:1;
+   data.set(b.data.subarray(o,o+6),o);data[o+6]=r[0]+b.data[o+6]*r[2];data[o+7]=r[1]+b.data[o+7]*r[3];data.set([...tangent,sign],o+8);
+  }
+ }
+ return data;
+}
+
+async function createGLB(){let json={asset:{version:'2.0',generator:'Field Equipment Archive · procedural ПКМ / 7.62R'},scene:0,scenes:[{nodes:[]}],nodes:[],meshes:[],accessors:[],bufferViews:[],buffers:[{byteLength:0}],images:[],textures:[],samplers:[{magFilter:9729,minFilter:9987,wrapS:33071,wrapT:33071}],materials:materials.map(m=>({name:m[0],pbrMetallicRoughness:{baseColorTexture:{index:0},metallicRoughnessTexture:{index:2},metallicFactor:1,roughnessFactor:1},normalTexture:{index:1,scale:.62},occlusionTexture:{index:2},doubleSided:true})),extras:{readme:assetReadme()}},chunks=[],offset=0;
+ function add(data,target,stride){let bytes=data instanceof Uint8Array?data:new Uint8Array(data.buffer),index=json.bufferViews.length;json.bufferViews.push({buffer:0,byteOffset:offset,byteLength:bytes.length,...(target?{target}:{}),...(stride?{byteStride:stride}:{})});chunks.push(bytes);let pad=(4-bytes.length%4)%4;if(pad)chunks.push(new Uint8Array(pad));offset+=bytes.length+pad;return index}
+ for(let k=0;k<3;k++){let png=await canvasBlob(atlasCanvases[k]),view=add(new Uint8Array(await png.arrayBuffer()));json.images.push({bufferView:view,mimeType:'image/png'});json.textures.push({sampler:0,source:k});await nextFrame()}
+ for(let b of batches){if(!b.visible)continue;let mat=effectiveMaterial(b),r=atlasLayout[mat].uv,data=gltfVertices(b,r);if(b.tint){let variant=JSON.parse(JSON.stringify(json.materials[mat]));variant.name=b.name;variant.pbrMetallicRoughness.baseColorFactor=[...(b.tint||[1,1,1]).map(x=>Math.pow(x,2.2)),1];if(variant.pbrMetallicRoughness.baseColorFactor[3]<1)variant.alphaMode='BLEND';mat=json.materials.length;json.materials.push(variant)}let view=add(data,34962,48),pos=json.accessors.length;json.accessors.push({bufferView:view,byteOffset:0,componentType:5126,count:b.count,type:'VEC3',min:[0,1,2].map(k=>{let n=Infinity;for(let i=k;i<data.length;i+=12)n=Math.min(n,data[i]);return n}),max:[0,1,2].map(k=>{let n=-Infinity;for(let i=k;i<data.length;i+=12)n=Math.max(n,data[i]);return n})},{bufferView:view,byteOffset:12,componentType:5126,count:b.count,type:'VEC3'},{bufferView:view,byteOffset:24,componentType:5126,count:b.count,type:'VEC2'},{bufferView:view,byteOffset:32,componentType:5126,count:b.count,type:'VEC4'});json.scenes[0].nodes.push(json.nodes.length);json.nodes.push({name:b.name,mesh:json.meshes.length,...(b.matrix.some((x,i)=>Math.abs(x-(i%5===0?1:0))>1e-8)?{matrix:Array.from(b.matrix)}:{})});json.meshes.push({name:b.name,primitives:[{attributes:{POSITION:pos,NORMAL:pos+1,TEXCOORD_0:pos+2,TANGENT:pos+3},material:mat,mode:4}]});await nextFrame()}
+ json.buffers[0].byteLength=offset;let text=new TextEncoder().encode(JSON.stringify(json)),padded=new Uint8Array(Math.ceil(text.length/4)*4);padded.fill(32);padded.set(text);let header=new Uint32Array([0x46546c67,2,12+8+padded.length+8+offset]),jh=new Uint32Array([padded.length,0x4e4f534a]),bh=new Uint32Array([offset,0x004e4942]);return new Blob([header,jh,padded,bh,...chunks],{type:'model/gltf-binary'})}
+let downloading=false;
+document.addEventListener('keydown',e=>{if(downloading&&/^[1-8rawebtc]$/i.test(e.key)){e.preventDefault();e.stopImmediatePropagation()}},true);
+async function downloadAsset(type){if(downloading||(!textureReady||baking)&&type!=='png')return;downloading=true;let locked=[...document.querySelectorAll('button,input')].map(el=>[el,el.disabled]);locked.forEach(([el])=>el.disabled=true);clearTimeout(beltTimer);if(beltBuiltCount!==state.count||beltBuiltSag!==state.sag)rebuildBelt();updateModels(10);toast('Preparing '+type.toUpperCase()+' download...',true);try{if(type==='png'){draw();let c=document.createElement('canvas');c.width=canvas.width;c.height=canvas.height;let ctx=c.getContext('2d'),g=ctx.createRadialGradient(c.width*.5,c.height*.48,0,c.width*.5,c.height*.48,c.width*.7);g.addColorStop(0,'#363e4b');g.addColorStop(1,'#17191c');ctx.fillStyle=g;ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(canvas,0,0);downloadBlob(await canvasBlob(c),'lmg_pkm_viewport.png')}else if(type==='glb')downloadBlob(await createGLB(),'lmg_pkm_'+finishes[state.finish][0].toLowerCase().replaceAll(' ','_')+'.glb');else{let entries=[];for(let k=0;k<3;k++)entries.push([['albedo.png','normal.png','orm.png'][k],await canvasBlob(atlasCanvases[k])]);let c=document.createElement('canvas');c.width=c.height=4096;let ctx=c.getContext('2d');for(let [channel,name] of [[0,'ao.png'],[1,'roughness.png'],[2,'metalness.png']]){for(let y=0;y<4096;y+=128){let image=atlasContexts[2].getImageData(0,y,4096,128);for(let i=0;i<image.data.length;i+=4){let value=image.data[i+channel];image.data[i]=image.data[i+1]=image.data[i+2]=value;image.data[i+3]=255}ctx.putImageData(image,0,y);await nextFrame()}entries.push([name,await canvasBlob(c)])}entries.push(['README.txt',new Blob([assetReadme()],{type:'text/plain;charset=utf-8'})]);downloadBlob(await zipStore(entries),'lmg_pkm_pbr_textures.zip')}toast(type.toUpperCase()+' downloaded · local file')}catch(e){toast('Export failed: '+e.message)}finally{downloading=false;locked.forEach(([el,disabled])=>el.disabled=disabled);updateExportState()}}
+for(let type of ['glb','png','zip'])$('#'+type).onclick=()=>downloadAsset(type);
+canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(worker)worker.terminate();toast('WebGL context lost. Waiting for GPU recovery…',true)});canvas.addEventListener('webglcontextrestored',()=>location.reload());
+addEventListener('pagehide',e=>{if(e.persisted)return;++bakeId;if(worker)worker.terminate();if(workerURL)URL.revokeObjectURL(workerURL);for(let b of [...batches,ground]){gl.deleteBuffer(b.buffer);if(b.feedBuffer)gl.deleteBuffer(b.feedBuffer)}textures.forEach(t=>gl.deleteTexture(t));gl.deleteProgram(prog)});
+window.viewerDiagnostics=()=>({triangles,atlasLayout,belt:typeof beltDiagnostics==='function'?beltDiagnostics(state.count,state.sag):null,activeTriangles:batches.filter(b=>b.visible).reduce((n,b)=>n+b.count/3,0),batches:batches.length,firstFrameMs:firstFrame,softwareGPU,renderScale,buildMs,bakeMs,baking,webgl:webgl2?2:1,seed:state.seed,finish:finishes[state.finish][0],glError:gl.getError(),textureCount:textures.length,configuration:{...state},feed:feedPose(state.feed),parts:batches.map(b=>({name:b.name,group:b.group,material:materials[effectiveMaterial(b)][0],visible:b.visible,triangles:b.count/3,matrix:Array.from(b.matrix)}))});
+})();
+</script>
+</body>
+</html>
